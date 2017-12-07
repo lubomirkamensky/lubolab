@@ -6,8 +6,8 @@
     <description>Recent content on Lubolab</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <managingEditor>yourname@example.com (yourname)</managingEditor>
-    <webMaster>yourname@example.com (yourname)</webMaster>
+    <managingEditor>lubomir.kamensky@gmail.com (Lubomir Kamensky)</managingEditor>
+    <webMaster>lubomir.kamensky@gmail.com (Lubomir Kamensky)</webMaster>
     <copyright>(c) 2017 Copyright Lubolab</copyright>
     <lastBuildDate>Mon, 17 Apr 2017 03:57:28 +0200</lastBuildDate>
     
@@ -18,7 +18,7 @@
       <title>Astronomical Events</title>
       <link>/2017/04/17/astronomical-events/</link>
       <pubDate>Mon, 17 Apr 2017 03:57:28 +0200</pubDate>
-      <author>yourname@example.com (yourname)</author>
+      <author>lubomir.kamensky@gmail.com (Lubomir Kamensky)</author>
       <guid>/2017/04/17/astronomical-events/</guid>
       <description>Personal environment Personal DWH begins with data about personal environment. Weather and day length affect our activity significantly. We already have Weather Data mart created, so now it is the time to build another one on top of astronomical events.
 This new datamart is going to be a common pattern for extending our personal DWH with any new data area.
@@ -29,7 +29,7 @@ The detail layer We start in our detail layer, focusing on another Observation s
       <title>Reporting: Data Lab Web App</title>
       <link>/2017/02/17/the-data-lab-web-app/</link>
       <pubDate>Fri, 17 Feb 2017 03:57:28 +0200</pubDate>
-      <author>yourname@example.com (yourname)</author>
+      <author>lubomir.kamensky@gmail.com (Lubomir Kamensky)</author>
       <guid>/2017/02/17/the-data-lab-web-app/</guid>
       <description>Friendly Web App Wanted Now it is the time to start playing with data we have collected. We need some nice, simple, user friendly web application which will be both easy to use and maintain.
 I thought it can help me that I was some time web developer in late 90s. But honestly, I was terrified what happened with web development in past years.
@@ -40,7 +40,7 @@ The time when the developer was in full control of his code using html, css, jav
       <title>Weather Data Mart</title>
       <link>/2017/02/10/weather-data-mart/</link>
       <pubDate>Fri, 10 Feb 2017 03:57:28 +0200</pubDate>
-      <author>yourname@example.com (yourname)</author>
+      <author>lubomir.kamensky@gmail.com (Lubomir Kamensky)</author>
       <guid>/2017/02/10/weather-data-mart/</guid>
       <description>Welcome to the Cloud In the first post I have stated that any cloud SQL service is still too expensive comparing to other options. As long as that assumption was only living in my head it was doing pretty well. But once it was written, things changed dramatically. The questions start raising.
 As a consequence there was long chain of events starting with detail investigation of Google Cloud SQL prices, testing the smallest SQL instance and discovering the whole new world of options.</description>
@@ -50,7 +50,7 @@ As a consequence there was long chain of events starting with detail investigati
       <title>Detail Layer: Logical Data Model</title>
       <link>/2017/01/17/detail-layer-logical-data-model/</link>
       <pubDate>Tue, 17 Jan 2017 03:57:28 +0200</pubDate>
-      <author>yourname@example.com (yourname)</author>
+      <author>lubomir.kamensky@gmail.com (Lubomir Kamensky)</author>
       <guid>/2017/01/17/detail-layer-logical-data-model/</guid>
       <description>No Data Changes in the Detail layer The first post ended with the table weather_measuring filled with a data which describes a weather. And I mentioned that this table belongs to something called Detail layer. Now it is the time to put it in some kind of context.
 Detail layer is the place where the most detailed information coming from various sources is stored. Quite probably we will use just part of it for the end user applications, maybe we will even change some data a bit for different purposes.</description>
@@ -60,7 +60,7 @@ Detail layer is the place where the most detailed information coming from variou
       <title>My Personal Data Warehouse Kickoff</title>
       <link>/2017/01/12/my-personal-dwh-kickoff/</link>
       <pubDate>Thu, 12 Jan 2017 03:57:28 +0200</pubDate>
-      <author>yourname@example.com (yourname)</author>
+      <author>lubomir.kamensky@gmail.com (Lubomir Kamensky)</author>
       <guid>/2017/01/12/my-personal-dwh-kickoff/</guid>
       <description>The Weather Station It all started more than five years ago, the day I decided to buy my very own weather station. I ended up with La Crosse Technology WS-2800-IT. You can still find it on a market under various brands like TFA, Techno line,.. It enables wireless data transmission to PC using USB stick, which made it good candidate for my future sensor network.
 The Local Server Of course I needed a local server collecting regularly the data and sending it to my virtual server in the cloud.</description>

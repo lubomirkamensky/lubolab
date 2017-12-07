@@ -44,8 +44,8 @@ topic = "topics"
 category = "categories"
 
 [author]
-name = "yourname"
-email = "yourname@example.com"
+name = "Lubomir Kamensky"
+email = "lubomir.kamensky@gmail.com"
 
 #
 # All parameters below here are optional and can be mixed and matched.
@@ -100,7 +100,7 @@ showRightSidebar = true
 highlight = "default"
 
 # Google Analytics.
-googleAnalytics = "Your Google Analytics tracking code"
+googleAnalytics = "UA-90639023-1"
 
 # Sidebar social links.
 github = "Myprofile" # Your Github profile ID
