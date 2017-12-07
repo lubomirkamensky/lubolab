@@ -1,0 +1,7 @@
+[datalab]
+Name = "Datalab"
+URL = "https://lubolab-957a1.firebaseapp.com/"
+
+[tags]
+Name = "Tags"
+URL = "/tags"
