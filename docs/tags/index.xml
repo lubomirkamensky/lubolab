@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Lubolab</title>
+    <link>/tags/</link>
+    <description>Recent content in Tags on Lubolab</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <managingEditor>yourname@example.com (yourname)</managingEditor>
+    <webMaster>yourname@example.com (yourname)</webMaster>
+    <copyright>(c) 2017 Copyright Lubolab</copyright>
+    <lastBuildDate>Mon, 17 Apr 2017 03:57:28 +0200</lastBuildDate>
+    
+	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Personal Dwh</title>
+      <link>/tags/personal-dwh/</link>
+      <pubDate>Mon, 17 Apr 2017 03:57:28 +0200</pubDate>
+      <author>yourname@example.com (yourname)</author>
+      <guid>/tags/personal-dwh/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

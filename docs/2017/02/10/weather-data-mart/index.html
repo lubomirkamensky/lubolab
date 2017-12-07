@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]> <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]> <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Weather Data Mart  &middot; Lubolab</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<meta name="description" content="" />
+
+<meta name="keywords" content="Personal DWH, ">
+
+<link rel="author" href="http://plus.google.com/+Myprofile">
+
+
+<meta property="og:title" content="Weather Data Mart  &middot; Lubolab ">
+<meta property="og:site_name" content="Lubolab"/>
+<meta property="og:url" content="/2017/02/10/weather-data-mart/" />
+<meta property="og:locale" content="en">
+
+
+<meta property="og:type" content="article" />
+<meta property="og:description" content=""/>
+<meta property="og:article:published_time" content="2017-02-10T03:57:28&#43;02:00" />
+<meta property="og:article:modified_time" content="2017-02-10T03:57:28&#43;02:00" />
+
+  
+    
+<meta property="og:article:tag" content="Personal DWH">
+    
+  
+
+  
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@Myprofile" />
+<meta name="twitter:creator" content="@Myprofile" />
+<meta name="twitter:title" content="Weather Data Mart" />
+<meta name="twitter:description" content="" />
+<meta name="twitter:url" content="/2017/02/10/weather-data-mart/" />
+<meta name="twitter:domain" content="/">
+  
+
+  
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "headline": "Weather Data Mart",
+    "author": {
+      "@type": "Person",
+      "name": "http://profiles.google.com/+Myprofile?rel=author"
+    },
+    "datePublished": "2017-02-10",
+    "description": "",
+    "wordCount": 990
+  }
+</script>
+  
+
+
+
+<link rel="canonical" href="/2017/02/10/weather-data-mart/" />
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/touch-icon-144-precomposed.png">
+<link rel="icon" href="/favicon.png">
+<meta name="generator" content="Hugo 0.31.1" />
+
+  <!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+
+
+    <link rel="stylesheet" href="/css/bootswatch/paper/bootstrap.min.css">
+
+
+<link rel="stylesheet" href="/css/font-awesome.min.css">
+<link rel="stylesheet" href="/css/style.css">
+
+
+<link rel="stylesheet" href="/css/style_custom.css">
+
+
+
+  <link rel="stylesheet" href="/css/highlight/default.css">
+
+
+</head>
+<body class="map[name:paper]" data-ng-app="myapp" data-ng-controller="MyController" data-ng-mouseleave="MouseLeave($event)">
+    <header id="main-header">
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        
+          
+          <a class="navbar-brand-img" href="/">
+            <img alt="Lubolab" src="/images/lubolablogo.png">
+            
+          </a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav navbar-right">
+            
+            
+            <li class="">
+
+              <a href="https://lubolab-957a1.firebaseapp.com/" >
+                <i class='fa fa-road'></i>
+                Datalab
+              </a>
+            </li>
+            
+            
+              
+          </ul>
+        </div>
+        
+      </div>
+    </nav>
+  </header>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-9">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+  <div class="text-center">
+
+    <h1>Weather Data Mart
+</h1>
+
+    <div class="metas">
+<small>
+  <i class="fa fa-calendar"></i>
+  <time datetime="2017-02-10">10 Feb, 2017</time>
+</small>
+
+
+  <small>
+  &middot; Read in about 5 min
+  &middot; (990 words)
+  &middot; 
+<span class="share-box">Share this on:
+    <a href="https://www.facebook.com/sharer/sharer.php?u=%2f2017%2f02%2f10%2fweather-data-mart%2f" onclick="window.open(this.href, 'mywin',
+'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"><i class="fa fa-facebook-official "></i></a>
+
+    <a href="https://twitter.com/intent/tweet?text=Weather%20Data%20Mart&amp;url=%2f2017%2f02%2f10%2fweather-data-mart%2f" onclick="window.open(this.href, 'mywin',
+'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"><i class="fa fa-twitter"></i></a>
+
+    <a href="https://plus.google.com/share?url=%2f2017%2f02%2f10%2fweather-data-mart%2f" onclick="window.open(this.href, 'mywin',
+'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"><i class="fa fa-google-plus"></i></a>
+
+    <a href="http://www.reddit.com/submit?url=%2f2017%2f02%2f10%2fweather-data-mart%2f" onclick="window.open(this.href, 'mywin',
+'left=20,top=20,width=900,height=500,toolbar=1,resizable=0'); return false;"><i class="fa fa-reddit"></i></a>
+
+    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=%2f2017%2f02%2f10%2fweather-data-mart%2f&amp;title=Weather%20Data%20Mart" onclick="window.open(this.href, 'mywin',
+'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"><i class="fa fa-linkedin"></i></a>
+
+    <a href="mailto:?subject=Weather%20Data%20Mart&amp;body=Check out this site %2f2017%2f02%2f10%2fweather-data-mart%2f" data-proofer-ignore=""><i class="fa fa-envelope"></i></a>
+  </span>
+
+  </small>
+
+<div class="margin-10">
+  <i class="fa fa-tags"></i>
+  
+  <a href="/tags/personal-dwh" class="label label-primary">Personal DWH</a>
+  
+
+
+</div>
+
+<br>
+</div>
+
+  </div>
+</div>
+
+      <div class="content">
+  
+
+<h3 id="welcome-to-the-cloud">Welcome to the Cloud</h3>
+
+<p>In the <a href="http://lubolab.com/my-personal-dwh-kickoff/">first post</a> I have stated that any cloud SQL service is still  too expensive comparing to other options. As long as that assumption was only living in my head it was doing pretty well. But once it was written, things changed dramatically. The questions start raising.</p>
+
+<p>As a consequence there was long chain of events starting with detail investigation of Google Cloud SQL prices, testing the smallest SQL instance and discovering the whole new world of options.</p>
+
+<h3 id="dynamic-data-mart">Dynamic Data Mart</h3>
+
+<p>Then, instead of just copying my existing code of Weather data mart to the GitHub repository and describing it, I started completely new development of dynamic solution. No more physical tables, everything just as view.</p>
+
+<p>The final code is available in public repository on GitHub <a href="https://github.com/lubomirkamensky/personal_dwh">personal_dwh</a>
+<code>personal_dwh/weather_mart</code> check the master branch.</p>
+
+<h3 id="the-adjustments">The Adjustments</h3>
+
+<p>The weather datamart brings the weather data in hourly/daily/monthly/yearly views. Part of the data mart are also the adjustments. As I have already mentioned in the <a href="http://lubolab.com/detail-layer-logical-data-model/">prior post</a>, in detail layer we always keep data as it comes from the source. Even if we find data quality issues which cannot be fixed by redelivering data from the source, we still don&rsquo;t fix the error in the detail layer. But instead introduce adjustments in our data mart.</p>
+
+<p>We can introduce adjustments in any used time context, so as hourly/daily/monthly/yearly adjustments. Of course the adjustment defined on lower level moves accumulated to the higher level. No need to define the same adjustment separately for each time context. Adjustments tables are defined here:
+<code>personal_dwh/weather_mart/db/tables</code>
+<p class="note">The main reason I introduced adjustments was neverending problem with Rain gauge unit. First it was troubles with batteries, then some unexplained failures. This was later solved by replacing it with some newer model. But anytime things go wrong, adjustments are ready to help.</p></p>
+
+<h3 id="some-small-additions">Some Small Additions</h3>
+
+<p>Well, the Google Cloud SQL is still just MySQL database which was never strong in analytical SQL functions. And anyway with the smallest SQL instance we don&rsquo;t have the power for any advanced SQL kung fu. We need to keep things simple.</p>
+
+<p>So we need one derived table with pre-calculated Actual Rain. The Rain comes from the source as Total Rain figure, the total accumulation from the beginning of the measurement. In the pre-calculated table we store the increase of Total Rain comparing to the prior value. See the all related code in the repository.</p>
+
+<p>The table definition is here:
+<code>personal_dwh/weather_mart/db/tables/t_actual_rain.tbl</code></p>
+
+<p>And the procedure loading the table here:
+<code>personal_dwh/weather_mart/db/procedures/sp_load_actual_rain.sp</code></p>
+
+<p>The procedure is now called from the job each time the detail table is loaded.
+<code>personal_dwh/detail_layer/jobs/powershell/weather_rupload.ps1</code></p>
+
+<h3 id="the-big-picture">The Big Picture</h3>
+
+<p>OK, now is the time to put all the thing together and show how it works
+<img src="/images/2017/02/views.png" alt="" /></p>
+
+<p>That&rsquo;s the logical picture. It is a bit naive, assuming that we can always filter the needed data simply in the final view we use. Of course we can, the only problem is performance.</p>
+
+<p class="note">In practice it is necessary to define the data scope and eliminate not needed records already in the beginning of the flow, right on the top of the detail data, in our case in Hourly aggregation.</p>
+
+<p>In the next post we will finally focus on the reporting layer.  It will be web component consuming json data. To simplify things, and get real-time database experience for the end users, we will use <a href="https://www.firebase.com">Firebase</a>.</p>
+
+<p>So the last thing we need now is performance tuning of our views focusing on updates of Firebase database.</p>
+
+<p>In some short regular intervals, say each 10 minutes, we need to update all values impacted by latest measurement.</p>
+
+<p>To update all figures for actual Hour, actual Date, actual Month, actual Year. This list in fact defines the needed data scope for our views.</p>
+
+<h3 id="performance-tuning">Performance Tuning</h3>
+
+<p>In practise we keep just 3 data scopes: actual Date, Month, Year and always update all hours for actual Date.</p>
+
+<p>We can derive all that scopes from the value of actual Date which we store in table as Day_Id defined as integer YYYYMMDD
+<code>personal_dwh/weather_mart/db/tables/t_loaded_periods.tbl
+</code></p>
+
+<p class="note">Usually it contains the current Date but in case we need to refresh the history due to some deeper adjustments, it can be any Date defining the scope for the next update of Firebase.</p>
+
+<p>Then on our datamart lowest level of detail we need 3 views:
+<code>personal_dwh/weather_mart/db/views/v_all_measures_hourly4day.vw
+</code>
+<code>personal_dwh/weather_mart/db/views/v_all_measures_hourly4month.vw
+</code>
+<code>personal_dwh/weather_mart/db/views/v_all_measures_hourly4year.vw
+</code></p>
+
+<p>Where the data scope for each time context is defined by inner join to mentioned table. See the variations of the join for the Day, Month, Year:</p>
+
+<pre><code>INNER JOIN
+    pdwh_mart_weather.t_loaded_periods tm
+    ON DATE_FORMAT(wm.`Datetime`, '%Y%m%d') &gt;= tm.Day_Id
+</code></pre>
+
+<pre><code>INNER JOIN
+    pdwh_mart_weather.t_loaded_periods tm
+    ON DATE_FORMAT(wm.`Datetime`, '%Y%m') &gt;= LEFT(tm.Day_Id,6)
+</code></pre>
+
+<pre><code>INNER JOIN
+    pdwh_mart_weather.t_loaded_periods tm
+    ON DATE_FORMAT(wm.`Datetime`, '%Y') &gt;= LEFT(tm.Day_Id,4)
+</code></pre>
+
+<p>You can find all the views in mentioned repository at location:
+<code>personal_dwh/weather_mart/db/views
+</code></p>
+
+<h3 id="the-final-query">The Final Query</h3>
+
+<p>Using this approach, even with the smallest SQL instance the response time to get all actual values for the update is just few seconds, without used data elimination the response time with actual almost 6 years history in data was several minutes. The final query which is part of the job mentioned later is like:</p>
+
+<pre><code>SELECT &quot;Yearly&quot; AS Grain, Year_id AS Period, Outdoor_Temp_MIN, Outdoor_Temp_MAX, Outdoor_Temp_AVG, Actual_Rain, Relative_Pressure_MIN, Relative_Pressure_MAX, Relative_Pressure_AVG, Outdoor_Hum_MIN, Outdoor_Hum_MAX, Outdoor_Hum_AVG, Dewpoint_MIN, Dewpoint_MAX, Dewpoint_AVG, Wind_Speed_MIN, Wind_Speed_MAX, Wind_Speed_AVG FROM vs_all_measures_yearly4year'
+UNION ALL 
+SELECT &quot;Monthly&quot; AS Grain, Month_id AS Period, Outdoor_Temp_MIN, Outdoor_Temp_MAX, Outdoor_Temp_AVG, Actual_Rain, Relative_Pressure_MIN, Relative_Pressure_MAX, Relative_Pressure_AVG, Outdoor_Hum_MIN, Outdoor_Hum_MAX, Outdoor_Hum_AVG, Dewpoint_MIN, Dewpoint_MAX, Dewpoint_AVG, Wind_Speed_MIN, Wind_Speed_MAX, Wind_Speed_AVG FROM vs_all_measures_monthly4month'
+UNION ALL 
+SELECT &quot;Daily&quot; AS Grain, Day_id AS Period, Outdoor_Temp_MIN, Outdoor_Temp_MAX, Outdoor_Temp_AVG, Actual_Rain, Relative_Pressure_MIN, Relative_Pressure_MAX, Relative_Pressure_AVG, Outdoor_Hum_MIN, Outdoor_Hum_MAX, Outdoor_Hum_AVG, Dewpoint_MIN, Dewpoint_MAX, Dewpoint_AVG, Wind_Speed_MIN, Wind_Speed_MAX, Wind_Speed_AVG FROM vs_all_measures_daily4day'
+UNION ALL 
+SELECT &quot;Hourly&quot; AS Grain, Hour_id AS Period, Outdoor_Temp_MIN, Outdoor_Temp_MAX, Outdoor_Temp_AVG, Actual_Rain, Relative_Pressure_MIN, Relative_Pressure_MAX, Relative_Pressure_AVG, Outdoor_Hum_MIN, Outdoor_Hum_MAX, Outdoor_Hum_AVG, Dewpoint_MIN, Dewpoint_MAX, Dewpoint_AVG, Wind_Speed_MIN, Wind_Speed_MAX, Wind_Speed_AVG FROM vs_all_measures_hourly4day'
+</code></pre>
+
+<p>And here you can find simple node.js script updating the Firebase:
+<code>personal_dwh/weather_mart/jobs/nodejs/lubolab_delta.js
+</code></p>
+
+<p class="success">Now we are ready to bring the data to end users</p>
+
+<p>Next time we will finish the first building block of personal data warehouse by making weather data available in a web app.</p>
+
+</div>
+
+
+      <footer>
+  
+<span class="share-box">Share this on:
+    <a href="https://www.facebook.com/sharer/sharer.php?u=%2f2017%2f02%2f10%2fweather-data-mart%2f" onclick="window.open(this.href, 'mywin',
+'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"><i class="fa fa-facebook-official "></i></a>
+
+    <a href="https://twitter.com/intent/tweet?text=Weather%20Data%20Mart&amp;url=%2f2017%2f02%2f10%2fweather-data-mart%2f" onclick="window.open(this.href, 'mywin',
+'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"><i class="fa fa-twitter"></i></a>
+
+    <a href="https://plus.google.com/share?url=%2f2017%2f02%2f10%2fweather-data-mart%2f" onclick="window.open(this.href, 'mywin',
+'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"><i class="fa fa-google-plus"></i></a>
+
+    <a href="http://www.reddit.com/submit?url=%2f2017%2f02%2f10%2fweather-data-mart%2f" onclick="window.open(this.href, 'mywin',
+'left=20,top=20,width=900,height=500,toolbar=1,resizable=0'); return false;"><i class="fa fa-reddit"></i></a>
+
+    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=%2f2017%2f02%2f10%2fweather-data-mart%2f&amp;title=Weather%20Data%20Mart" onclick="window.open(this.href, 'mywin',
+'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"><i class="fa fa-linkedin"></i></a>
+
+    <a href="mailto:?subject=Weather%20Data%20Mart&amp;body=Check out this site %2f2017%2f02%2f10%2fweather-data-mart%2f" data-proofer-ignore=""><i class="fa fa-envelope"></i></a>
+  </span>
+
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+      
+  
+    <nav><ul class="pager">
+    
+        <li class="previous">
+          <a href="/2017/01/17/detail-layer-logical-data-model/" title="Detail Layer: Logical Data Model">
+            <span aria-hidden="true">&larr;</span>Previous
+          </a>
+        </li>
+    
+
+    
+      <li class="next">
+        <a href="/2017/02/17/the-data-lab-web-app/" title="Reporting: Data Lab Web App">
+            Next <span aria-hidden="true">&rarr;</span>
+        </a>
+      </li>
+    
+    </ul> </nav>
+  
+
+
+</div>
+
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+  
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+  (function() {
+    
+    
+    if (window.location.hostname == "localhost")
+      return;
+
+    var dsq = document.createElement('script'); dsq.async = true; dsq.type = 'text/javascript';
+    dsq.src = '//lubolab.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+</div>
+
+</footer>
+
+    </div>
+    
+      <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+        <div>
+  
+
+    <div class="section">
+      <header><div class="title"><b>Latest Posts</b></div></header>
+      <div class="content">
+        <ul>
+        
+          <li>
+          <a href="/2017/04/17/astronomical-events/">Astronomical Events</a>
+          </li>
+        
+          <li>
+          <a href="/2017/02/17/the-data-lab-web-app/">Reporting: Data Lab Web App</a>
+          </li>
+        
+          <li>
+          <a href="/2017/02/10/weather-data-mart/">Weather Data Mart</a>
+          </li>
+        
+          <li>
+          <a href="/2017/01/17/detail-layer-logical-data-model/">Detail Layer: Logical Data Model</a>
+          </li>
+        
+          <li>
+          <a href="/2017/01/12/my-personal-dwh-kickoff/">My Personal Data Warehouse Kickoff</a>
+          </li>
+        
+        </ul>
+      </div>
+    </div>
+
+    
+      
+      
+    
+      
+      
+      <div class="section taxonomies">
+        <header><div class="title"><b>tag</b></div></header>
+
+        <div class="content">
+          <ul>
+            <li><a href="/tags/personal-dwh">personal-dwh</a></li>
+          </ul>
+        </div>
+      </div>
+      
+    
+      
+      
+    
+
+</div>
+
+      </div>
+    
+  </div>
+</div>
+    
+<footer class="footer hidden-print">
+  <div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+           <div class="pull-left">
+  <a class="toplink" href="javascript:" id="return-to-top">back to top</a>
+</div>
+<div class="pull-right">
+
+</div>
+
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
+              
+    
+
+    
+<div class="container copyright">
+    <small>
+  &copy; 2017 Copyright Lubolab
+
+  </small>
+</div>
+
+
+
+        </div>
+    </div>
+  </div>
+</footer>
+
+    
+
+<script src="/js/jquery.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+
+
+<script src="/js/angular.min.js"></script>
+<script src="/js/popover/angular-storage.min.js"></script>
+
+<script src="/js/highlight.pack.js"></script>
+<script src="/js/site.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+<script>
+  var _gaq=[['_setAccount','Your Google Analytics tracking code'],['_trackPageview']];
+  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+  g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+  s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+
+<script>
+var ENABLE_POPOVER =  true , 
+EXPIRE_COOKIE =  5 , 
+SHOW_MODAL_TIMEOUT =  10000 , 
+MOUSE_LEAVE =  true , 
+MODAL_SIZE = "", 
+POST_URL = "https://zapier.com/hooks/catch/1227563/", 
+SIGNUP_HEADER = "Join Our Newsletter",
+HEADER_IMAGE = "//placehold.it/1000x600",
+IMG_DESCRIPTION = "Placeholder image for this popover modal optin form",
+SIGNUP_TEXT = "Signup today for free and be the first to get notified on new updates.",
+INPUT_PLACEHOLDER = "Enter your email",
+SUBMIT_BUTTON = "Subscribe",
+SUCCESS_MESSAGE = "Thanks for your subscription!",
+ERROR_MESSAGE = "Submitting form failed!",
+OPTIN =  true ,
+COOKIE_NAME = "mycookie1",
+CONTENTLANGUAGE = ""; 
+</script>
+
+
+
+<script src="/js/popover/angular-modal-service.min.js"></script>
+<script src="/js/angular-ismobile.min.js"></script>
+<script src="/js/popover/popover.min.js"></script>
+
+
+
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js"></script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/config/TeX-AMS-MML_HTMLorMML.js"></script>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[','\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    for(var all in MathJax.Hub.getAllJax()) {
+        all.SourceElement().parentNode.className += ' has-jax';
+
+    }
+});
+</script>
+
+
+
+
+
+
+  </body>
+</html>
+
