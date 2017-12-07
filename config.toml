@@ -35,7 +35,8 @@ disqusShortname = "lubolab"
 
 
 [permalinks]
-post = "/:year/:month/:day/:filename/"
+#post = "/:year/:month/:day/:filename/"
+post = "/:filename/"
 code = "/:filename/"
 
 [taxonomies]
