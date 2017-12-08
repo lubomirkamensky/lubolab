@@ -159,7 +159,11 @@ identifier = "GitHub"
 url = "https://github.com/lubomirkamensky/lubolab"
 pre = "<i class='fa fa-github'></i>"
 
-
-
+[[Languages.en.menu.footer]] # add  links to the bottom right corner.
+name = ""
+pre = "<i>&middot;</i>"
+identifier = ""
+weight = 1
+url = ""
 
 

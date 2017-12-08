@@ -24,7 +24,7 @@ Monica in the following video convinced me that Google Polymer is what I need. S
 <iframe width="560" height="315" src="https://www.youtube.com/embed/6t2JRKTCYbI" frameborder="0" allowfullscreen></iframe>
 
 And so far it seems she is right. Of course the cost is being terribly dependent on work of someone else. But that's life.
-###Development Environment
+### Development Environment
 We need [NODE.JS](https://nodejs.org/en/) and [POLYMER CLI](https://www.polymer-project.org/1.0/start/toolbox/set-up#install-the-polymer-cli) to get the app template for quick development start. You can follow instructions in [this post](https://www.urbaninsight.com/2016/06/20/exploring-polymer-js-through-polymer-cli) to get some more background.
 
 Then login to [firebase.com](https://www.firebase.com/) using your google account. Here we get for free real-time database and web hosting. 
@@ -56,7 +56,7 @@ The whole database is following the same pattern, it contains the full history, 
 
 <p class="note">There are two kinds of measures in the data. One like Temperature described by 3 values for each time period. The minimum value, the maximum value and the average.  And then measure like Rain, described by only one value, the rain accumulation over the time period.</p>
 
-###Required Business Logic
+### Required Business Logic
 The app will present some particular data, like Hourly Temperature, for specified period of time.
 
 So we need to specify the path to proper data set like `Weather/Temperature/Hourly` And the filtration criteria like `Starting Hour` and `Ending Hour`. 
@@ -64,7 +64,7 @@ So we need to specify the path to proper data set like `Weather/Temperature/Hour
 Being able to query the data, we just need one more component for data visualisation. 
 
 Seems like our needs are pretty clear, let's pick some Lego bricks from Google Polymer and put it all together.
-###App Skeleton
+### App Skeleton
 It's going to be one page app. Starting with Polymer CLI we have the app template ready. There is one html page `index.html` fixing for us the rocket science issues of modern web app. I really don't bother trying to understand them.
 
 Once we create our own web component as described below, we simply put it's tag `data-lab` to the body of `index.html`

@@ -52,7 +52,7 @@ As a consequence there was long chain of events starting with detail investigati
       <pubDate>Tue, 17 Jan 2017 03:57:28 +0200</pubDate>
       <author>lubomir.kamensky@gmail.com (Lubomir Kamensky)</author>
       <guid>/detail-layer-logical-data-model/</guid>
-      <description>No Data Changes in the Detail layer The first post ended with the table weather_measuring filled with a data which describes a weather. And I mentioned that this table belongs to something called Detail layer. Now it is the time to put it in some kind of context.
+      <description>No Data Changes in the Detail layer The first post ended with the table weather_measuring filled with a data describing a weather. And I mentioned that this table belongs to something called Detail layer. Now it is the time to put it in some kind of context.
 Detail layer is the place where the most detailed information coming from various sources is stored. Quite probably we will use just part of it for the end user applications, maybe we will even change some data a bit for different purposes.</description>
     </item>
     

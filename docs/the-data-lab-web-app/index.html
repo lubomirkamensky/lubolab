@@ -196,9 +196,11 @@
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/6t2JRKTCYbI" frameborder="0" allowfullscreen></iframe>
 
-<p>And so far it seems she is right. Of course the cost is being terribly dependent on work of someone else. But that&rsquo;s life.
-###Development Environment
-We need <a href="https://nodejs.org/en/" target="_blank">NODE.JS</a> and <a href="https://www.polymer-project.org/1.0/start/toolbox/set-up#install-the-polymer-cli" target="_blank">POLYMER CLI</a> to get the app template for quick development start. You can follow instructions in <a href="https://www.urbaninsight.com/2016/06/20/exploring-polymer-js-through-polymer-cli" target="_blank">this post</a> to get some more background.</p>
+<p>And so far it seems she is right. Of course the cost is being terribly dependent on work of someone else. But that&rsquo;s life.</p>
+
+<h3 id="development-environment">Development Environment</h3>
+
+<p>We need <a href="https://nodejs.org/en/" target="_blank">NODE.JS</a> and <a href="https://www.polymer-project.org/1.0/start/toolbox/set-up#install-the-polymer-cli" target="_blank">POLYMER CLI</a> to get the app template for quick development start. You can follow instructions in <a href="https://www.urbaninsight.com/2016/06/20/exploring-polymer-js-through-polymer-cli" target="_blank">this post</a> to get some more background.</p>
 
 <p>Then login to <a href="https://www.firebase.com/" target="_blank">firebase.com</a> using your google account. Here we get for free real-time database and web hosting.</p>
 
@@ -231,16 +233,19 @@ We need <a href="https://nodejs.org/en/" target="_blank">NODE.JS</a> and <a href
 
 <p class="note">There are two kinds of measures in the data. One like Temperature described by 3 values for each time period. The minimum value, the maximum value and the average.  And then measure like Rain, described by only one value, the rain accumulation over the time period.</p>
 
-<p>###Required Business Logic
-The app will present some particular data, like Hourly Temperature, for specified period of time.</p>
+<h3 id="required-business-logic">Required Business Logic</h3>
+
+<p>The app will present some particular data, like Hourly Temperature, for specified period of time.</p>
 
 <p>So we need to specify the path to proper data set like <code>Weather/Temperature/Hourly</code> And the filtration criteria like <code>Starting Hour</code> and <code>Ending Hour</code>.</p>
 
 <p>Being able to query the data, we just need one more component for data visualisation.</p>
 
-<p>Seems like our needs are pretty clear, let&rsquo;s pick some Lego bricks from Google Polymer and put it all together.
-###App Skeleton
-It&rsquo;s going to be one page app. Starting with Polymer CLI we have the app template ready. There is one html page <code>index.html</code> fixing for us the rocket science issues of modern web app. I really don&rsquo;t bother trying to understand them.</p>
+<p>Seems like our needs are pretty clear, let&rsquo;s pick some Lego bricks from Google Polymer and put it all together.</p>
+
+<h3 id="app-skeleton">App Skeleton</h3>
+
+<p>It&rsquo;s going to be one page app. Starting with Polymer CLI we have the app template ready. There is one html page <code>index.html</code> fixing for us the rocket science issues of modern web app. I really don&rsquo;t bother trying to understand them.</p>
 
 <p>Once we create our own web component as described below, we simply put it&rsquo;s tag <code>data-lab</code> to the body of <code>index.html</code></p>
 
@@ -434,6 +439,8 @@ firebase deploy
   <a class="toplink" href="javascript:" id="return-to-top">back to top</a>
 </div>
 <div class="pull-right">
+
+<a href="/"></a> <i>&middot;</i>
 
 </div>
 
