@@ -6,7 +6,7 @@ title = "My Personal Data Warehouse Kickoff"
 tags = [ "Personal DWH" ]
 +++
 ### The Weather Station
-It all started more than five years ago, the day I decided to buy my very own weather station. I ended up with  [La Crosse Technology WS-2800-IT](http://en.lacrossetechnology.fr/P-5-A1-WS2800.html). You can still find it on a market under various brands like TFA, Techno line,.. 
+It all started more than five years ago the day I decided to buy my very own weather station. I ended up with  [La Crosse Technology WS-2800-IT](http://en.lacrossetechnology.fr/P-5-A1-WS2800.html). You can still find it on a market under various brands like TFA, Techno line,.. 
 ![](/images/2017/01/la-crosse-technology-ws2800-pro.jpg)
 
 It  enables wireless data transmission to PC using USB stick,  which made it good candidate  for my future sensor network.
@@ -24,11 +24,11 @@ Thanks to batteries it can easily run even during electricity failures without a
 I really want to use some nice Cloud SQL service but there is always good reason for postponing that. It is still much cheaper to rent some tiny Virtual Server and install MySQL on it. That's exactly my current setup for the cloud server. Using some base VPS from local provider here in Czechia, [Wedos](https://hosting.wedos.com/en/) 
 ### The Data Flow
 It is designed in such way so the process is fully automated and no manual interaction is needed including cases of:
-<p class="warning">
+<div class="c_alert c_alert-warning"><i class="fa fa-exclamation-triangle"></i>
 <b>the standard risks :</b><br>
 1. Weather station is disconnected and the source file cannot be updated<br>
 2. Internet Connectivity is lost and the data cannot be sent to the cloud server
-</p>
+</div>
 
 To fix the first risk, it's necessary to avoid repetitive sending of the last available measuring from the station. A simple view can guarantee this. 
 
@@ -69,9 +69,9 @@ The execution scheduling is done simply using Task scheduler.
 
 The first job is scheduled to be executed every minute. The plan for second job is to run each 10 minutes. If second job, for any reason, cannot connect to the cloud server, then the local buffer is just accumulating data. It can be few hours or even several days. The next execution after reconnecting will  catch up all missed loads. 
 
-<p class="note">In case of local server replacement, I just reconnected the weather station to the new server with only job 1 enabled. 
+<div class="c_alert c_alert-success"><i class="fa fa-info-circle"></i> In case of local server replacement, I just reconnected the weather station to the new server with only job 1 enabled. 
 The old server is still running. Job 1 there is just hanging idle  without connection to the weather station. Job 2 finishes the data load to the cloud server. 
-After making sure that the new server is doing well and collecting weather data to the new local buffer,  I stop both jobs on the old server and finally start job 2 on the new server. </p>
+After making sure that the new server is doing well and collecting weather data to the new local buffer,  I stop both jobs on the old server and finally start job 2 on the new server. </div>
 ### Opening the Door to a New Journey
-<p class="success">Now the very first table of the detail layer of my personal DWH is filled with data.</p> This is where the adventure really starts. Next time shortly about the target model of the whole detail layer and then let's start building data-marts, tools for adjustments, access layer, reports and perhaps even more. 
+<div class="c_alert c_alert-success"><i class="fa fa-exclamation-triangle"></i> Now the very first table of the detail layer of my personal DWH is filled with data.</div> This is where the adventure really starts. Next time shortly about the target model of the whole detail layer and then let's start building data-marts, tools for adjustments, access layer, reports and perhaps even more. 
   

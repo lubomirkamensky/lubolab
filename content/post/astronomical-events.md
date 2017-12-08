@@ -9,7 +9,7 @@ tags = [ "Personal DWH" ]
 ### Personal environment
 Personal DWH begins with data about personal environment. Weather and day length affect our activity significantly. We already have Weather Data mart created, so now it is the time to build another one on top of astronomical events.
 
-This new datamart is going to be a common pattern for extending our personal DWH with any new data area.
+<div class="c_alert c_alert-success"><i class="fa fa-info-circle"></i> This new datamart is going to be a common pattern for extending our personal DWH with any new data area.</div>
 
 ### The detail layer
 We start in our detail layer,  focusing on another [Observation subtype](http://lubolab.com/detail-layer-logical-data-model/), the Event. To get the information about the day length we introduce a sun events.
@@ -35,7 +35,7 @@ The astronomical datamart is again defined as a view. There is not so big volume
 
 All hourly, daily, monthly, yearly data is materialized in the Firebase. The load is driven by  new control table [t_ loaded_ periods](https://github.com/lubomirkamensky/personal_dwh/blob/master/astronomical_mart/db/tables/t_loaded_periods.tbl). The range of data for the actual load is defined by views [v_ load_ scope](https://github.com/lubomirkamensky/personal_dwh/blob/master/astronomical_mart/db/views/v_load_scope.vw) and [v_ load_ range](https://github.com/lubomirkamensky/personal_dwh/blob/master/astronomical_mart/db/views/v_load_range.vw)
 
-The limitation of Google Apps Script is a time constraint for an execution. It can run for a maximum period of 4-5 minutes. As we already have load control, using load scope views,  it is not a big deal to process data in small batches, manageble in given time frame. 
+<div class="c_alert c_alert-success"><i class="fa fa-info-circle"></i> The limitation of Google Apps Script is a time constraint for an execution. It can run for a maximum period of 4-5 minutes. As we already have load control, using load scope views,  it is not a big deal to process data in small batches, manageble in given time frame. </div>
 
 The script for loading the astro events into detail layer is here [pdwh_ detail_ event_ astro.gs](https://github.com/lubomirkamensky/personal_dwh/blob/master/detail_layer/jobs/gappscript/pdwh_detail_event_astro.gs)
 

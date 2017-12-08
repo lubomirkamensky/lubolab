@@ -21,7 +21,7 @@ The weather datamart brings the weather data in hourly/daily/monthly/yearly view
 
 We can introduce adjustments in any used time context, so as hourly/daily/monthly/yearly adjustments. Of course the adjustment defined on lower level moves accumulated to the higher level. No need to define the same adjustment separately for each time context. Adjustments tables are defined here:
 `personal_dwh/weather_mart/db/tables`
-<p class="note">The main reason I introduced adjustments was neverending problem with Rain gauge unit. First it was troubles with batteries, then some unexplained failures. This was later solved by replacing it with some newer model. But anytime things go wrong, adjustments are ready to help.</p>
+<div class="c_alert c_alert-success"><i class="fa fa-info-circle"></i> The main reason I introduced adjustments was neverending problem with Rain gauge unit. First it was troubles with batteries, then some unexplained failures. This was later solved by replacing it with some newer model. But anytime things go wrong, adjustments are ready to help.</div>
 
 ### Some Small Additions
 Well, the Google Cloud SQL is still just MySQL database which was never strong in analytical SQL functions. And anyway with the smallest SQL instance we don't have the power for any advanced SQL kung fu. We need to keep things simple. 
@@ -43,7 +43,7 @@ OK, now is the time to put all the thing together and show how it works
 
 That's the logical picture. It is a bit naive, assuming that we can always filter the needed data simply in the final view we use. Of course we can, the only problem is performance. 
 
-<p class="note">In practice it is necessary to define the data scope and eliminate not needed records already in the beginning of the flow, right on the top of the detail data, in our case in Hourly aggregation.</p>
+<div class="c_alert c_alert-success"><i class="fa fa-info-circle"></i> In practice it is necessary to define the data scope and eliminate not needed records already in the beginning of the flow, right on the top of the detail data, in our case in Hourly aggregation.</div>
 
 In the next post we will finally focus on the reporting layer.  It will be web component consuming json data. To simplify things, and get real-time database experience for the end users, we will use [Firebase](https://www.firebase.com).
 
@@ -60,7 +60,7 @@ We can derive all that scopes from the value of actual Date which we store in ta
 `personal_dwh/weather_mart/db/tables/t_loaded_periods.tbl
 `
 
-<p class="note">Usually it contains the current Date but in case we need to refresh the history due to some deeper adjustments, it can be any Date defining the scope for the next update of Firebase.</p>
+<div class="c_alert c_alert-success"><i class="fa fa-info-circle"></i> Usually it contains the current Date but in case we need to refresh the history due to some deeper adjustments, it can be any Date defining the scope for the next update of Firebase.</div>
 
 Then on our datamart lowest level of detail we need 3 views:
 `personal_dwh/weather_mart/db/views/v_all_measures_hourly4day.vw
@@ -106,6 +106,6 @@ And here you can find simple node.js script updating the Firebase:
 `personal_dwh/weather_mart/jobs/nodejs/lubolab_delta.js
 `
 
-<p class="success">Now we are ready to bring the data to end users</p>
+<div class="c_alert c_alert-success"><i class="fa fa-exclamation-triangle"></i> Now we are ready to bring the data to the end users</div>
 
 Next time we will finish the first building block of personal data warehouse by making weather data available in a web app. 

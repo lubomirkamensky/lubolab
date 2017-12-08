@@ -54,7 +54,7 @@ In the [prior post](http://lubolab.com/weather-data-mart/) we have prepared the 
 ```
 The whole database is following the same pattern, it contains the full history, not just the fragment as our delta. That's the data which our app is going to consume. 
 
-<p class="note">There are two kinds of measures in the data. One like Temperature described by 3 values for each time period. The minimum value, the maximum value and the average.  And then measure like Rain, described by only one value, the rain accumulation over the time period.</p>
+<div class="c_alert c_alert-success"><i class="fa fa-info-circle"></i> There are two kinds of measures in the data. One like Temperature described by 3 values for each time period. The minimum value, the maximum value and the average.  And then measure like Rain, described by only one value, the rain accumulation over the time period.</div>
 
 ### Required Business Logic
 The app will present some particular data, like Hourly Temperature, for specified period of time.
@@ -112,7 +112,7 @@ cd C:\Users\Lubomir\Desktop\GITHUB\personal_dwh\web_app
 firebase login
 firebase deploy
 ```
-<p class="success">This post is closing the first series about Personal Data Warehouse, proving it is not just an idea but something very real. </p> 
+<div class="c_alert c_alert-success"><i class="fa fa-exclamation-triangle"></i>This post is closing the first series about Personal Data Warehouse, proving it is not just an idea but something very real. </div> 
 
 
 
