@@ -116,7 +116,7 @@ flattr = ""  # populate with your flattr uid
 [blackfriday]
 angledQuotes = true
 fractions = false
-hrefTargetBlank = false
+hrefTargetBlank = true
 latexDashes = true
 plainIdAnchors = true
 extensions = []
@@ -142,7 +142,7 @@ extensionmask = []
 [Languages.en]
 languageCode = "en"
 weight = 1
-copyright = "(c) 2017 Copyright Lubolab"
+copyright = "(c) 2017 Lubolab"
 title = "Lubolab" # Site title
 
 [[Languages.en.menu.main]]
@@ -150,7 +150,15 @@ name = "Datalab"
 weight = 1
 identifier = ""
 url = "https://lubolab-957a1.firebaseapp.com/"
-pre = "<i class='fa fa-road'></i>"
+pre = "<i class='fa fa-flask'></i>"
+
+[[Languages.en.menu.main]]
+name = "Blog Source code"
+weight = 0
+identifier = "GitHub"
+url = "https://github.com/lubomirkamensky/lubolab"
+pre = "<i class='fa fa-github'></i>"
+
 
 
 
