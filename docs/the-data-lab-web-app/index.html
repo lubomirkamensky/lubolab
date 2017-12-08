@@ -92,8 +92,16 @@
             <li class="">
 
               <a href="https://lubolab-957a1.firebaseapp.com/" >
-                <i class='fa fa-road'></i>
+                <i class='fa fa-flask'></i>
                 Datalab
+              </a>
+            </li>
+            
+            <li class="">
+
+              <a href="https://github.com/lubomirkamensky/lubolab" >
+                <i class='fa fa-github'></i>
+                Blog Source code
               </a>
             </li>
             
@@ -190,15 +198,15 @@
 
 <p>And so far it seems she is right. Of course the cost is being terribly dependent on work of someone else. But that&rsquo;s life.
 ###Development Environment
-We need <a href="https://nodejs.org/en/">NODE.JS</a> and <a href="https://www.polymer-project.org/1.0/start/toolbox/set-up#install-the-polymer-cli">POLYMER CLI</a> to get the app template for quick development start. You can follow instructions in <a href="https://www.urbaninsight.com/2016/06/20/exploring-polymer-js-through-polymer-cli">this post</a> to get some more background.</p>
+We need <a href="https://nodejs.org/en/" target="_blank">NODE.JS</a> and <a href="https://www.polymer-project.org/1.0/start/toolbox/set-up#install-the-polymer-cli" target="_blank">POLYMER CLI</a> to get the app template for quick development start. You can follow instructions in <a href="https://www.urbaninsight.com/2016/06/20/exploring-polymer-js-through-polymer-cli" target="_blank">this post</a> to get some more background.</p>
 
-<p>Then login to <a href="https://www.firebase.com/">firebase.com</a> using your google account. Here we get for free real-time database and web hosting.</p>
+<p>Then login to <a href="https://www.firebase.com/" target="_blank">firebase.com</a> using your google account. Here we get for free real-time database and web hosting.</p>
 
-<p>To be able to use Firebase hosting it is necessary to install <a href="https://firebase.google.com/docs/hosting/deploying">Firebase CLI</a></p>
+<p>To be able to use Firebase hosting it is necessary to install <a href="https://firebase.google.com/docs/hosting/deploying" target="_blank">Firebase CLI</a></p>
 
 <h3 id="firebase-database">Firebase Database</h3>
 
-<p>In the <a href="http://lubolab.com/weather-data-mart/">prior post</a> we have prepared the job generating delta update of Firebase  database <code>personal_dwh/weather_mart/jobs/nodejs/lubolab_delta.js</code>. Here you can see how such delta looks like.</p>
+<p>In the <a href="http://lubolab.com/weather-data-mart/" target="_blank">prior post</a> we have prepared the job generating delta update of Firebase  database <code>personal_dwh/weather_mart/jobs/nodejs/lubolab_delta.js</code>. Here you can see how such delta looks like.</p>
 
 <pre><code>{&quot;Measures&quot;:{
 	&quot;Weather&quot;:{
@@ -254,12 +262,12 @@ It&rsquo;s going to be one page app. Starting with Polymer CLI we have the app t
 
 <p>Of course it was necessary to create several JavaScript methods controlling mentioned elements. The only complication was, for me, a bit unexpected behaviour of firebase-query element. It delivers data bit by bit, in iterations, and to avoid repetitive reloading of Google Chart, it is better to pre-calculate the number of expected data sets, and only send the data to Google Chart when the data delivery is finished.</p>
 
-<p>You can try the final result here <a href="https://lubolab-957a1.firebaseapp.com/">lubolab-957a1.firebaseapp.com</a>
+<p>You can try the final result here <a href="https://lubolab-957a1.firebaseapp.com/" target="_blank">lubolab-957a1.firebaseapp.com</a>
 Google account is required to login. The weather data is available for any Google user. Just click the LOGIN button at the top left. Tested OK with Chrome, Edge, Safari. Doesn&rsquo;t work with IE. No clue about the rest.</p>
 
 <h3 id="the-final-code">The Final Code</h3>
 
-<p>The final code is available in public repository on GitHub <a href="https://github.com/lubomirkamensky/personal_dwh">personal_dwh</a>
+<p>The final code is available in public repository on GitHub <a href="https://github.com/lubomirkamensky/personal_dwh" target="_blank">personal_dwh</a>
 <code>personal_dwh/web_app</code> check the master branch.</p>
 
 <p>the objects mentioned when talking about the App Skeleton:
@@ -437,7 +445,7 @@ firebase deploy
     
 <div class="container copyright">
     <small>
-  &copy; 2017 Copyright Lubolab
+  &copy; 2017 Lubolab
 
   </small>
 </div>

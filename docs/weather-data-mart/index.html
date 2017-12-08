@@ -92,8 +92,16 @@
             <li class="">
 
               <a href="https://lubolab-957a1.firebaseapp.com/" >
-                <i class='fa fa-road'></i>
+                <i class='fa fa-flask'></i>
                 Datalab
+              </a>
+            </li>
+            
+            <li class="">
+
+              <a href="https://github.com/lubomirkamensky/lubolab" >
+                <i class='fa fa-github'></i>
+                Blog Source code
               </a>
             </li>
             
@@ -168,7 +176,7 @@
 
 <h3 id="welcome-to-the-cloud">Welcome to the Cloud</h3>
 
-<p>In the <a href="http://lubolab.com/my-personal-dwh-kickoff/">first post</a> I have stated that any cloud SQL service is still  too expensive comparing to other options. As long as that assumption was only living in my head it was doing pretty well. But once it was written, things changed dramatically. The questions start raising.</p>
+<p>In the <a href="http://lubolab.com/my-personal-dwh-kickoff/" target="_blank">first post</a> I have stated that any cloud SQL service is still  too expensive comparing to other options. As long as that assumption was only living in my head it was doing pretty well. But once it was written, things changed dramatically. The questions start raising.</p>
 
 <p>As a consequence there was long chain of events starting with detail investigation of Google Cloud SQL prices, testing the smallest SQL instance and discovering the whole new world of options.</p>
 
@@ -176,12 +184,12 @@
 
 <p>Then, instead of just copying my existing code of Weather data mart to the GitHub repository and describing it, I started completely new development of dynamic solution. No more physical tables, everything just as view.</p>
 
-<p>The final code is available in public repository on GitHub <a href="https://github.com/lubomirkamensky/personal_dwh">personal_dwh</a>
+<p>The final code is available in public repository on GitHub <a href="https://github.com/lubomirkamensky/personal_dwh" target="_blank">personal_dwh</a>
 <code>personal_dwh/weather_mart</code> check the master branch.</p>
 
 <h3 id="the-adjustments">The Adjustments</h3>
 
-<p>The weather datamart brings the weather data in hourly/daily/monthly/yearly views. Part of the data mart are also the adjustments. As I have already mentioned in the <a href="http://lubolab.com/detail-layer-logical-data-model/">prior post</a>, in detail layer we always keep data as it comes from the source. Even if we find data quality issues which cannot be fixed by redelivering data from the source, we still don&rsquo;t fix the error in the detail layer. But instead introduce adjustments in our data mart.</p>
+<p>The weather datamart brings the weather data in hourly/daily/monthly/yearly views. Part of the data mart are also the adjustments. As I have already mentioned in the <a href="http://lubolab.com/detail-layer-logical-data-model/" target="_blank">prior post</a>, in detail layer we always keep data as it comes from the source. Even if we find data quality issues which cannot be fixed by redelivering data from the source, we still don&rsquo;t fix the error in the detail layer. But instead introduce adjustments in our data mart.</p>
 
 <p>We can introduce adjustments in any used time context, so as hourly/daily/monthly/yearly adjustments. Of course the adjustment defined on lower level moves accumulated to the higher level. No need to define the same adjustment separately for each time context. Adjustments tables are defined here:
 <code>personal_dwh/weather_mart/db/tables</code>
@@ -211,7 +219,7 @@
 
 <p class="note">In practice it is necessary to define the data scope and eliminate not needed records already in the beginning of the flow, right on the top of the detail data, in our case in Hourly aggregation.</p>
 
-<p>In the next post we will finally focus on the reporting layer.  It will be web component consuming json data. To simplify things, and get real-time database experience for the end users, we will use <a href="https://www.firebase.com">Firebase</a>.</p>
+<p>In the next post we will finally focus on the reporting layer.  It will be web component consuming json data. To simplify things, and get real-time database experience for the end users, we will use <a href="https://www.firebase.com" target="_blank">Firebase</a>.</p>
 
 <p>So the last thing we need now is performance tuning of our views focusing on updates of Firebase database.</p>
 
@@ -432,7 +440,7 @@ SELECT &quot;Hourly&quot; AS Grain, Hour_id AS Period, Outdoor_Temp_MIN, Outdoor
     
 <div class="container copyright">
     <small>
-  &copy; 2017 Copyright Lubolab
+  &copy; 2017 Lubolab
 
   </small>
 </div>

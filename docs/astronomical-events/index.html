@@ -92,8 +92,16 @@
             <li class="">
 
               <a href="https://lubolab-957a1.firebaseapp.com/" >
-                <i class='fa fa-road'></i>
+                <i class='fa fa-flask'></i>
                 Datalab
+              </a>
+            </li>
+            
+            <li class="">
+
+              <a href="https://github.com/lubomirkamensky/lubolab" >
+                <i class='fa fa-github'></i>
+                Blog Source code
               </a>
             </li>
             
@@ -174,44 +182,44 @@
 
 <h3 id="the-detail-layer">The detail layer</h3>
 
-<p>We start in our detail layer,  focusing on another <a href="http://lubolab.com/detail-layer-logical-data-model/">Observation subtype</a>, the Event. To get the information about the day length we introduce a sun events.</p>
+<p>We start in our detail layer,  focusing on another <a href="http://lubolab.com/detail-layer-logical-data-model/" target="_blank">Observation subtype</a>, the Event. To get the information about the day length we introduce a sun events.</p>
 
 <p>You can see sample Event data here:<img src="/images/2017/05/event.jpg" alt="" /></p>
 
-<p>The whole table structure is available in public repository on GitHub here <a href="https://github.com/lubomirkamensky/personal_dwh/tree/master/detail_layer/db/tables">personal_dwh/tree/master/detail_layer/db/tables</a></p>
+<p>The whole table structure is available in public repository on GitHub here <a href="https://github.com/lubomirkamensky/personal_dwh/tree/master/detail_layer/db/tables" target="_blank">personal_dwh/tree/master/detail_layer/db/tables</a></p>
 
 <h3 id="data-source">Data source</h3>
 
-<p>As the source for event data we use <a href="http://aa.usno.navy.mil/data/docs/api.php">public Astronomical Applications API</a> provided by The United States Naval Observatory (USNO).</p>
+<p>As the source for event data we use <a href="http://aa.usno.navy.mil/data/docs/api.php" target="_blank">public Astronomical Applications API</a> provided by The United States Naval Observatory (USNO).</p>
 
-<p>Here is sample URL requesting all Sun and Moon events for one day on location specified by coordinates: <a href="http://api.usno.navy.mil/rstt/oneday?date=05/12/2017&amp;coords=48.749015N,16.983294E&amp;tz=1">http://api.usno.navy.mil/rstt/oneday?date=05/12/2017&amp;coords=48.749015N,16.983294E&amp;tz=1</a></p>
+<p>Here is sample URL requesting all Sun and Moon events for one day on location specified by coordinates: <a href="http://api.usno.navy.mil/rstt/oneday?date=05/12/2017&amp;coords=48.749015N,16.983294E&amp;tz=1" target="_blank">http://api.usno.navy.mil/rstt/oneday?date=05/12/2017&amp;coords=48.749015N,16.983294E&amp;tz=1</a></p>
 
 <h3 id="etl-environment">ETL environment</h3>
 
-<p>We use <a href="https://developers.google.com/apps-script/">Google Apps Script</a> as environment for data extraction, load and transformation (ETL) and also as job scheduler.  It is used for building both detail layer in Cloud SQL and application layer in Firebase.</p>
+<p>We use <a href="https://developers.google.com/apps-script/" target="_blank">Google Apps Script</a> as environment for data extraction, load and transformation (ETL) and also as job scheduler.  It is used for building both detail layer in Cloud SQL and application layer in Firebase.</p>
 
 <h3 id="the-data-flow">The data flow</h3>
 
-<p>The whole flow starts by loading the detail table <a href="https://github.com/lubomirkamensky/personal_dwh/blob/master/detail_layer/db/tables/event.tbl">Event</a></p>
+<p>The whole flow starts by loading the detail table <a href="https://github.com/lubomirkamensky/personal_dwh/blob/master/detail_layer/db/tables/event.tbl" target="_blank">Event</a></p>
 
-<p>We have few views in Cloud SQL  to support the detail layer load. They define the load scope. The default scope is limited by the beginning of our DWH and end of current year. Later the begining of the load scope  moves according to already loaded data. You can see the view definitions here <a href="https://github.com/lubomirkamensky/personal_dwh/tree/master/detail_layer/db/views">personal_dwh/tree/master/detail_layer/db/views</a>. The detail layer load in SQL cloud is driven by the content of <a href="https://github.com/lubomirkamensky/personal_dwh/blob/master/detail_layer/db/tables/event.tbl">Event</a> table itself.</p>
+<p>We have few views in Cloud SQL  to support the detail layer load. They define the load scope. The default scope is limited by the beginning of our DWH and end of current year. Later the begining of the load scope  moves according to already loaded data. You can see the view definitions here <a href="https://github.com/lubomirkamensky/personal_dwh/tree/master/detail_layer/db/views" target="_blank">personal_dwh/tree/master/detail_layer/db/views</a>. The detail layer load in SQL cloud is driven by the content of <a href="https://github.com/lubomirkamensky/personal_dwh/blob/master/detail_layer/db/tables/event.tbl" target="_blank">Event</a> table itself.</p>
 
-<p>The astronomical datamart is again defined as a view. There is not so big volume of data so all hourly, daily, monthly, yearly data is derived on top of one, hourly view <a href="https://github.com/lubomirkamensky/personal_dwh/blob/master/astronomical_mart/db/views/v_daylight_length_hourly.vw">v_ daylight_ length_ hourly</a>.</p>
+<p>The astronomical datamart is again defined as a view. There is not so big volume of data so all hourly, daily, monthly, yearly data is derived on top of one, hourly view <a href="https://github.com/lubomirkamensky/personal_dwh/blob/master/astronomical_mart/db/views/v_daylight_length_hourly.vw" target="_blank">v_ daylight_ length_ hourly</a>.</p>
 
-<p>All hourly, daily, monthly, yearly data is materialized in the Firebase. The load is driven by  new control table <a href="https://github.com/lubomirkamensky/personal_dwh/blob/master/astronomical_mart/db/tables/t_loaded_periods.tbl">t_ loaded_ periods</a>. The range of data for the actual load is defined by views <a href="https://github.com/lubomirkamensky/personal_dwh/blob/master/astronomical_mart/db/views/v_load_scope.vw">v_ load_ scope</a> and <a href="https://github.com/lubomirkamensky/personal_dwh/blob/master/astronomical_mart/db/views/v_load_range.vw">v_ load_ range</a></p>
+<p>All hourly, daily, monthly, yearly data is materialized in the Firebase. The load is driven by  new control table <a href="https://github.com/lubomirkamensky/personal_dwh/blob/master/astronomical_mart/db/tables/t_loaded_periods.tbl" target="_blank">t_ loaded_ periods</a>. The range of data for the actual load is defined by views <a href="https://github.com/lubomirkamensky/personal_dwh/blob/master/astronomical_mart/db/views/v_load_scope.vw" target="_blank">v_ load_ scope</a> and <a href="https://github.com/lubomirkamensky/personal_dwh/blob/master/astronomical_mart/db/views/v_load_range.vw" target="_blank">v_ load_ range</a></p>
 
 <p>The limitation of Google Apps Script is a time constraint for an execution. It can run for a maximum period of 4-5 minutes. As we already have load control, using load scope views,  it is not a big deal to process data in small batches, manageble in given time frame.</p>
 
-<p>The script for loading the astro events into detail layer is here <a href="https://github.com/lubomirkamensky/personal_dwh/blob/master/detail_layer/jobs/gappscript/pdwh_detail_event_astro.gs">pdwh_ detail_ event_ astro.gs</a></p>
+<p>The script for loading the astro events into detail layer is here <a href="https://github.com/lubomirkamensky/personal_dwh/blob/master/detail_layer/jobs/gappscript/pdwh_detail_event_astro.gs" target="_blank">pdwh_ detail_ event_ astro.gs</a></p>
 
-<p>The script for building the access layer in Firebase is here <a href="https://github.com/lubomirkamensky/personal_dwh/blob/master/astronomical_mart/jobs/gappscript/firebs_meas_astro_daylight.gs">firebs_ meas_ astro_ daylight.gs</a></p>
+<p>The script for building the access layer in Firebase is here <a href="https://github.com/lubomirkamensky/personal_dwh/blob/master/astronomical_mart/jobs/gappscript/firebs_meas_astro_daylight.gs" target="_blank">firebs_ meas_ astro_ daylight.gs</a></p>
 
 <h3 id="reporting-tool">Reporting tool</h3>
 
-<p>At the end we do small change in our <a href="http://lubolab.com/the-data-lab-web-app/">web app</a> to include the new data.
-The change takes place in one file <a href="https://github.com/lubomirkamensky/personal_dwh/blob/master/web_app/public/src/data-view.html">data-view.html</a>. The dropdown menus for Subject Area, Measure and Grain will be now dynamic, generated from associative arrays measureDict and grainDict.</p>
+<p>At the end we do small change in our <a href="http://lubolab.com/the-data-lab-web-app/" target="_blank">web app</a> to include the new data.
+The change takes place in one file <a href="https://github.com/lubomirkamensky/personal_dwh/blob/master/web_app/public/src/data-view.html" target="_blank">data-view.html</a>. The dropdown menus for Subject Area, Measure and Grain will be now dynamic, generated from associative arrays measureDict and grainDict.</p>
 
-<p>The final result you can see here <a href="https://lubolab-957a1.firebaseapp.com/">lubolab-957a1.firebaseapp.com</a>. Login into your gmail account is required.
+<p>The final result you can see here <a href="https://lubolab-957a1.firebaseapp.com/" target="_blank">lubolab-957a1.firebaseapp.com</a>. Login into your gmail account is required.
 <img src="/images/2017/06/astro.jpg" alt="" /></p>
 
 </div>
@@ -361,7 +369,7 @@ The change takes place in one file <a href="https://github.com/lubomirkamensky/p
     
 <div class="container copyright">
     <small>
-  &copy; 2017 Copyright Lubolab
+  &copy; 2017 Lubolab
 
   </small>
 </div>
