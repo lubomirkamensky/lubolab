@@ -10,7 +10,7 @@ The [first post](http://lubolab.com/my-personal-dwh-kickoff/) ended with the tab
 
 Detail layer is the place where the most detailed information coming from various sources is stored. Quite probably we will use just part of it for the end user applications, maybe we will even change some data a bit for different purposes. But never directly in our detail layer. Here we keep the data as  it comes from the source.  
 
-<div class="alert alert-warning"><i class="fa fa-exclamation-triangle"></i> Of course it's possible to add some technical columns or to introduce mechanism for history handling. But never to apply any transformations where some information from the source is changed or even lost. </div>
+<div class="c_alert c_alert-warning"><i class="fa fa-exclamation-triangle"></i> Of course it's possible to add some technical columns or to introduce mechanism for history handling. But never to apply any transformations where some information from the source is changed or even lost. </div>
 
 Any transformation rule is always based just on the knowledge available at that particular moment and that can change in the future.  Then it's the time to come back to the detail layer, find the original source data, and recalculate data-marts or application layers accordingly to the new rules.
 
@@ -32,5 +32,5 @@ And If you don't like data modeling, then just forget this post. I wrote it just
 For those still interested in the subject, here is the model of Calendar. I believe, nothing surprising. 
 ![](/images/2017/01/calendar.png)
 
-<div class="alert alert-success"><i class="fa fa-exclamation-triangle"></i> With both Observer and Calendar models implemented, we can start using our detail layer for building the first datamart. </div>  
+<div class="c_alert c_alert-success"><i class="fa fa-exclamation-triangle"></i> With both Observer and Calendar models implemented, we can start using our detail layer for building the first datamart. </div>  
 
