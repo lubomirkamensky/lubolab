@@ -149,7 +149,7 @@ title = "Lubolab" # Site title
 name = "Datalab"
 weight = 1
 identifier = ""
-url = "https://lubolab-957a1.firebaseapp.com/"
+url = "https://datalab.lubolab.com/"
 pre = "<i class='fa fa-flask'></i>"
 
 [[Languages.en.menu.main]]
