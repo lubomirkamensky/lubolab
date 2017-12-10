@@ -9,10 +9,19 @@
     <managingEditor>lubomir.kamensky@gmail.com (Lubomir Kamensky)</managingEditor>
     <webMaster>lubomir.kamensky@gmail.com (Lubomir Kamensky)</webMaster>
     <copyright>(c) 2017 Lubolab</copyright>
-    <lastBuildDate>Mon, 17 Apr 2017 03:57:28 +0200</lastBuildDate>
+    <lastBuildDate>Sat, 09 Dec 2017 03:57:28 +0200</lastBuildDate>
     
 	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>New setup for this blog: Migration from Ghost to Hugo</title>
+      <link>/new_setup_for_this_blog/</link>
+      <pubDate>Sat, 09 Dec 2017 03:57:28 +0200</pubDate>
+      <author>lubomir.kamensky@gmail.com (Lubomir Kamensky)</author>
+      <guid>/new_setup_for_this_blog/</guid>
+      <description>World Wild Jungle As I already complained in the post Reporting: Data Lab Web App earlier this year, I am quite confused regarding the actual complexity of web development. The evolution of the web technologies created a brand new world. World Wild virtual jungle. The diversity of species living there is gigantic. It is getting closer to real nature where it is impossible for a man to get detail understanding of all living forms.</description>
+    </item>
     
     <item>
       <title>Astronomical Events</title>
