@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Lubolab</title>
-    <link>/tags/</link>
+    <link>https://lubolab.com/tags/</link>
     <description>Recent content in Tags on Lubolab</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
@@ -11,24 +11,24 @@
     <copyright>(c) 2017 Lubolab</copyright>
     <lastBuildDate>Sat, 09 Dec 2017 03:57:28 +0200</lastBuildDate>
     
-	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://lubolab.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Blogging Platform</title>
-      <link>/tags/blogging-platform/</link>
+      <link>https://lubolab.com/tags/blogging-platform/</link>
       <pubDate>Sat, 09 Dec 2017 03:57:28 +0200</pubDate>
       <author>lubomir.kamensky@gmail.com (Lubomir Kamensky)</author>
-      <guid>/tags/blogging-platform/</guid>
+      <guid>https://lubolab.com/tags/blogging-platform/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Personal Dwh</title>
-      <link>/tags/personal-dwh/</link>
+      <link>https://lubolab.com/tags/personal-dwh/</link>
       <pubDate>Mon, 17 Apr 2017 03:57:28 +0200</pubDate>
       <author>lubomir.kamensky@gmail.com (Lubomir Kamensky)</author>
-      <guid>/tags/personal-dwh/</guid>
+      <guid>https://lubolab.com/tags/personal-dwh/</guid>
       <description></description>
     </item>
     

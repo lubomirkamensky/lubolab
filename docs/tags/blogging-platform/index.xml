@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Blogging Platform on Lubolab</title>
-    <link>/tags/blogging-platform/</link>
+    <link>https://lubolab.com/tags/blogging-platform/</link>
     <description>Recent content in Blogging Platform on Lubolab</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
@@ -11,15 +11,15 @@
     <copyright>(c) 2017 Lubolab</copyright>
     <lastBuildDate>Sat, 09 Dec 2017 03:57:28 +0200</lastBuildDate>
     
-	<atom:link href="/tags/blogging-platform/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://lubolab.com/tags/blogging-platform/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>New setup for this blog: Migration from Ghost to Hugo</title>
-      <link>/new_setup_for_this_blog/</link>
+      <link>https://lubolab.com/new_setup_for_this_blog/</link>
       <pubDate>Sat, 09 Dec 2017 03:57:28 +0200</pubDate>
       <author>lubomir.kamensky@gmail.com (Lubomir Kamensky)</author>
-      <guid>/new_setup_for_this_blog/</guid>
+      <guid>https://lubolab.com/new_setup_for_this_blog/</guid>
       <description>World Wild Jungle As I already complained in the post Reporting: Data Lab Web App earlier this year, I am quite confused regarding the actual complexity of web development. The evolution of the web technologies created a brand new world. World Wild virtual jungle. The diversity of species living there is gigantic. It is getting closer to real nature where it is impossible for a man to get detail understanding of all living forms.</description>
     </item>
     

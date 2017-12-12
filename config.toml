@@ -2,7 +2,7 @@
 publishDir = "docs"
 
 # hostname (and path) to the root eg. https://appernetic.github.io/
-baseurl = "/"
+baseurl = "https://lubolab.com/"
 
 # Remark if you want to disable multilingual support.
 DefaultContentLanguage = "en"
