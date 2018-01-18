@@ -37,7 +37,7 @@ All hourly, daily, monthly, yearly data is materialized in the Firebase. The loa
 
 <div class="c_alert c_alert-success"><i class="fa fa-info-circle"></i> The limitation of Google Apps Script is a time constraint for an execution. It can run for a maximum period of 4-5 minutes. As we already have load control, using load scope views,  it is not a big deal to process data in small batches, manageble in given time frame. </div>
 
-The script for loading the astro events into detail layer is here [pdwh_ detail_ event_ astro.gs](https://github.com/lubomirkamensky/personal_dwh/blob/master/detail_layer/jobs/gappscript/pdwh_detail_event_astro.gs)
+The script for loading the astro events into detail layer is here [pdwh_ detail_ event_ astro.gs](https://github.com/lubomirkamensky/personal_dwh/blob/master/detail_layer/jobs/gappscript/pdwh_detail_event_astro.js)
 
 The script for building the access layer in Firebase is here [firebs_ meas_ astro_ daylight.gs](https://github.com/lubomirkamensky/personal_dwh/blob/master/astronomical_mart/jobs/gappscript/firebs_meas_astro_daylight.gs)
 
