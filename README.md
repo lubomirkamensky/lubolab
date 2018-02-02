@@ -1,2 +1,0 @@
-# lubolab
-Lubolab website
