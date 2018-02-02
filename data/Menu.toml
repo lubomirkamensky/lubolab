@@ -1,0 +1,7 @@
+[datalab]
+Name = "Datalab"
+URL = "https://datalab.lubolab.com/"
+
+[tags]
+Name = "Tags"
+URL = "/tags"
