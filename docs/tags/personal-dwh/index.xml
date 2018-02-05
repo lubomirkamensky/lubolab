@@ -9,10 +9,21 @@
     <managingEditor>lubomir.kamensky@gmail.com (Lubomir Kamensky)</managingEditor>
     <webMaster>lubomir.kamensky@gmail.com (Lubomir Kamensky)</webMaster>
     <copyright>(c) 2017 Lubolab</copyright>
-    <lastBuildDate>Sun, 14 Jan 2018 03:57:28 +0200</lastBuildDate>
+    <lastBuildDate>Mon, 05 Feb 2018 03:57:28 +0200</lastBuildDate>
     
 	<atom:link href="https://lubolab.com/tags/personal-dwh/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Building Sensor Network: with BigClown</title>
+      <link>https://lubolab.com/building-sensor-network-bc/</link>
+      <pubDate>Mon, 05 Feb 2018 03:57:28 +0200</pubDate>
+      <author>lubomir.kamensky@gmail.com (Lubomir Kamensky)</author>
+      <guid>https://lubolab.com/building-sensor-network-bc/</guid>
+      <description>The Motivation I am definitely not a hardware guy. Never was and never will be, but nevertheless, I enjoy building my smart house and garden.
+I started with not that smart weather station and moved its data to the cloud in my first blog and later used some open API of smart IoT products like Netatmo Cameras, see the article here.
+Unfortunately, there are some limitations always. It is hard to customize the specialized products and mostly it is only possible to access the data from the cloud.</description>
+    </item>
     
     <item>
       <title>Camera Events: The ETL</title>

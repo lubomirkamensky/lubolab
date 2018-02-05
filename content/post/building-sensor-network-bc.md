@@ -1,5 +1,5 @@
 +++
-date = "2018-02-02T03:57:28+02:00"
+date = "2018-02-05T03:57:28+02:00"
 draft = false
 title = "Building Sensor Network: with BigClown"
 
@@ -7,35 +7,39 @@ tags = [ "Personal DWH" ]
 +++
 
 ### The Motivation
-I am definitely not a hardware guy. Never was and never will be, but nevertheless I enjoy building my smart house and garden. 
+I am definitely not a hardware guy. Never was and never will be, but nevertheless, I enjoy building my smart house and garden. 
 
 I started with not that smart weather station and moved its data to the cloud in my [first blog](/my-personal-dwh-kickoff/) and later used some open API of smart IoT products like Netatmo Cameras, see the [article here](/camera-events-the-etl/).
 
-Unfortunately there are some limitations always. It is hard to customize the specialized products and mostly it is only possible to access the data from the cloud. So no way to get the data in case of internet connection or cloud server outage.
+![The Limitations](/images/2018/02/limitations.jpg)
+
+Unfortunately, there are some limitations always. It is hard to customize the specialized products and mostly it is only possible to access the data from the cloud. So no way to get the data in case of internet connection or cloud server outage.
 
 ### BigClown.com
 Then I discovered the [BigCLown](https://www.bigclown.com/) modules. It looks like IoT LEGO. The same sort of precision and beautiful look. The similar options of building based on your own ideas. And quite logically, also the similar price.
 
-But it is not just nice toy as LEGO is, it is much more. It is ready for serious projects.
+But it is not just a nice toy as LEGO is, it is much more. It is ready for serious projects.
 
-While the hardware part of the project is fixed as soon as you plug all required modules together, the software part is the real playground for you.
+While the hardware part of the project is fixed as soon as you plug all required modules together, the software part is the real playground for me :)
 
-### The Playground
-The standard setup for any software project is at least one development machine and the production server. Of course, for more professional setup some other environments are needed like testing, but let's  consider the simplest possible option and you can always make it more complicated later.
+![BigClown modules](/images/2018/02/bigclown.jpg)
+
+### The BigClown Playground
+The standard setup for any software project is at least one development machine and the production server. Of course, for more professional setup some other environments are needed like testing, but let's  consider the simplest possible setup and you can always make it more complex later.
 
 #### The Development Machine
 
 ##### The Firmware 
 
-I already mentioned that the hardware is not really my cup of tea, and I consider the low level programming of hardware firmware to be part of that field as well. So my software development playground starts with loading the completed firmware into the hardware. This is the neccesary minimum to make sure all the hardware  compoments are in sync and everything is going to work as expected.
+I already mentioned that the hardware is not really my cup of tea, and I consider the low-level programming of hardware firmware to be part of that field as well. So my software development playground starts with loading the completed firmware into the hardware. This is the necessary minimum to make sure all the hardware  compoments are in sync and everything is going to work as expected.
 
 ##### The Development Environment 
 Even though I've grown up on Windows I started to prefer Linux development machine. If you are really interested in automation, data or even data science and machine learning, everything is much easier and more natural from Linux environment. For some reason, perhaps the name :-) I ended up with one of the Ubuntu derivates, [Lubuntu](http://lubuntu.net). It is fast and lightweight OS which can run even on older hardware. 
 
-Considering we have some kind of Ubuntu derivate there are few things to install.
+Considering we have some kind of Ubuntu derivate, there are few things to install.
 
 ###### Python
-First set of tools is related to the most human friendly programming language Python:  
+The first set of tools is related to the most human-friendly programming language Python:  
 ```
 sudo apt update && sudo apt upgrade
 sudo apt install python3 python3-pip python3-setuptools
@@ -48,17 +52,17 @@ sudo pip3 install --upgrade bcf
 ```
 
 ###### GIT
-Essential part of any development environment is the version control system and [GIT](https://git-scm.com/) is the best one. Together with [GitHub](http://github.com) repository it helps you in infinite ways to improve the culture of your coding.
+The essential part of any development environment is the version control system and I am positive [GIT](https://git-scm.com/) is the best one. Together with [GitHub](http://github.com) repository it helps you in infinite ways to improve the culture of your coding.
 
 ```
 sudo apt-get install git-all
 ```
 
 The impact is even bigger when  using the public repository. I think it is the next step of human evolution which is already based on not just genes but also memes. You can consider sharing your code as the way to immortality :-)
-But of course, better code has higher chances to succeed.
+But of course, a better code has higher chances to succeed.
 
 ###### Sublime Text
-It is easier to code in good text editor. The selection is always very personal choice.  I feel most comfortable using [Sublime Text](https://www.sublimetext.com/).
+It is easier to code in a good text editor. The selection is always a very personal choice.  I feel most comfortable using [Sublime Text](https://www.sublimetext.com/).
 
 ```
 wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
@@ -67,7 +71,7 @@ sudo apt update && sudo apt install sublime-text
 ```
 
 ###### Remote access tools
-Remote work is natural part of Linux OS and I prefer using [mosh](https://mosh.org/) to access other Linux machines. It makes the remote work usable even in case of imperfect connection. It is like ssh but with instant response and without interruptions so you have the feel of local work instead of remote.
+Remote work is a natural part of Linux OS and I prefer using [mosh](https://mosh.org/) to access other Linux machines. It makes the remote work usable even in case of imperfect connection. It is like ssh but with instant response and without interruptions so you have the feel of local work instead of the remote.
 
 ```
 sudo apt-get install mosh
@@ -97,13 +101,13 @@ sudo apt install mysql-workbench
 Other specific tools for specific tasks are mentioned in particular articles, like [web app development](/the-data-lab-web-app/) or [writing the blog](/new_setup_for_this_blog/)
 
 #### The Production Server
-In my very first article [here](/my-personal-dwh-kickoff/) I started to use tablet as a server. Now I can modestly say it was a brilliant idea. The main benefit is definitely the ability to run several hours on battery in case of power outage but there is more. You can any time easily check the server status using its screen and you can even use the screen as some sort of dasboard terminal.
+In my very first article [here](/my-personal-dwh-kickoff/) I started to use a tablet as a server. Now I can modestly say it was a brilliant idea. The main benefit is definitely the ability to run several hours on battery in case of a power outage but there is more. You can anytime easily check the server status using its screen and you can even use the screen as some sort of dashboard terminal.
 
-Together with BigCLown sensors running on batteries you get robust sensor network providing continuous history of all your measurements.
+Together with BigCLown sensors running on batteries you get robust sensor network providing a continuous history of all your measurements.
 
-You can buy very cheap tablets now, where the price is not that far from the price of Raspberry Pi, but you can also use some old tablet which is not used any more and I am also considering the idea of using some old smarphone for that.
+You can buy very cheap tablets now, where the price is not that far from the price of Raspberry Pi, but you can also use some old tablet which is not used anymore and I am also considering the idea of using some old smartphone for that.
 
-To keep things simple I use the same OS as for development machine, [Lubuntu](http://lubuntu.net).
+To keep things simple I use the same OS as for development machine, [Lubuntu](http://lubuntu.net). Let's look into the server installations now. It begins as on the development machine.
 
 ##### Python
 
@@ -159,20 +163,20 @@ pm2 save
 sudo pip3 install --upgrade --no-cache-dir bcf
 ```
 
-##### The Access layers 
+#### The Access layers 
 The more  sensors you have in your network, the more important it is, to introduce some level of abstraction to unify the access to data from various sources. 
 
-###### Current
-The first layer represents the flow of actual measurements coming from the sensors where only changed values are allowed to enter the flow. This layer is implented by MQTT messaging protocol.
+##### Current
+The first layer represents the flow of actual measurements coming from the sensors where only changed values are allowed to enter the flow. This layer is implemented by MQTT messaging protocol.
 
 ```
 sudo apt install mosquitto mosquitto-clients
 ```
 
-###### History
-Second layer represents the time series history of value changes for each sensor.  It is provided by time series database InfluxDb.
+##### History
+The second layer represents the time series history of value changes for each sensor.  It is provided by time series database InfluxDb.
 
-"ubuntu/ artful stable" below has to be replaced wih the name of installed Linux distribution (jessie, xenial,...)
+"ubuntu/ artful stable" below has to be replaced with the name of installed Linux distribution (jessie, xenial,...)
 
 ```
 curl -sL https://repos.influxdata.com/influxdb.key | sudo apt-key add -
@@ -181,18 +185,18 @@ sudo apt update && sudo apt install influxdb
 sudo systemctl start influxdb
 ```
 
-###### Integration
-Third layer combines data from various sources to put information into context. This is still domain of relational SQL database like MySQL. Let's skip this layer for now.
+##### Integration
+The third layer combines data from various sources to put information into context. This is still the domain of relational SQL database like MySQL. Let's skip this layer for now.
 
-###### Machine learning
+##### Machine learning
 Forth layer is recognizing new or defined patterns processing selected dataset from whatever layer below. Python machine learning library [scikit-learn](http://scikit-learn.org/) can be used here. Let's skip this layer for now.
 
-###### Reporting, Alarms, Management
+##### Reporting, Alarms, Management
 Any of the  layers below can directly feed some reporting tool or an alarm. Here are unlimited options.
 
 #### How to make it all work
 
-Let's start on the development machine where the bcf toll is already installed.
+Let's start with the development machine where the bcf tool is already installed.
 
 ##### Update firmware in BigCLown modules
 
@@ -236,7 +240,7 @@ Okay, now we use the device information to load the usb-dongle firmware:
 bcf flash --device /dev/ttyUSB0 bigclownlabs/bcf-gateway-usb-dongle:latest
 ```
 
-To load the firmwate to the core module, the core modul has to be connected to and USB port, then press and keep holding the B button on the Core Module. Now press and release the R button and finally release also the B button.
+To load the firmwate to the core module, the core module has to be connected to an USB port, then press and keep holding the B button on the Core Module. Now press and release the R button and finally release also the B button.
 The core module is ready to the last step:
 ```
 bcf flash --dfu bigclownlabs/bcf-generic-node-battery-mini:latest
@@ -244,10 +248,10 @@ bcf flash --dfu bigclownlabs/bcf-generic-node-battery-mini:latest
 
 Now let's move to the Production server 
 
-##### Tools feeding the access layers
+#### Tools feeding the access layers
 
 
-###### BigClown to MQTT
+##### BigClown to MQTT
 First tool catches the data coming from wireless modules and publish them using MQTT protocol. It works both ways so can also send commands to the modules.
 
 ```
@@ -257,7 +261,7 @@ sudo mkdir -p /etc/bigclown
 sudo nano /etc/bigclown/bcg-ud.yml
 ```
 
-then copy paste and save following content
+then copy, paste and save following content
 
 ```
 device: /dev/bcUD0
@@ -275,7 +279,7 @@ pm2 save
 ```
 
 
-###### MQTT to INFLUXDB
+##### MQTT to INFLUXDB
 Second tool can store the current data into time series database and keep the history for specified measurements.
 
 ```
@@ -340,17 +344,17 @@ pm2 start /usr/bin/python3 --name "mqtt2influxdb" -- /usr/local/bin/mqtt2influxd
 pm2 save
 ```
 
-###### Time to see something working
+##### Time to see it working
 
 Let's plug the USB dongle into the production server and open two terminal windows. 
 
-First one to show all mqtt messages published on the server:
+First one to show all MQTT messages published on the server:
 ```
 mosquitto_sub -h SERVER_IP -v -t '#'
 
 ```
 
-Second to send the commans. Start with requesting the gateway information to make sure the USB dongle was found:
+Second to send the commands. Start with requesting the gateway information to make sure the USB dongle was found:
 ```
 mosquitto_pub -h SERVER_IP -t gateway/all/info/get -n
 ```
@@ -365,9 +369,9 @@ Then put the USB dongle to the pairing mode:
 mosquitto_pub -h SERVER_IP -t gateway/usb-dongle/pairing-mode/start -n
 ```
 
-Now it is ready to be paired with wirelles sensors. The core module with generic node Firmware gets to  the pairing mode whenever it restarts, so unplug and plug the battery module, disconnect and connect the USB/power cable or press the restart button.
+Now it is ready to be paired with wireless sensors. The core module with generic node Firmware gets to  the pairing mode whenever it restarts, so unplug and plug the battery module, disconnect and connect the USB/power cable or press the restart button.
 
-Then the paired node shoud be annonced by similar message in the first terminal:
+Then the paired node should be announced by a similar message in the first terminal:
 ```
 node/836e1983a739/info {"firmware": "generic-node-power-module-rgbw144", "version": "v1.7.4"}
 ```
@@ -382,18 +386,18 @@ And you can list alls paired nodes using this command:
 mosquitto_pub -h SERVER_IP -t gateway/usb-dongle/nodes/get -n
 ```
 
-###### And some small customization
+##### And some small customization
 
 I prefer to customize the node names, to have names instead of numbers. And I don't relate the node name to actual role or location but rather give each core module some long term unique name.
 
-Then I can related the actual location and role to the node name when needed.
+Then I can relate the actual location and role to the node name when needed.
 
 To customize node names:
 ```
 sudo nano /etc/bigclown/bcg-ud.yml
 ```
 
-and make changes in similar manner:
+and make changes in a similar manner:
 ```
 device: /dev/bcUD0
 name: "usb-dongle"

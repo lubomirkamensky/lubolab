@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]> <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]> <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Building Sensor Network: with BigClown  &middot; Lubolab</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<meta name="description" content="" />
+
+<meta name="keywords" content="Personal DWH, ">
+
+
+<meta property="og:title" content="Building Sensor Network: with BigClown  &middot; Lubolab ">
+<meta property="og:site_name" content="Lubolab"/>
+<meta property="og:url" content="https://lubolab.com/building-sensor-network-bc/" />
+<meta property="og:locale" content="en">
+
+
+<meta property="og:type" content="article" />
+<meta property="og:description" content=""/>
+<meta property="og:article:published_time" content="2018-02-05T03:57:28&#43;02:00" />
+<meta property="og:article:modified_time" content="2018-02-05T03:57:28&#43;02:00" />
+
+  
+    
+<meta property="og:article:tag" content="Personal DWH">
+    
+  
+
+  
+
+  
+
+
+
+<link rel="canonical" href="https://lubolab.com/building-sensor-network-bc/" />
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://lubolab.com/touch-icon-144-precomposed.png">
+<link rel="icon" href="https://lubolab.com/favicon.png">
+<meta name="generator" content="Hugo 0.31.1" />
+
+  <!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+
+
+    <link rel="stylesheet" href="https://lubolab.com/css/bootswatch/paper/bootstrap.min.css">
+
+
+<link rel="stylesheet" href="https://lubolab.com/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://lubolab.com/css/style.css">
+
+
+<link rel="stylesheet" href="https://lubolab.com/css/style_custom.css">
+
+
+
+  <link rel="stylesheet" href="https://lubolab.com/css/highlight/default.css">
+
+
+</head>
+<body class="map[name:paper]" data-ng-app="myapp" data-ng-controller="MyController" data-ng-mouseleave="MouseLeave($event)">
+    <header id="main-header">
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        
+          
+          <a class="navbar-brand-img" href="https://lubolab.com/">
+            <img alt="Lubolab" src="https://lubolab.com/images/lubolablogo.png">
+            
+          </a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav navbar-right">
+            
+            
+            <li class="">
+
+              <a href="https://datalab.lubolab.com/" >
+                <i class='fa fa-flask'></i>
+                Datalab
+              </a>
+            </li>
+            
+            <li class="">
+
+              <a href="https://github.com/lubomirkamensky/lubolab" >
+                <i class='fa fa-github'></i>
+                Blog Source code
+              </a>
+            </li>
+            
+            
+              
+          </ul>
+        </div>
+        
+      </div>
+    </nav>
+  </header>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-9">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+  <div class="text-center">
+
+    <h1>Building Sensor Network: with BigClown
+</h1>
+
+    <div class="metas">
+<small>
+  <i class="fa fa-calendar"></i>
+  <time datetime="2018-02-05">5 Feb, 2018</time>
+</small>
+
+
+  <small>
+  &middot; Read in about 10 min
+  &middot; (2036 words)
+  &middot; 
+<span class="share-box">Share this on:
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2flubolab.com%2fbuilding-sensor-network-bc%2f" onclick="window.open(this.href, 'mywin',
+'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"><i class="fa fa-facebook-official "></i></a>
+
+    <a href="https://twitter.com/intent/tweet?text=Building%20Sensor%20Network%3a%20with%20BigClown&amp;url=https%3a%2f%2flubolab.com%2fbuilding-sensor-network-bc%2f" onclick="window.open(this.href, 'mywin',
+'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"><i class="fa fa-twitter"></i></a>
+
+    <a href="https://plus.google.com/share?url=https%3a%2f%2flubolab.com%2fbuilding-sensor-network-bc%2f" onclick="window.open(this.href, 'mywin',
+'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"><i class="fa fa-google-plus"></i></a>
+
+    <a href="http://www.reddit.com/submit?url=https%3a%2f%2flubolab.com%2fbuilding-sensor-network-bc%2f" onclick="window.open(this.href, 'mywin',
+'left=20,top=20,width=900,height=500,toolbar=1,resizable=0'); return false;"><i class="fa fa-reddit"></i></a>
+
+    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2flubolab.com%2fbuilding-sensor-network-bc%2f&amp;title=Building%20Sensor%20Network%3a%20with%20BigClown" onclick="window.open(this.href, 'mywin',
+'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"><i class="fa fa-linkedin"></i></a>
+
+    <a href="mailto:?subject=Building%20Sensor%20Network%3a%20with%20BigClown&amp;body=Check out this site https%3a%2f%2flubolab.com%2fbuilding-sensor-network-bc%2f" data-proofer-ignore=""><i class="fa fa-envelope"></i></a>
+  </span>
+
+  </small>
+
+<div class="margin-10">
+  <i class="fa fa-tags"></i>
+  
+  <a href="https://lubolab.com/tags/personal-dwh" class="label label-primary">Personal DWH</a>
+  
+
+
+</div>
+
+<br>
+</div>
+
+  </div>
+</div>
+
+      <div class="content">
+  
+
+<h3 id="the-motivation">The Motivation</h3>
+
+<p>I am definitely not a hardware guy. Never was and never will be, but nevertheless, I enjoy building my smart house and garden.</p>
+
+<p>I started with not that smart weather station and moved its data to the cloud in my <a href="https://lubolab.com/my-personal-dwh-kickoff/">first blog</a> and later used some open API of smart IoT products like Netatmo Cameras, see the <a href="https://lubolab.com/camera-events-the-etl/">article here</a>.</p>
+
+<p><img src="https://lubolab.com/images/2018/02/limitations.jpg" alt="The Limitations" /></p>
+
+<p>Unfortunately, there are some limitations always. It is hard to customize the specialized products and mostly it is only possible to access the data from the cloud. So no way to get the data in case of internet connection or cloud server outage.</p>
+
+<h3 id="bigclown-com">BigClown.com</h3>
+
+<p>Then I discovered the <a href="https://www.bigclown.com/" target="_blank">BigCLown</a> modules. It looks like IoT LEGO. The same sort of precision and beautiful look. The similar options of building based on your own ideas. And quite logically, also the similar price.</p>
+
+<p>But it is not just a nice toy as LEGO is, it is much more. It is ready for serious projects.</p>
+
+<p>While the hardware part of the project is fixed as soon as you plug all required modules together, the software part is the real playground for me :)</p>
+
+<p><img src="https://lubolab.com/images/2018/02/bigclown.jpg" alt="BigClown modules" /></p>
+
+<h3 id="the-bigclown-playground">The BigClown Playground</h3>
+
+<p>The standard setup for any software project is at least one development machine and the production server. Of course, for more professional setup some other environments are needed like testing, but let&rsquo;s  consider the simplest possible setup and you can always make it more complex later.</p>
+
+<h4 id="the-development-machine">The Development Machine</h4>
+
+<h5 id="the-firmware">The Firmware</h5>
+
+<p>I already mentioned that the hardware is not really my cup of tea, and I consider the low-level programming of hardware firmware to be part of that field as well. So my software development playground starts with loading the completed firmware into the hardware. This is the necessary minimum to make sure all the hardware  compoments are in sync and everything is going to work as expected.</p>
+
+<h5 id="the-development-environment">The Development Environment</h5>
+
+<p>Even though I&rsquo;ve grown up on Windows I started to prefer Linux development machine. If you are really interested in automation, data or even data science and machine learning, everything is much easier and more natural from Linux environment. For some reason, perhaps the name :-) I ended up with one of the Ubuntu derivates, <a href="http://lubuntu.net" target="_blank">Lubuntu</a>. It is fast and lightweight OS which can run even on older hardware.</p>
+
+<p>Considering we have some kind of Ubuntu derivate, there are few things to install.</p>
+
+<h6 id="python">Python</h6>
+
+<p>The first set of tools is related to the most human-friendly programming language Python:</p>
+
+<pre><code>sudo apt update &amp;&amp; sudo apt upgrade
+sudo apt install python3 python3-pip python3-setuptools
+sudo pip3 install --upgrade pip
+</code></pre>
+
+<p>With Python environment ready we can install  BigClown Firmware Tool which will simplify the Firmware load for us:</p>
+
+<pre><code>sudo pip3 install --upgrade bcf
+</code></pre>
+
+<h6 id="git">GIT</h6>
+
+<p>The essential part of any development environment is the version control system and I am positive <a href="https://git-scm.com/" target="_blank">GIT</a> is the best one. Together with <a href="http://github.com" target="_blank">GitHub</a> repository it helps you in infinite ways to improve the culture of your coding.</p>
+
+<pre><code>sudo apt-get install git-all
+</code></pre>
+
+<p>The impact is even bigger when  using the public repository. I think it is the next step of human evolution which is already based on not just genes but also memes. You can consider sharing your code as the way to immortality :-)
+But of course, a better code has higher chances to succeed.</p>
+
+<h6 id="sublime-text">Sublime Text</h6>
+
+<p>It is easier to code in a good text editor. The selection is always a very personal choice.  I feel most comfortable using <a href="https://www.sublimetext.com/" target="_blank">Sublime Text</a>.</p>
+
+<pre><code>wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
+echo &quot;deb https://download.sublimetext.com/ apt/stable/&quot; | sudo tee /etc/apt/sources.list.d/sublime-text.list
+sudo apt update &amp;&amp; sudo apt install sublime-text
+</code></pre>
+
+<h6 id="remote-access-tools">Remote access tools</h6>
+
+<p>Remote work is a natural part of Linux OS and I prefer using <a href="https://mosh.org/" target="_blank">mosh</a> to access other Linux machines. It makes the remote work usable even in case of imperfect connection. It is like ssh but with instant response and without interruptions so you have the feel of local work instead of the remote.</p>
+
+<pre><code>sudo apt-get install mosh
+</code></pre>
+
+<p>To access Windows machines remotely I use <a href="https://www.remmina.org/wp/" target="_blank">remmina</a>.</p>
+
+<pre><code>sudo apt-get install remmina
+</code></pre>
+
+<h6 id="other-tools">Other tools</h6>
+
+<p>Simple image viewer/editor: <a href="https://nomacs.org/" target="_blank">nomacs</a></p>
+
+<pre><code>sudo add-apt-repository ppa:nomacs/stable
+sudo apt-get update
+sudo apt-get install nomacs
+</code></pre>
+
+<p>For MySQL and MariaDb management I use <a href="https://dev.mysql.com/downloads/workbench/" target="_blank">MySQL Workbench</a></p>
+
+<pre><code>sudo apt install mysql-workbench
+</code></pre>
+
+<p>Other specific tools for specific tasks are mentioned in particular articles, like <a href="https://lubolab.com/the-data-lab-web-app/">web app development</a> or <a href="https://lubolab.com/new_setup_for_this_blog/">writing the blog</a></p>
+
+<h4 id="the-production-server">The Production Server</h4>
+
+<p>In my very first article <a href="https://lubolab.com/my-personal-dwh-kickoff/">here</a> I started to use a tablet as a server. Now I can modestly say it was a brilliant idea. The main benefit is definitely the ability to run several hours on battery in case of a power outage but there is more. You can anytime easily check the server status using its screen and you can even use the screen as some sort of dashboard terminal.</p>
+
+<p>Together with BigCLown sensors running on batteries you get robust sensor network providing a continuous history of all your measurements.</p>
+
+<p>You can buy very cheap tablets now, where the price is not that far from the price of Raspberry Pi, but you can also use some old tablet which is not used anymore and I am also considering the idea of using some old smartphone for that.</p>
+
+<p>To keep things simple I use the same OS as for development machine, <a href="http://lubuntu.net" target="_blank">Lubuntu</a>. Let&rsquo;s look into the server installations now. It begins as on the development machine.</p>
+
+<h5 id="python-1">Python</h5>
+
+<pre><code>sudo apt update &amp;&amp; sudo apt upgrade
+sudo apt install python3 python3-pip python3-setuptools
+sudo pip3 install --upgrade pip
+</code></pre>
+
+<h5 id="node-js">Node.Js</h5>
+
+<pre><code>curl -sL  https://deb.nodesource.com/setup_8.x | sudo -E bash -
+sudo apt-get install -y nodejs
+</code></pre>
+
+<h5 id="process-manager-pm2">Process Manager PM2</h5>
+
+<pre><code>sudo npm install -g pm2
+sudo -H PM2_HOME=/home/$(whoami)/.pm2 pm2 startup systemd -u $(whoami)
+sudo -H chmod 644 /etc/systemd/system/pm2-$(whoami).service
+</code></pre>
+
+<h5 id="few-pm2-commands-to-remeber">Few PM2 commands to remeber</h5>
+
+<p>to list all pm2 processes</p>
+
+<pre><code>pm2 list
+</code></pre>
+
+<p>to get details about particular process</p>
+
+<pre><code>pm2 show PROCESS_NAME
+</code></pre>
+
+<p>to restart particular process, for example after config changes</p>
+
+<pre><code>pm2 restart PROCESS_NAME
+</code></pre>
+
+<h5 id="node-red">Node-RED</h5>
+
+<pre><code>sudo npm install -g --unsafe-perm node-red
+pm2 start `which node-red` -- --verbose
+pm2 save
+</code></pre>
+
+<h5 id="bigclown-firmware-tool">BigClown Firmware Tool</h5>
+
+<pre><code>sudo pip3 install --upgrade --no-cache-dir bcf
+</code></pre>
+
+<h4 id="the-access-layers">The Access layers</h4>
+
+<p>The more  sensors you have in your network, the more important it is, to introduce some level of abstraction to unify the access to data from various sources.</p>
+
+<h5 id="current">Current</h5>
+
+<p>The first layer represents the flow of actual measurements coming from the sensors where only changed values are allowed to enter the flow. This layer is implemented by MQTT messaging protocol.</p>
+
+<pre><code>sudo apt install mosquitto mosquitto-clients
+</code></pre>
+
+<h5 id="history">History</h5>
+
+<p>The second layer represents the time series history of value changes for each sensor.  It is provided by time series database InfluxDb.</p>
+
+<p>&laquo;ubuntu/ artful stable&raquo; below has to be replaced with the name of installed Linux distribution (jessie, xenial,&hellip;)</p>
+
+<pre><code>curl -sL https://repos.influxdata.com/influxdb.key | sudo apt-key add -
+echo &quot;deb https://repos.influxdata.com/ubuntu/ artful stable&quot; | sudo tee /etc/apt/sources.list.d/influxdb.list
+sudo apt update &amp;&amp; sudo apt install influxdb
+sudo systemctl start influxdb
+</code></pre>
+
+<h5 id="integration">Integration</h5>
+
+<p>The third layer combines data from various sources to put information into context. This is still the domain of relational SQL database like MySQL. Let&rsquo;s skip this layer for now.</p>
+
+<h5 id="machine-learning">Machine learning</h5>
+
+<p>Forth layer is recognizing new or defined patterns processing selected dataset from whatever layer below. Python machine learning library <a href="http://scikit-learn.org/" target="_blank">scikit-learn</a> can be used here. Let&rsquo;s skip this layer for now.</p>
+
+<h5 id="reporting-alarms-management">Reporting, Alarms, Management</h5>
+
+<p>Any of the  layers below can directly feed some reporting tool or an alarm. Here are unlimited options.</p>
+
+<h4 id="how-to-make-it-all-work">How to make it all work</h4>
+
+<p>Let&rsquo;s start with the development machine where the bcf tool is already installed.</p>
+
+<h5 id="update-firmware-in-bigclown-modules">Update firmware in BigCLown modules</h5>
+
+<p>first make sure we have actual firmware ready</p>
+
+<pre><code>bcf update
+</code></pre>
+
+<p>Then list the available firmware</p>
+
+<pre><code>bcf list
+</code></pre>
+
+<p>Which looks like:</p>
+
+<pre><code>bigclownlabs/bcf-gateway-usb-dongle:v1.7.4                   
+bigclownlabs/bcf-generic-node-battery-mini:v1.7.4            
+bigclownlabs/bcf-generic-node-battery-standard:v1.7.4        
+bigclownlabs/bcf-generic-node-power-module-rgb150:v1.7.4     
+bigclownlabs/bcf-generic-node-power-module-rgb300:v1.7.4     
+bigclownlabs/bcf-generic-node-power-module-rgbw144:v1.7.4    
+bigclownlabs/bcf-generic-node-power-module-rgbw72:v1.7.4 
+</code></pre>
+
+<p>There are more of them but this is the list of my regular choices. First line is the firmware for the usb-dongle. The rest is firmware for the core module making it a remote generic node. Basically a generic node can be any kind of remote sensor you need, it adapts to the role you give it. The names of listed node variants are nicely descriptive. All variants support all available BigClown sensors. The battery nodes are just sending the sensor reading anytime the value changes. The power nodes not only sends information but also wait for the commands.</p>
+
+<p>There is a distinct way how to load the usb-dongle firmware after you connect it to an USB port, but first let&rsquo;s see how to identify the plugged dongle.</p>
+
+<pre><code>bcf devices
+</code></pre>
+
+<p>to get something like</p>
+
+<pre><code>/dev/ttyUSB0
+</code></pre>
+
+<p>Okay, now we use the device information to load the usb-dongle firmware:</p>
+
+<pre><code>bcf flash --device /dev/ttyUSB0 bigclownlabs/bcf-gateway-usb-dongle:latest
+</code></pre>
+
+<p>To load the firmwate to the core module, the core module has to be connected to an USB port, then press and keep holding the B button on the Core Module. Now press and release the R button and finally release also the B button.
+The core module is ready to the last step:</p>
+
+<pre><code>bcf flash --dfu bigclownlabs/bcf-generic-node-battery-mini:latest
+</code></pre>
+
+<p>Now let&rsquo;s move to the Production server</p>
+
+<h4 id="tools-feeding-the-access-layers">Tools feeding the access layers</h4>
+
+<h5 id="bigclown-to-mqtt">BigClown to MQTT</h5>
+
+<p>First tool catches the data coming from wireless modules and publish them using MQTT protocol. It works both ways so can also send commands to the modules.</p>
+
+<pre><code>sudo pip3 install --upgrade --no-cache-dir bcg
+echo 'SUBSYSTEMS==&quot;usb&quot;, ACTION==&quot;add&quot;, KERNEL==&quot;ttyUSB*&quot;, ATTRS{idVendor}==&quot;0403&quot;, ATTRS{idProduct}==&quot;6015&quot;, ATTRS{serial}==&quot;bc-usb-dongle*&quot;, SYMLINK+=&quot;bcUD%n&quot;, TAG+=&quot;systemd&quot;, ENV{SYSTEMD_ALIAS}=&quot;/dev/bcUD%n&quot;'  | sudo tee --append /etc/udev/rules.d/58-bigclown-usb-dongle.rules
+sudo mkdir -p /etc/bigclown
+sudo nano /etc/bigclown/bcg-ud.yml
+</code></pre>
+
+<p>then copy, paste and save following content</p>
+
+<pre><code>device: /dev/bcUD0
+name: &quot;usb-dongle&quot;
+mqtt:
+    host: localhost
+    port: 1883
+</code></pre>
+
+<p>and finally daemonize the tool using pm2 to make it running as a service</p>
+
+<pre><code>pm2 start /usr/bin/python3 --name &quot;bcg-ud&quot; -- /usr/local/bin/bcg -c /etc/bigclown/bcg-ud.yml
+pm2 save
+</code></pre>
+
+<h5 id="mqtt-to-influxdb">MQTT to INFLUXDB</h5>
+
+<p>Second tool can store the current data into time series database and keep the history for specified measurements.</p>
+
+<pre><code>sudo pip3 install --upgrade --no-cache-dir mqtt2influxdb
+sudo nano /etc/bigclown/mqtt2influxdb.yml
+</code></pre>
+
+<p>then copy paste and save following content:</p>
+
+<pre><code>mqtt:
+  host: 127.0.0.1
+  port: 1883
+
+influxdb:
+  host: 127.0.0.1
+  port: 8086
+  database: node
+
+points:
+  - measurement: temperature
+    topic: node/+/thermometer/+/temperature
+    fields:
+      value: $.payload
+    tags:
+      id: $.topic[1]
+      channel: $.topic[3]
+
+  - measurement: relative-humidity
+    topic: node/+/hygrometer/0:4/relative-humidity
+    fields:
+      value: $.payload
+    tags:
+      id: $.topic[1]
+
+  - measurement: illuminance
+    topic: node/+/lux-meter/0:0/illuminance
+    fields:
+      value: $.payload
+    tags:
+      id: $.topic[1]
+
+  - measurement: pressure
+    topic: node/+/barometer/0:0/pressure
+    fields:
+      value: $.payload
+    tags:
+      id: $.topic[1]
+
+  - measurement: co2
+    topic: node/+/co2-meter/-/concentration
+    fields:
+      value: $.payload
+    tags:
+      id: $.topic[1]
+</code></pre>
+
+<p>and also daemonize the tool using pm2 to make it running as a service</p>
+
+<pre><code>pm2 start /usr/bin/python3 --name &quot;mqtt2influxdb&quot; -- /usr/local/bin/mqtt2influxdb -c /etc/bigclown/mqtt2influxdb.yml
+pm2 save
+</code></pre>
+
+<h5 id="time-to-see-it-working">Time to see it working</h5>
+
+<p>Let&rsquo;s plug the USB dongle into the production server and open two terminal windows.</p>
+
+<p>First one to show all MQTT messages published on the server:</p>
+
+<pre><code>mosquitto_sub -h SERVER_IP -v -t '#'
+
+</code></pre>
+
+<p>Second to send the commands. Start with requesting the gateway information to make sure the USB dongle was found:</p>
+
+<pre><code>mosquitto_pub -h SERVER_IP -t gateway/all/info/get -n
+</code></pre>
+
+<p>And you should see something like below in the first window:</p>
+
+<pre><code>gateway/usb-dongle/info {&quot;id&quot;: &quot;836d1983a739&quot;, &quot;firmware&quot;: &quot;bcf-gateway-usb-dongle&quot;, &quot;version&quot;: &quot;v1.7.4&quot;}
+</code></pre>
+
+<p>Then put the USB dongle to the pairing mode:</p>
+
+<pre><code>mosquitto_pub -h SERVER_IP -t gateway/usb-dongle/pairing-mode/start -n
+</code></pre>
+
+<p>Now it is ready to be paired with wireless sensors. The core module with generic node Firmware gets to  the pairing mode whenever it restarts, so unplug and plug the battery module, disconnect and connect the USB/power cable or press the restart button.</p>
+
+<p>Then the paired node should be announced by a similar message in the first terminal:</p>
+
+<pre><code>node/836e1983a739/info {&quot;firmware&quot;: &quot;generic-node-power-module-rgbw144&quot;, &quot;version&quot;: &quot;v1.7.4&quot;}
+</code></pre>
+
+<p>After pairing all the nodes, stop the pairing mode:</p>
+
+<pre><code>mosquitto_pub -h SERVER_IP -t gateway/usb-dongle/pairing-mode/stop -n
+</code></pre>
+
+<p>And you can list alls paired nodes using this command:</p>
+
+<pre><code>mosquitto_pub -h SERVER_IP -t gateway/usb-dongle/nodes/get -n
+</code></pre>
+
+<h5 id="and-some-small-customization">And some small customization</h5>
+
+<p>I prefer to customize the node names, to have names instead of numbers. And I don&rsquo;t relate the node name to actual role or location but rather give each core module some long term unique name.</p>
+
+<p>Then I can relate the actual location and role to the node name when needed.</p>
+
+<p>To customize node names:</p>
+
+<pre><code>sudo nano /etc/bigclown/bcg-ud.yml
+</code></pre>
+
+<p>and make changes in a similar manner:</p>
+
+<pre><code>device: /dev/bcUD0
+name: &quot;usb-dongle&quot;
+mqtt:
+    host: localhost
+    port: 1883
+rename:
+  836d19838e5e: ulmus
+  836d19822047: fraxinus
+  836d19822262: salix
+  836d19822e3b: quercus
+  836d19821824: pinus
+  836d19822b26: carpinus
+</code></pre>
+
+<p>Then just restart the process</p>
+
+<pre><code>pm2 restart bcg-ud
+</code></pre>
+
+<h4 id="the-matrix-bigclown-sensor-network">The Matrix: BigClown Sensor Network</h4>
+
+<p>And now we can enjoy The Matrix of measurements coming from all the nodes :)</p>
+
+<p><img src="https://lubolab.com/images/2018/02/matrix.png" alt="The Matrix" /></p>
+
+</div>
+
+
+      <footer>
+  
+<span class="share-box">Share this on:
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2flubolab.com%2fbuilding-sensor-network-bc%2f" onclick="window.open(this.href, 'mywin',
+'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"><i class="fa fa-facebook-official "></i></a>
+
+    <a href="https://twitter.com/intent/tweet?text=Building%20Sensor%20Network%3a%20with%20BigClown&amp;url=https%3a%2f%2flubolab.com%2fbuilding-sensor-network-bc%2f" onclick="window.open(this.href, 'mywin',
+'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"><i class="fa fa-twitter"></i></a>
+
+    <a href="https://plus.google.com/share?url=https%3a%2f%2flubolab.com%2fbuilding-sensor-network-bc%2f" onclick="window.open(this.href, 'mywin',
+'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"><i class="fa fa-google-plus"></i></a>
+
+    <a href="http://www.reddit.com/submit?url=https%3a%2f%2flubolab.com%2fbuilding-sensor-network-bc%2f" onclick="window.open(this.href, 'mywin',
+'left=20,top=20,width=900,height=500,toolbar=1,resizable=0'); return false;"><i class="fa fa-reddit"></i></a>
+
+    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2flubolab.com%2fbuilding-sensor-network-bc%2f&amp;title=Building%20Sensor%20Network%3a%20with%20BigClown" onclick="window.open(this.href, 'mywin',
+'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"><i class="fa fa-linkedin"></i></a>
+
+    <a href="mailto:?subject=Building%20Sensor%20Network%3a%20with%20BigClown&amp;body=Check out this site https%3a%2f%2flubolab.com%2fbuilding-sensor-network-bc%2f" data-proofer-ignore=""><i class="fa fa-envelope"></i></a>
+  </span>
+
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+      
+  
+    <nav><ul class="pager">
+    
+        <li class="previous">
+          <a href="https://lubolab.com/camera-events-the-etl/" title="Camera Events: The ETL">
+            <span aria-hidden="true">&larr;</span>Previous
+          </a>
+        </li>
+    
+
+    
+    </ul> </nav>
+  
+
+
+</div>
+
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+  
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+  (function() {
+    
+    
+    if (window.location.hostname == "localhost")
+      return;
+
+    var dsq = document.createElement('script'); dsq.async = true; dsq.type = 'text/javascript';
+    dsq.src = '//lubolab.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+</div>
+
+</footer>
+
+    </div>
+    
+      <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+        <div>
+  
+
+    <div class="section">
+      <header><div class="title"><b>Latest Posts</b></div></header>
+      <div class="content">
+        <ul>
+        
+          <li>
+          <a href="https://lubolab.com/building-sensor-network-bc/">Building Sensor Network: with BigClown</a>
+          </li>
+        
+          <li>
+          <a href="https://lubolab.com/camera-events-the-etl/">Camera Events: The ETL</a>
+          </li>
+        
+          <li>
+          <a href="https://lubolab.com/camera-events-data-model/">Camera Events: Data Model</a>
+          </li>
+        
+          <li>
+          <a href="https://lubolab.com/new_setup_for_this_blog/">New setup for this blog: Migration from Ghost to Hugo</a>
+          </li>
+        
+          <li>
+          <a href="https://lubolab.com/astronomical-events/">Astronomical Events</a>
+          </li>
+        
+          <li>
+          <a href="https://lubolab.com/the-data-lab-web-app/">Reporting: Data Lab Web App</a>
+          </li>
+        
+          <li>
+          <a href="https://lubolab.com/weather-data-mart/">Weather Data Mart</a>
+          </li>
+        
+          <li>
+          <a href="https://lubolab.com/detail-layer-logical-data-model/">Detail Layer: Logical Data Model</a>
+          </li>
+        
+          <li>
+          <a href="https://lubolab.com/my-personal-dwh-kickoff/">My Personal Data Warehouse Kickoff</a>
+          </li>
+        
+        </ul>
+      </div>
+    </div>
+
+    
+      
+      
+    
+      
+      
+      <div class="section taxonomies">
+        <header><div class="title"><b>tag</b></div></header>
+
+        <div class="content">
+          <ul>
+            <li><a href="https://lubolab.com/tags/personal-dwh">personal-dwh</a></li><li><a href="https://lubolab.com/tags/blogging-platform">blogging-platform</a></li>
+          </ul>
+        </div>
+      </div>
+      
+    
+      
+      
+    
+
+</div>
+
+      </div>
+    
+  </div>
+</div>
+    
+<footer class="footer hidden-print">
+  <div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+           <div class="pull-left">
+  <a class="toplink" href="javascript:" id="return-to-top">back to top</a>
+</div>
+<div class="pull-right">
+
+<a href="https://lubolab.com/"></a> <i>&middot;</i>
+
+</div>
+
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
+              
+    
+
+    
+<div class="container copyright">
+    <small>
+  &copy; 2017 Lubolab
+
+  </small>
+</div>
+
+
+
+        </div>
+    </div>
+  </div>
+</footer>
+
+    
+
+<script src="https://lubolab.com/js/jquery.min.js"></script>
+<script src="https://lubolab.com/js/bootstrap.min.js"></script>
+
+
+<script src="https://lubolab.com/js/highlight.pack.js"></script>
+<script src="https://lubolab.com/js/site.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+<script>
+  var _gaq=[['_setAccount','UA-90639023-1'],['_trackPageview']];
+  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+  g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+  s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+
+<script>
+var ENABLE_POPOVER =  false , 
+EXPIRE_COOKIE =  5 , 
+SHOW_MODAL_TIMEOUT =  10000 , 
+MOUSE_LEAVE =  true , 
+MODAL_SIZE = "", 
+POST_URL = "https://zapier.com/hooks/catch/1227563/", 
+SIGNUP_HEADER = "Join Our Newsletter",
+HEADER_IMAGE = "//placehold.it/1000x600",
+IMG_DESCRIPTION = "Placeholder image for this popover modal optin form",
+SIGNUP_TEXT = "Signup today for free and be the first to get notified on new updates.",
+INPUT_PLACEHOLDER = "Enter your email",
+SUBMIT_BUTTON = "Subscribe",
+SUCCESS_MESSAGE = "Thanks for your subscription!",
+ERROR_MESSAGE = "Submitting form failed!",
+OPTIN =  true ,
+COOKIE_NAME = "mycookie1",
+CONTENTLANGUAGE = ""; 
+</script>
+
+
+
+
+
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js"></script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/config/TeX-AMS-MML_HTMLorMML.js"></script>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[','\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    for(var all in MathJax.Hub.getAllJax()) {
+        all.SourceElement().parentNode.className += ' has-jax';
+
+    }
+});
+</script>
+
+
+
+
+
+
+  </body>
+</html>
+
