@@ -3,7 +3,7 @@ date = "2018-02-05T03:57:28+02:00"
 draft = false
 title = "Building Sensor Network: with BigClown"
 
-tags = [ "Personal DWH" ]
+tags = [ "Personal DWH", "BigClown" ]
 +++
 
 ### The Motivation
