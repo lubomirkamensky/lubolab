@@ -3,7 +3,7 @@ date = "2018-01-13T03:57:28+02:00"
 draft = false
 title = "Camera Events: Data Model"
 
-tags = [ "Personal DWH" ]
+tags = [ "Personal DWH", "Netatmo" ]
 +++
 
 ### The Idea

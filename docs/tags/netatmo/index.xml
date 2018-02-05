@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Netatmo on Lubolab</title>
+    <link>https://lubolab.com/tags/netatmo/</link>
+    <description>Recent content in Netatmo on Lubolab</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <managingEditor>lubomir.kamensky@gmail.com (Lubomir Kamensky)</managingEditor>
+    <webMaster>lubomir.kamensky@gmail.com (Lubomir Kamensky)</webMaster>
+    <copyright>(c) 2017 Lubolab</copyright>
+    <lastBuildDate>Sun, 14 Jan 2018 03:57:28 +0200</lastBuildDate>
+    
+	<atom:link href="https://lubolab.com/tags/netatmo/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Camera Events: The ETL</title>
+      <link>https://lubolab.com/camera-events-the-etl/</link>
+      <pubDate>Sun, 14 Jan 2018 03:57:28 +0200</pubDate>
+      <author>lubomir.kamensky@gmail.com (Lubomir Kamensky)</author>
+      <guid>https://lubolab.com/camera-events-the-etl/</guid>
+      <description>The ETL Script environment We are going to access Netatmo cameras using Netatmo Connect API which is basically REST API providing JSON responses. I think the best scripting environment for work with dictionaries, lists, and sets is Python.
+And there is even nice client simplifying the communication with this API in Python netatmo-api-python provided by Philippe Larduinat. Well, it wasn&amp;rsquo;t hard to decide and I installed the latest version of 3.</description>
+    </item>
+    
+    <item>
+      <title>Camera Events: Data Model</title>
+      <link>https://lubolab.com/camera-events-data-model/</link>
+      <pubDate>Sat, 13 Jan 2018 03:57:28 +0200</pubDate>
+      <author>lubomir.kamensky@gmail.com (Lubomir Kamensky)</author>
+      <guid>https://lubolab.com/camera-events-data-model/</guid>
+      <description>The Idea I have few smart Netatmo cameras, both indoor and outdoor. And it is quite logical to integrate them into my personal Datawarehouse. There is even nice open API supporting such intention.
+The goal is to load event data into detail layer and store the snapshot photos in Google photos using the Google Backup and Sync. Then, of course, somehow link the data with the photos.
+The Data Model Concept This time we are going to face bit more complicated interaction with the source system.</description>
+    </item>
+    
+  </channel>
+</rss>

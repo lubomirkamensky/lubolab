@@ -3,7 +3,7 @@ date = "2018-01-14T03:57:28+02:00"
 draft = false
 title = "Camera Events: The ETL"
 
-tags = [ "Personal DWH" ]
+tags = [ "Personal DWH", "Netatmo" ]
 +++
 
 ### The ETL Script environment
