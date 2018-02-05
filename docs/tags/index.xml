@@ -9,10 +9,19 @@
     <managingEditor>lubomir.kamensky@gmail.com (Lubomir Kamensky)</managingEditor>
     <webMaster>lubomir.kamensky@gmail.com (Lubomir Kamensky)</webMaster>
     <copyright>(c) 2017 Lubolab</copyright>
-    <lastBuildDate>Sat, 09 Dec 2017 03:57:28 +0200</lastBuildDate>
+    <lastBuildDate>Mon, 05 Feb 2018 03:57:28 +0200</lastBuildDate>
     
 	<atom:link href="https://lubolab.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Bigclown</title>
+      <link>https://lubolab.com/tags/bigclown/</link>
+      <pubDate>Mon, 05 Feb 2018 03:57:28 +0200</pubDate>
+      <author>lubomir.kamensky@gmail.com (Lubomir Kamensky)</author>
+      <guid>https://lubolab.com/tags/bigclown/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Blogging Platform</title>
