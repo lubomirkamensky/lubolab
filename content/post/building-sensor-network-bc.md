@@ -392,30 +392,14 @@ I prefer to customize the node names, to have names instead of numbers. And I do
 
 Then I can relate the actual location and role to the node name when needed.
 
-To customize node names:
+To customize node names use MQTT:
 ```
-sudo nano /etc/bigclown/bcg-ud.yml
-```
-
-and make changes in a similar manner:
-```
-device: /dev/bcUD0
-name: "usb-dongle"
-mqtt:
-    host: localhost
-    port: 1883
-rename:
-  836d19838e5e: ulmus
-  836d19822047: fraxinus
-  836d19822262: salix
-  836d19822e3b: quercus
-  836d19821824: pinus
-  836d19822b26: carpinus
-``` 
-
-Then just restart the process
-``` 
-pm2 restart bcg-ud
+mosquitto_pub -t 'gateway/usb-dongle/alias/set' -m '{"id": "836d19838e5e", "alias": "ulmus"}'
+mosquitto_pub -t 'gateway/usb-dongle/alias/set' -m '{"id": "836d19822047", "alias": "fraxinus"}'
+mosquitto_pub -t 'gateway/usb-dongle/alias/set' -m '{"id": "836d19822262", "alias": "salix"}'
+mosquitto_pub -t 'gateway/usb-dongle/alias/set' -m '{"id": "836d19822e3b", "alias": "quercus"}'
+mosquitto_pub -t 'gateway/usb-dongle/alias/set' -m '{"id": "836d19821824", "alias": "pinus"}'
+mosquitto_pub -t 'gateway/usb-dongle/alias/set' -m '{"id": "836d19822b26", "alias": "carpinus"}'
 ``` 
 
 #### The Matrix: BigClown Sensor Network
