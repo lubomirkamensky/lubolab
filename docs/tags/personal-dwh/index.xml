@@ -9,10 +9,22 @@
     <managingEditor>lubomir.kamensky@gmail.com (Lubomir Kamensky)</managingEditor>
     <webMaster>lubomir.kamensky@gmail.com (Lubomir Kamensky)</webMaster>
     <copyright>(c) 2017 Lubolab</copyright>
-    <lastBuildDate>Mon, 05 Feb 2018 03:57:28 +0200</lastBuildDate>
+    <lastBuildDate>Tue, 06 Feb 2018 03:57:28 +0200</lastBuildDate>
     
 	<atom:link href="https://lubolab.com/tags/personal-dwh/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>IoT Doorbell: with BigClown</title>
+      <link>https://lubolab.com/iot-doorbell-bc/</link>
+      <pubDate>Tue, 06 Feb 2018 03:57:28 +0200</pubDate>
+      <author>lubomir.kamensky@gmail.com (Lubomir Kamensky)</author>
+      <guid>https://lubolab.com/iot-doorbell-bc/</guid>
+      <description>The Idea There are many situations when you miss a delivery or a visitor while being in the garden, garage, workshop or just watching a movie or listening music.
+Of course, there are wireless doorbell extenders, but I prefer system solution.
+The idea is simple, to integrate the standard wired doorbell into my sensor network so each doorbell ring generates MQTT message as any other sensor.
+Then there are unlimited options how to utilize the doorbell events.</description>
+    </item>
     
     <item>
       <title>Building Sensor Network: with BigClown</title>

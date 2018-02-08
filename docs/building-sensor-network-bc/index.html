@@ -45,7 +45,7 @@
 <link rel="canonical" href="https://lubolab.com/building-sensor-network-bc/" />
 <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://lubolab.com/touch-icon-144-precomposed.png">
 <link rel="icon" href="https://lubolab.com/favicon.png">
-<meta name="generator" content="Hugo 0.31.1" />
+<meta name="generator" content="Hugo 0.25.1" />
 
   <!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.js"></script>
@@ -135,7 +135,7 @@
 
   <small>
   &middot; Read in about 10 min
-  &middot; (2036 words)
+  &middot; (2046 words)
   &middot; 
 <span class="share-box">Share this on:
     <a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2flubolab.com%2fbuilding-sensor-network-bc%2f" onclick="window.open(this.href, 'mywin',
@@ -559,30 +559,14 @@ pm2 save
 
 <p>Then I can relate the actual location and role to the node name when needed.</p>
 
-<p>To customize node names:</p>
+<p>To customize node names use MQTT:</p>
 
-<pre><code>sudo nano /etc/bigclown/bcg-ud.yml
-</code></pre>
-
-<p>and make changes in a similar manner:</p>
-
-<pre><code>device: /dev/bcUD0
-name: &quot;usb-dongle&quot;
-mqtt:
-    host: localhost
-    port: 1883
-rename:
-  836d19838e5e: ulmus
-  836d19822047: fraxinus
-  836d19822262: salix
-  836d19822e3b: quercus
-  836d19821824: pinus
-  836d19822b26: carpinus
-</code></pre>
-
-<p>Then just restart the process</p>
-
-<pre><code>pm2 restart bcg-ud
+<pre><code>mosquitto_pub -t 'gateway/usb-dongle/alias/set' -m '{&quot;id&quot;: &quot;836d19838e5e&quot;, &quot;alias&quot;: &quot;ulmus&quot;}'
+mosquitto_pub -t 'gateway/usb-dongle/alias/set' -m '{&quot;id&quot;: &quot;836d19822047&quot;, &quot;alias&quot;: &quot;fraxinus&quot;}'
+mosquitto_pub -t 'gateway/usb-dongle/alias/set' -m '{&quot;id&quot;: &quot;836d19822262&quot;, &quot;alias&quot;: &quot;salix&quot;}'
+mosquitto_pub -t 'gateway/usb-dongle/alias/set' -m '{&quot;id&quot;: &quot;836d19822e3b&quot;, &quot;alias&quot;: &quot;quercus&quot;}'
+mosquitto_pub -t 'gateway/usb-dongle/alias/set' -m '{&quot;id&quot;: &quot;836d19821824&quot;, &quot;alias&quot;: &quot;pinus&quot;}'
+mosquitto_pub -t 'gateway/usb-dongle/alias/set' -m '{&quot;id&quot;: &quot;836d19822b26&quot;, &quot;alias&quot;: &quot;carpinus&quot;}'
 </code></pre>
 
 <h4 id="the-matrix-bigclown-sensor-network">The Matrix: BigClown Sensor Network</h4>
@@ -628,6 +612,12 @@ rename:
     
 
     
+      <li class="next">
+        <a href="https://lubolab.com/iot-doorbell-bc/" title="IoT Doorbell: with BigClown">
+            Next <span aria-hidden="true">&rarr;</span>
+        </a>
+      </li>
+    
     </ul> </nav>
   
 
@@ -666,6 +656,10 @@ rename:
       <header><div class="title"><b>Latest Posts</b></div></header>
       <div class="content">
         <ul>
+        
+          <li>
+          <a href="https://lubolab.com/iot-doorbell-bc/">IoT Doorbell: with BigClown</a>
+          </li>
         
           <li>
           <a href="https://lubolab.com/building-sensor-network-bc/">Building Sensor Network: with BigClown</a>
@@ -718,7 +712,7 @@ rename:
 
         <div class="content">
           <ul>
-            <li><a href="https://lubolab.com/tags/personal-dwh">personal-dwh</a></li><li><a href="https://lubolab.com/tags/netatmo">netatmo</a></li><li><a href="https://lubolab.com/tags/bigclown">bigclown</a></li><li><a href="https://lubolab.com/tags/blogging-platform">blogging-platform</a></li>
+            <li><a href="https://lubolab.com/tags/personal-dwh">personal-dwh</a></li><li><a href="https://lubolab.com/tags/bigclown">bigclown</a></li><li><a href="https://lubolab.com/tags/netatmo">netatmo</a></li><li><a href="https://lubolab.com/tags/blogging-platform">blogging-platform</a></li>
           </ul>
         </div>
       </div>
