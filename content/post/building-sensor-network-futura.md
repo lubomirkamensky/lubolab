@@ -14,13 +14,13 @@ It was one issue I had with the unit and couldn't fix it within the standard pro
 
 I think there is a bit naive idea that if you set the optimal temperature, then the main requirement is to keep such temperature exactly and strictly on that level at any point of time. But that is infitely far from the reality. 
 
-Functional heat recovery unit should think ahead a bit. So during a hot summer when the temperature during the night fall below the required level it cannot start recovering the heat to keep the exact required temperature, that would be definitely wasting the perfect opportunity to cool the house to cope better with the heat coming within the day.
+Functional heat recovery unit should think ahead a bit. So during a hot summer if the temperature during the night fall below the required level it shouldn't start recovering the heat to keep the exact required temperature. That would be definitely wasting the perfect opportunity to cool the house a bit before the hot day comes again.
 
-And similarily for the cold winter. If we light our fireplace and the indoor temperature goes under the required level, I don't want the heat unit to switch to bypass mode immediately and waste all the heat.
+And similarily for the cold winter. If we light our fireplace and the indoor temperature goes above the required level, I don't want the heat unit to start bypass mode immediately and waste all the heat.
 
-Of course it is possible to always shift the required temperature in the mobile app, but honestly this is task for the machine not for any creative human being. 
+Of course it is possible to always shift the required temperature in the mobile app, but honestly this is task for the machine not for lazy creative human being. 
 
-Fortunately the solution is easy, just to set the required temperature way above the optimal in winter and way below the optimal in summer. Then everything works exactly how it should. Now we are geting close to the issue I had.
+Fortunately the solution is easy, just to set the required temperature way above the optimal in winter and way below the optimal in summer. Then everything works exactly how it should. Now we are finally geting close to the issue I had.
 
 Unfortunately some of the settings get lost whenever the heat recovery unit  disconnects from the power supply. And the required temperature is one of them so it resets to the default value 21 degrees. Consulting this issue with product support they say the unit should keep all the setting but so far cannot find out why it is not so. 
 
@@ -50,8 +50,7 @@ For each attribute we need to specify following information: "Topic", "Register"
 Supporting our lazyness, it allowes to define defaults for constant values. 
 For our purpose we define two big groups of attributes, one for Input registers, one for Holding registers.  Specification of each group starts with default definition specifying everything but the first two values.
 
-Then for any  attribute we specify just the MQTT topic and position in Modbus Registers.
-See the shortened version of the [register definition](https://github.com/lubomirkamensky/modbus2mqtt/blob/master/futura.csv) below. There is just one diference between the groups. The FunctionCode 4  for Input registers and FunctionCode 3 for Holding registers.
+Then for any  attribute we specify just the MQTT topic and position in Modbus Registers. There is just one diference between the groups. The FunctionCode 4  for Input registers and FunctionCode 3 for Holding registers. See the shortened version of the [register definition](https://github.com/lubomirkamensky/modbus2mqtt/blob/master/futura.csv) below. 
 
 ```
 # Input Registers 
@@ -73,9 +72,26 @@ overpressure_tm,3
 night_tm,4
 ```
 
-Having the register definition file in place, we can test how it works
+Having the register definition file in place, we can test how it works:
 
 ```
 python3 modbus2mqtt.py --mqtt-topic futura --tcp HOST_IP --registers futura.csv
+```
+
+and in second terminal subscribe to the futura messages:
+
+```
+mosquitto_sub -v -t 'futura/#'
+```
+
+And you should see something like this:
+
+![The Matrix](/images/2018/02/futura.png)
+
+Then the final step is to set this new python gate as anothe pm2 process. 
+
+```
+pm2 start /usr/bin/python3 --name "json2mqtt-neurio" -- /home/luba/Git/modbus2mqtt/modbus2mqtt.py --mqtt-topic futura --tcp HOST_IP --registers /home/luba/Git/modbus2mqtt/futura.csv
+pm2 save
 ```
 
