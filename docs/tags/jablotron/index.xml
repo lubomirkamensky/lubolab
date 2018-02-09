@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Jablotron on Lubolab</title>
+    <link>https://lubolab.com/tags/jablotron/</link>
+    <description>Recent content in Jablotron on Lubolab</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <managingEditor>lubomir.kamensky@gmail.com (Lubomir Kamensky)</managingEditor>
+    <webMaster>lubomir.kamensky@gmail.com (Lubomir Kamensky)</webMaster>
+    <copyright>(c) 2017 Lubolab</copyright>
+    <lastBuildDate>Fri, 09 Feb 2018 03:57:28 +0200</lastBuildDate>
+    
+	<atom:link href="https://lubolab.com/tags/jablotron/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Building Sensor Network: Jablotron Futura integration</title>
+      <link>https://lubolab.com/building-sensor-network-futura/</link>
+      <pubDate>Fri, 09 Feb 2018 03:57:28 +0200</pubDate>
+      <author>lubomir.kamensky@gmail.com (Lubomir Kamensky)</author>
+      <guid>https://lubolab.com/building-sensor-network-futura/</guid>
+      <description>Jablotron Futura Futura is a heat recovery unit, sort of the heart of a house ventilation system and as such, it can introduce complex information about the indoor air quality into my sensor network. But to be honest that fact wasn&amp;rsquo;t the main driver for its integration.
+The driver It was one issue I had with the unit and couldn&amp;rsquo;t fix it within the standard product support. The behavior of the units depends on the settings you give it.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://lubolab.com/building-sensor-network-futura/</loc>
+    <lastmod>2018-02-09T03:57:28+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://lubolab.com/iot-doorbell-bc/</loc>
     <lastmod>2018-02-08T03:57:28+02:00</lastmod>
   </url>
@@ -70,8 +75,26 @@
   </url>
   
   <url>
+    <loc>https://lubolab.com/tags/futura/</loc>
+    <lastmod>2018-02-09T03:57:28+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://lubolab.com/tags/jablotron/</loc>
+    <lastmod>2018-02-09T03:57:28+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://lubolab.com/</loc>
-    <lastmod>2018-02-08T03:57:28+02:00</lastmod>
+    <lastmod>2018-02-09T03:57:28+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://lubolab.com/tags/modbus2mqtt/</loc>
+    <lastmod>2018-02-09T03:57:28+02:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -83,13 +106,13 @@
   
   <url>
     <loc>https://lubolab.com/tags/personal-dwh/</loc>
-    <lastmod>2018-02-08T03:57:28+02:00</lastmod>
+    <lastmod>2018-02-09T03:57:28+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://lubolab.com/post/</loc>
-    <lastmod>2018-02-08T03:57:28+02:00</lastmod>
+    <lastmod>2018-02-09T03:57:28+02:00</lastmod>
     <priority>0</priority>
   </url>
   
