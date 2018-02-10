@@ -137,7 +137,7 @@
 
   <small>
   &middot; Read in about 2 min
-  &middot; (330 words)
+  &middot; (327 words)
   &middot; 
 <span class="share-box">Share this on:
     <a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2flubolab.com%2fbuilding-sensor-network-neurio%2f" onclick="window.open(this.href, 'mywin',
@@ -210,9 +210,12 @@
 <pre><code>[ (i['type'],i['p_W']) for i in dataSet['channels'] ]
 </code></pre>
 
-<p>where &laquo;dataSet&raquo; refers to the root in JSON dictionary tree. Basically, it creates a list of channel types and power in watts values.</p>
+<p>where &laquo;dataSet&raquo; refers to the root in JSON dictionary tree. And the output is always in the format:</p>
 
-<p>And this list is then easily published over MQTT using Eclipse Paho for Python library, resulting in something like:</p>
+<pre><code>[attribute_name, attribute_value]
+</code></pre>
+
+<p>which can be easily published over MQTT using Eclipse Paho for Python library, resulting this time in something like:</p>
 
 <pre><code>neurio/PHASE_A_CONSUMPTION 116
 neurio/PHASE_B_CONSUMPTION 80
