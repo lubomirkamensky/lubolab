@@ -33,9 +33,12 @@ The simple template can look like this:
 [ (i['type'],i['p_W']) for i in dataSet['channels'] ]
 ```
 
-where "dataSet" refers to the root in JSON dictionary tree. Basically, it creates a list of channel types and power in watts values.
+where "dataSet" refers to the root in JSON dictionary tree. And the output is always in the format:
+```
+[attribute_name, attribute_value]
+```
 
-And this list is then easily published over MQTT using Eclipse Paho for Python library, resulting in something like:
+which can be easily published over MQTT using Eclipse Paho for Python library, resulting this time in something like:
 
 ```
 neurio/PHASE_A_CONSUMPTION 116
