@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Neurio on Lubolab</title>
+    <link>https://lubolab.com/tags/neurio/</link>
+    <description>Recent content in Neurio on Lubolab</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <managingEditor>lubomir.kamensky@gmail.com (Lubomir Kamensky)</managingEditor>
+    <webMaster>lubomir.kamensky@gmail.com (Lubomir Kamensky)</webMaster>
+    <copyright>(c) 2017 Lubolab</copyright>
+    <lastBuildDate>Sat, 10 Feb 2018 03:57:28 +0200</lastBuildDate>
+    
+	<atom:link href="https://lubolab.com/tags/neurio/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Building Sensor Network: Neurio integration</title>
+      <link>https://lubolab.com/building-sensor-network-neurio/</link>
+      <pubDate>Sat, 10 Feb 2018 03:57:28 +0200</pubDate>
+      <author>lubomir.kamensky@gmail.com (Lubomir Kamensky)</author>
+      <guid>https://lubolab.com/building-sensor-network-neurio/</guid>
+      <description>Neurio Neurio Home Energy Monitor is one of my smart IoT sensors which offers nice cloud app. This one monitors the detailed house power consumption.
+When I started to build my own sensor network independent of the cloud availability, I was pleased to find out that, not like Netatmo sensors, Neurio offers also local access to the actual measurements. Then the task was clear, I need to have power consumption information available through MQTT.</description>
+    </item>
+    
+  </channel>
+</rss>

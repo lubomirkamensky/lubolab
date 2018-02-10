@@ -92,4 +92,3 @@ Then the final step is to set this new Python gate as another pm2 process.
 pm2 start /usr/bin/python3 --name "json2mqtt-neurio" -- /home/luba/Git/modbus2mqtt/modbus2mqtt.py --mqtt-topic futura --tcp HOST_IP --registers /home/luba/Git/modbus2mqtt/futura.csv
 pm2 save
 ```
-

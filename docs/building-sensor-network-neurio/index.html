@@ -5,7 +5,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  <title>New setup for this blog: Migration from Ghost to Hugo  &middot; Lubolab</title>
+  <title>Building Sensor Network: Neurio integration  &middot; Lubolab</title>
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="HandheldFriendly" content="True">
 <meta name="MobileOptimized" content="320">
@@ -14,23 +14,27 @@
 
 <meta name="description" content="" />
 
-<meta name="keywords" content="Blogging platform, ">
+<meta name="keywords" content="Personal DWH, Neurio, JSON2MQTT, ">
 
 
-<meta property="og:title" content="New setup for this blog: Migration from Ghost to Hugo  &middot; Lubolab ">
+<meta property="og:title" content="Building Sensor Network: Neurio integration  &middot; Lubolab ">
 <meta property="og:site_name" content="Lubolab"/>
-<meta property="og:url" content="https://lubolab.com/new_setup_for_this_blog/" />
+<meta property="og:url" content="https://lubolab.com/building-sensor-network-neurio/" />
 <meta property="og:locale" content="en">
 
 
 <meta property="og:type" content="article" />
 <meta property="og:description" content=""/>
-<meta property="og:article:published_time" content="2017-12-09T03:57:28&#43;02:00" />
-<meta property="og:article:modified_time" content="2017-12-09T03:57:28&#43;02:00" />
+<meta property="og:article:published_time" content="2018-02-10T03:57:28&#43;02:00" />
+<meta property="og:article:modified_time" content="2018-02-10T03:57:28&#43;02:00" />
 
   
     
-<meta property="og:article:tag" content="Blogging platform">
+<meta property="og:article:tag" content="Personal DWH">
+    
+<meta property="og:article:tag" content="Neurio">
+    
+<meta property="og:article:tag" content="JSON2MQTT">
     
   
 
@@ -40,7 +44,7 @@
 
 
 
-<link rel="canonical" href="https://lubolab.com/new_setup_for_this_blog/" />
+<link rel="canonical" href="https://lubolab.com/building-sensor-network-neurio/" />
 <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://lubolab.com/touch-icon-144-precomposed.png">
 <link rel="icon" href="https://lubolab.com/favicon.png">
 <meta name="generator" content="Hugo 0.25.1" />
@@ -121,37 +125,37 @@
       <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
   <div class="text-center">
 
-    <h1>New setup for this blog: Migration from Ghost to Hugo
+    <h1>Building Sensor Network: Neurio integration
 </h1>
 
     <div class="metas">
 <small>
   <i class="fa fa-calendar"></i>
-  <time datetime="2017-12-09">9 Dec, 2017</time>
+  <time datetime="2018-02-10">10 Feb, 2018</time>
 </small>
 
 
   <small>
-  &middot; Read in about 5 min
-  &middot; (967 words)
+  &middot; Read in about 2 min
+  &middot; (330 words)
   &middot; 
 <span class="share-box">Share this on:
-    <a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2flubolab.com%2fnew_setup_for_this_blog%2f" onclick="window.open(this.href, 'mywin',
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2flubolab.com%2fbuilding-sensor-network-neurio%2f" onclick="window.open(this.href, 'mywin',
 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"><i class="fa fa-facebook-official "></i></a>
 
-    <a href="https://twitter.com/intent/tweet?text=New%20setup%20for%20this%20blog%3a%20Migration%20from%20Ghost%20to%20Hugo&amp;url=https%3a%2f%2flubolab.com%2fnew_setup_for_this_blog%2f" onclick="window.open(this.href, 'mywin',
+    <a href="https://twitter.com/intent/tweet?text=Building%20Sensor%20Network%3a%20Neurio%20integration&amp;url=https%3a%2f%2flubolab.com%2fbuilding-sensor-network-neurio%2f" onclick="window.open(this.href, 'mywin',
 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"><i class="fa fa-twitter"></i></a>
 
-    <a href="https://plus.google.com/share?url=https%3a%2f%2flubolab.com%2fnew_setup_for_this_blog%2f" onclick="window.open(this.href, 'mywin',
+    <a href="https://plus.google.com/share?url=https%3a%2f%2flubolab.com%2fbuilding-sensor-network-neurio%2f" onclick="window.open(this.href, 'mywin',
 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"><i class="fa fa-google-plus"></i></a>
 
-    <a href="http://www.reddit.com/submit?url=https%3a%2f%2flubolab.com%2fnew_setup_for_this_blog%2f" onclick="window.open(this.href, 'mywin',
+    <a href="http://www.reddit.com/submit?url=https%3a%2f%2flubolab.com%2fbuilding-sensor-network-neurio%2f" onclick="window.open(this.href, 'mywin',
 'left=20,top=20,width=900,height=500,toolbar=1,resizable=0'); return false;"><i class="fa fa-reddit"></i></a>
 
-    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2flubolab.com%2fnew_setup_for_this_blog%2f&amp;title=New%20setup%20for%20this%20blog%3a%20Migration%20from%20Ghost%20to%20Hugo" onclick="window.open(this.href, 'mywin',
+    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2flubolab.com%2fbuilding-sensor-network-neurio%2f&amp;title=Building%20Sensor%20Network%3a%20Neurio%20integration" onclick="window.open(this.href, 'mywin',
 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"><i class="fa fa-linkedin"></i></a>
 
-    <a href="mailto:?subject=New%20setup%20for%20this%20blog%3a%20Migration%20from%20Ghost%20to%20Hugo&amp;body=Check out this site https%3a%2f%2flubolab.com%2fnew_setup_for_this_blog%2f" data-proofer-ignore=""><i class="fa fa-envelope"></i></a>
+    <a href="mailto:?subject=Building%20Sensor%20Network%3a%20Neurio%20integration&amp;body=Check out this site https%3a%2f%2flubolab.com%2fbuilding-sensor-network-neurio%2f" data-proofer-ignore=""><i class="fa fa-envelope"></i></a>
   </span>
 
   </small>
@@ -159,7 +163,11 @@
 <div class="margin-10">
   <i class="fa fa-tags"></i>
   
-  <a href="https://lubolab.com/tags/blogging-platform" class="label label-primary">Blogging platform</a>
+  <a href="https://lubolab.com/tags/personal-dwh" class="label label-primary">Personal DWH</a>
+  
+  <a href="https://lubolab.com/tags/neurio" class="label label-primary">Neurio</a>
+  
+  <a href="https://lubolab.com/tags/json2mqtt" class="label label-primary">JSON2MQTT</a>
   
 
 
@@ -174,79 +182,62 @@
       <div class="content">
   
 
-<h3 id="world-wild-jungle">World Wild Jungle</h3>
+<h3 id="neurio">Neurio</h3>
 
-<p>As I already complained in the post <a href="https://lubolab.com/the-data-lab-web-app/">Reporting: Data Lab Web App</a> earlier this year, I am quite confused regarding the actual complexity of web development.  The evolution of the web technologies created a brand new world.  World Wild virtual jungle. The diversity of species living there is gigantic. It is getting closer to real nature where it is impossible for a man to get detail understanding of all living forms. Even the scientists have to specialize and focus on specific subset only.</p>
+<p><a href="https://www.neur.io/energy-monitor/" target="_blank">Neurio Home Energy Monitor</a> is one of my smart IoT sensors which offers nice cloud app. This one monitors the detailed house power consumption.</p>
 
-<p>We live in the times of rapid expansions of web technologies. New forms arise each day while others are reaching their dead end.  So to pick just one particular platform to fit perfectly your needs in long-term is definitely a challenge.  Especially when running a personal blog is not a full-time job but only a hobby.</p>
+<p>When I started to build my own sensor network independent of the cloud availability, I was pleased to find out that, not like Netatmo sensors, Neurio offers also local access to the actual measurements. Then the task was clear, I need to have power consumption information available through MQTT.</p>
 
-<h3 id="evolution-path-of-my-blogging-platform">Evolution path of my blogging platform</h3>
+<h3 id="neurio-local-access">Neurio local access</h3>
 
-<p>Don&rsquo;t get me wrong, there is a plenty of friendly platforms which you can instantly use for easy blogging.  The problems start when you want to be in control of things.  When you want to experiment with any part of a content and implement whatever idea you get.</p>
+<p>The Neurio Sensor implements a JSON format sensor value output. By calling <a href="http://IP_address/current-sample" target="_blank">http://IP_address/current-sample</a> the sensor returns latest measurement value.</p>
 
-<p>Then you need some good open source platform with a strong community around.</p>
+<p>So in my case <a href="http://192.168.88.189/current-sample" target="_blank">http://192.168.88.189/current-sample</a> returns now:</p>
 
-<p>Okay, I  will tell you now my own evolution path. First I got a suggestion from my friend to join the <a href="https://www.drupal.org/" target="_blank">Drupal</a> community which is &laquo;of course&raquo; the best. But I quickly realized that to cope with such monster is far beyond my capacity. Then I picked the <a href="https://www.djangoproject.com/" target="_blank">Django</a>, because I like Python and it looked so much easier.  It is definitely much easier than Drupal but still, I  didn&rsquo;t get there to the point when I can focus more on what I want than how to achieve it. The next step was the <a href="https://ghost.org/" target="_blank">Ghost</a>.  With Ghost, I finally started this blog and soon realized what I really need. Simplicity and freedom!  But the Ghost gives you just the first.</p>
-
-<p>Then I heard about the <a href="https://gohugo.io/" target="_blank">Hugo</a>. Well, the first impression wasn&rsquo;t that great. Static site generator, why to go for anything like that?  Fortunately, I was already playing with the idea of static pages for some time. And in fact, there is not much sense in storing the web content in a database to later extract it specifically for each user.  I understand, there are some super cash mechanisms to avoid performance disaster but isn&rsquo;t that too complicated for delivering written texts? If the motivation is teamwork and collaboration isn&rsquo;t then better to use the best tool for that allowing not only team collaboration but also complete versioning control?</p>
-
-<h3 id="the-final-compilation">The final compilation</h3>
-
-<p>Questions like that lead to a combination of versioning tool and static site generator.  The generator takes care of easy maintenance, separation of content from its format. It deals with all the dependencies and libraries providing optimal frontend framework. This gives you a perfect compilation of tools where you don&rsquo;t need to dive into details before you really need to customize something.</p>
-
-<p>And in case of customization, you only focus one thing at one time.  Sure you have to go out of the comfort zone where everything is fixed by somebody else but you are not paying any extra costs for going on your own. Not like with the other monster tools where any minor change requires first building huge complicated infrastructure which allows you to change some tiny thing. Here you simply add your own isolated piece of work on the top of what is already created. There are no limits to that and you don&rsquo;t even pay any extra tax for that.</p>
-
-<p>Sounds great? It is great.  The migration of my prior posts from Ghost to Hugo was super easy. It even uses the same Markdown syntax and shares a similar approach for storing static files like images. In fact, the most difficult part of the migration was to accept the fact that the solution is that simple. Exactly like this post, the most of the talking is just to swallow that fact.</p>
-
-<h3 id="step-by-step-implementation">Step by step  implementation</h3>
-
-<p>Now the shorter part describing the implementation begins.  The final solution uses <a href="https://git-scm.com/" target="_blank">Git</a> as collaboration and versioning tool, <a href="https://github.com/" target="_blank">GitHub</a> as project repository and also website hosting provider and finally <a href="https://www.cloudflare.com/" target="_blank">Cloudflare</a> services to Set Up SSL on Github Pages With Custom Domains. All that for free.</p>
-
-<div class="c_alert c_alert-success"><i class="fa fa-exclamation-triangle"></i> Prerequisites:  installed Git and created GitHub account</div>
-
-<p><b>Step 1</b>: <a href="https://gohugo.io/getting-started/installing" target="_blank">Install Hugo</a>, create new website</p>
-
-<pre><code>hugo new site your_site_name
+<pre><code>{&quot;sensorId&quot;:&quot;0x0000C47F510180C9&quot;,&quot;timestamp&quot;:&quot;2018-02-10T09:44:09Z&quot;,&quot;channels&quot;:[{&quot;type&quot;:&quot;PHASE_A_CONSUMPTION&quot;,&quot;ch&quot;:1,&quot;eImp_Ws&quot;:4979583905,&quot;eExp_Ws&quot;:1792905,&quot;p_W&quot;:98,&quot;q_VAR&quot;:-45,&quot;v_V&quot;:233.666},{&quot;type&quot;:&quot;PHASE_B_CONSUMPTION&quot;,&quot;ch&quot;:2,&quot;eImp_Ws&quot;:4845889558,&quot;eExp_Ws&quot;:3195780,&quot;p_W&quot;:789,&quot;q_VAR&quot;:-214,&quot;v_V&quot;:232.286},{&quot;type&quot;:&quot;PHASE_C_CONSUMPTION&quot;,&quot;ch&quot;:3,&quot;eImp_Ws&quot;:6931117926,&quot;eExp_Ws&quot;:15110144,&quot;p_W&quot;:112,&quot;q_VAR&quot;:-86,&quot;v_V&quot;:235.431},{&quot;type&quot;:&quot;CONSUMPTION&quot;,&quot;ch&quot;:4,&quot;eImp_Ws&quot;:16750543658,&quot;eExp_Ws&quot;:14269510,&quot;p_W&quot;:999,&quot;q_VAR&quot;:-344,&quot;v_V&quot;:233.794}],&quot;cts&quot;:[{&quot;ct&quot;:1,&quot;p_W&quot;:98,&quot;q_VAR&quot;:-45,&quot;v_V&quot;:233.666},{&quot;ct&quot;:2,&quot;p_W&quot;:789,&quot;q_VAR&quot;:-214,&quot;v_V&quot;:232.286},{&quot;ct&quot;:3,&quot;p_W&quot;:112,&quot;q_VAR&quot;:-86,&quot;v_V&quot;:235.431},{&quot;ct&quot;:4,&quot;p_W&quot;:0,&quot;q_VAR&quot;:0,&quot;v_V&quot;:233.623}]}
 </code></pre>
 
-<p>pick some <a href="https://themes.gohugo.io/" target="_blank">Hugo theme</a> and copy its directory into the website themes directory. Copy the content of exampleSite directory from the theme directory to the website root directory.</p>
+<h3 id="time-for-json-to-mqtt-translation-gate">Time for JSON to MQTT translation gate</h3>
 
-<p><b>Step 2</b>: <a href="https://github.com/new" target="_blank">Create new GitHub project repository</a> for your web, clone it on your pc</p>
+<p>This time the short Google research didn&rsquo;t return any existing app and to be honest, I was happy for that. It is refreshing to go on my own in the simplest possible way from time to time.</p>
 
-<pre><code>git clone https://github.com/your_user/your_project.git
+<p>The idea was simple, to create JSON2MQTT translation gate which accepts as parameter URL of a JSON resource and some template specifying how to cope with JSON data.</p>
+
+<p>Python is very powerful in the simplicity of JSON like data transformation and it was very logical to utilize the power of list/set comprehension for the transformation template or mapping file if you will.</p>
+
+<p>The simple template can look like this:</p>
+
+<pre><code>[ (i['type'],i['p_W']) for i in dataSet['channels'] ]
 </code></pre>
 
-<p>and move there the complete content of your Hugo website root directory. Check the structure for <a href="https://github.com/lubomirkamensky/lubolab" target="_blank">this blog</a> if it&rsquo;s not clear.</p>
+<p>where &laquo;dataSet&raquo; refers to the root in JSON dictionary tree. Basically, it creates a list of channel types and power in watts values.</p>
 
-<p><b>Step 3</b>: Update config.toml, setting publishDir = &laquo;docs&raquo;, test the site locally</p>
+<p>And this list is then easily published over MQTT using Eclipse Paho for Python library, resulting in something like:</p>
 
-<pre><code>hugo server -D
+<pre><code>neurio/PHASE_A_CONSUMPTION 116
+neurio/PHASE_B_CONSUMPTION 80
+neurio/PHASE_C_CONSUMPTION 143
+neurio/CONSUMPTION 338
 </code></pre>
 
-<p>publish the content for the web.</p>
+<p>See the complete <a href="https://github.com/lubomirkamensky/JSON2mqtt" target="_blank">source code</a></p>
 
-<pre><code>hugo
+<p>The final step is as always, adding the new gate into pm2 processes</p>
+
+<pre><code>pm2 start /usr/bin/python3 --name &quot;JSON2mqtt-neurio&quot; -- /home/luba/Git/JSON2mqtt/JSON2mqtt.py --JSON http://192.168.88.189/current-sample --map neurio.txt --mqtt-topic neurio
+pm2 save
 </code></pre>
 
-<p>if not clear, check <a href="https://gohugo.io/getting-started/quick-start/" target="_blank">quick-start manual</a>.</p>
+<p>We can check what processes we already have there:</p>
 
-<p><b>Step 4</b>: Push all the changes to your GitHub repository.</p>
+<p><img src="https://lubolab.com/images/2018/02/pm2list.png" alt="The PM2" /></p>
 
-<pre><code>git add --all :/
-git commit -m &quot;Meaningful commit description&quot; 
-git push  
+<p>And of course to subscribe to see the Neurio messages</p>
+
+<pre><code>mosquitto_sub -v -t 'neurio/#'
 </code></pre>
 
-<p><b>Step 5</b>: Go to GitHub repository settings, section GitHUb Pages  and set the source as master branch/docs and set  your domain as the Custom domain.</p>
-
-<p><b>Step 6</b>: Pull the changes to your local repository</p>
-
-<pre><code>git pull
-</code></pre>
-
-<p>copy CNAME file from DOCS directory to your static  directory so it is not lost in case you drop and recreate docs directory. You can check the final structure on GitHub for <a href="https://github.com/lubomirkamensky/lubolab" target="_blank">this blog</a>.</p>
-
-<p><b>Step 7</b>: Update DNS records for your domain, create two A records pointing to 192.30.252.153 and 192.30.252.154, create CNAME record pointing www to your_domain.com.  Use Cloudflare.com to <a href="https://hackernoon.com/set-up-ssl-on-github-pages-with-custom-domains-for-free-a576bdf51bc" target="_blank">Set Up SSL on Github Pages With Custom Domains</a></p>
+<p><img src="https://lubolab.com/images/2018/02/neurio.png" alt="The Matrix" /></p>
 
 </div>
 
@@ -254,22 +245,22 @@ git push
       <footer>
   
 <span class="share-box">Share this on:
-    <a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2flubolab.com%2fnew_setup_for_this_blog%2f" onclick="window.open(this.href, 'mywin',
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2flubolab.com%2fbuilding-sensor-network-neurio%2f" onclick="window.open(this.href, 'mywin',
 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"><i class="fa fa-facebook-official "></i></a>
 
-    <a href="https://twitter.com/intent/tweet?text=New%20setup%20for%20this%20blog%3a%20Migration%20from%20Ghost%20to%20Hugo&amp;url=https%3a%2f%2flubolab.com%2fnew_setup_for_this_blog%2f" onclick="window.open(this.href, 'mywin',
+    <a href="https://twitter.com/intent/tweet?text=Building%20Sensor%20Network%3a%20Neurio%20integration&amp;url=https%3a%2f%2flubolab.com%2fbuilding-sensor-network-neurio%2f" onclick="window.open(this.href, 'mywin',
 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"><i class="fa fa-twitter"></i></a>
 
-    <a href="https://plus.google.com/share?url=https%3a%2f%2flubolab.com%2fnew_setup_for_this_blog%2f" onclick="window.open(this.href, 'mywin',
+    <a href="https://plus.google.com/share?url=https%3a%2f%2flubolab.com%2fbuilding-sensor-network-neurio%2f" onclick="window.open(this.href, 'mywin',
 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"><i class="fa fa-google-plus"></i></a>
 
-    <a href="http://www.reddit.com/submit?url=https%3a%2f%2flubolab.com%2fnew_setup_for_this_blog%2f" onclick="window.open(this.href, 'mywin',
+    <a href="http://www.reddit.com/submit?url=https%3a%2f%2flubolab.com%2fbuilding-sensor-network-neurio%2f" onclick="window.open(this.href, 'mywin',
 'left=20,top=20,width=900,height=500,toolbar=1,resizable=0'); return false;"><i class="fa fa-reddit"></i></a>
 
-    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2flubolab.com%2fnew_setup_for_this_blog%2f&amp;title=New%20setup%20for%20this%20blog%3a%20Migration%20from%20Ghost%20to%20Hugo" onclick="window.open(this.href, 'mywin',
+    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2flubolab.com%2fbuilding-sensor-network-neurio%2f&amp;title=Building%20Sensor%20Network%3a%20Neurio%20integration" onclick="window.open(this.href, 'mywin',
 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"><i class="fa fa-linkedin"></i></a>
 
-    <a href="mailto:?subject=New%20setup%20for%20this%20blog%3a%20Migration%20from%20Ghost%20to%20Hugo&amp;body=Check out this site https%3a%2f%2flubolab.com%2fnew_setup_for_this_blog%2f" data-proofer-ignore=""><i class="fa fa-envelope"></i></a>
+    <a href="mailto:?subject=Building%20Sensor%20Network%3a%20Neurio%20integration&amp;body=Check out this site https%3a%2f%2flubolab.com%2fbuilding-sensor-network-neurio%2f" data-proofer-ignore=""><i class="fa fa-envelope"></i></a>
   </span>
 
   <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -278,18 +269,12 @@ git push
     <nav><ul class="pager">
     
         <li class="previous">
-          <a href="https://lubolab.com/astronomical-events/" title="Astronomical Events">
+          <a href="https://lubolab.com/building-sensor-network-futura/" title="Building Sensor Network: Jablotron Futura integration">
             <span aria-hidden="true">&larr;</span>Previous
           </a>
         </li>
     
 
-    
-      <li class="next">
-        <a href="https://lubolab.com/camera-events-data-model/" title="Camera Events: Data Model">
-            Next <span aria-hidden="true">&rarr;</span>
-        </a>
-      </li>
     
     </ul> </nav>
   
