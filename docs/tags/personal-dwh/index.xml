@@ -9,10 +9,20 @@
     <managingEditor>lubomir.kamensky@gmail.com (Lubomir Kamensky)</managingEditor>
     <webMaster>lubomir.kamensky@gmail.com (Lubomir Kamensky)</webMaster>
     <copyright>(c) 2017 Lubolab</copyright>
-    <lastBuildDate>Sat, 10 Feb 2018 03:57:28 +0200</lastBuildDate>
+    <lastBuildDate>Sun, 11 Feb 2018 03:57:28 +0200</lastBuildDate>
     
 	<atom:link href="https://lubolab.com/tags/personal-dwh/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Building Sensor Network: Computer Battery Monitor</title>
+      <link>https://lubolab.com/building-sensor-network-battery/</link>
+      <pubDate>Sun, 11 Feb 2018 03:57:28 +0200</pubDate>
+      <author>lubomir.kamensky@gmail.com (Lubomir Kamensky)</author>
+      <guid>https://lubolab.com/building-sensor-network-battery/</guid>
+      <description>Battery Monitor over MQTT It can sound quite obscure to publish Computer Battery status over MQTT. But I think it is on the contrary, absolutely essential thing. Let me explain.
+In fact, I was about to write a post about smart alerts, to move finally to something really practical after so many posts focusing just on building the sensor playground. Honestly, I postponed such topic already several times. Always something popped up, what was absolutely essential to cover before moving further.</description>
+    </item>
     
     <item>
       <title>Building Sensor Network: Neurio integration</title>
