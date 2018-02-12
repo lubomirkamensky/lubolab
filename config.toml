@@ -109,7 +109,7 @@ bitbucket = "" # Your Bitbucket profile ID
 linkedin = "lubomirkamensky" # Your LinkedIn profile ID (from public URL)
 googleplus = "" # Your Google+ profile ID
 facebook = "" # Your Facebook profile ID
-twitter = "" # Your Twitter profile ID
+twitter = "LubomirKamensky" # Your Twitter profile ID
 youtube = ""  # Your Youtube channel ID
 flattr = ""  # populate with your flattr uid
 
@@ -142,13 +142,13 @@ extensionmask = []
 [Languages.en]
 languageCode = "en"
 weight = 1
-copyright = "(c) 2017 Lubolab"
+copyright = "(c) 2018 Lubolab"
 title = "Lubolab" # Site title
 
 [[Languages.en.menu.main]]
 name = "Datalab"
 weight = 1
-identifier = ""
+identifier = "Datalab"
 url = "https://datalab.lubolab.com/"
 pre = "<i class='fa fa-flask'></i>"
 
@@ -158,6 +158,13 @@ weight = 0
 identifier = "GitHub"
 url = "https://github.com/lubomirkamensky/lubolab"
 pre = "<i class='fa fa-github'></i>"
+
+[[Languages.en.menu.main]]
+name = "Twitter"
+weight = 0
+identifier = "Twitter"
+url = "https://twitter.com/LubomirKamensky"
+pre = "<i class='fa fa-twitter'></i>"
 
 [[Languages.en.menu.footer]] # add  links to the bottom right corner.
 name = ""
