@@ -20,7 +20,7 @@
       <pubDate>Mon, 12 Feb 2018 03:57:28 +0200</pubDate>
       <author>lubomir.kamensky@gmail.com (Lubomir Kamensky)</author>
       <guid>https://lubolab.com/building-sensor-network-sms/</guid>
-      <description>SMS gateway Before we start designing the nice flows in Node-RED, we need to create functional SMS gateway. The critical communication channel in the sensor network I build and describe in my blog. Having SMS gateway we can create first practical use cases utilizing the data in access layers. Although there is finished just the first access layer now, the MQTT.
+      <description>SMS gateway Before designing the nice flows in Node-RED, it is necessary to create functional SMS gateway. The critical communication channel in the sensor network I build and describe in my blog. Having SMS gateway we can create first practical use cases utilizing the data in access layers. Although there is finished just the first access layer now, the MQTT.
 I bought a cheap 3g USB dongle Huawei E3531 and inspired by article Sending SMS on a Raspberry Pi started the installation.</description>
     </item>
     
