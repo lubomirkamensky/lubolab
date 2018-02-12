@@ -94,6 +94,14 @@
               </a>
             </li>
             
+            <li class="">
+
+              <a href="https://twitter.com/LubomirKamensky" >
+                <i class='fa fa-twitter'></i>
+                Twitter
+              </a>
+            </li>
+            
             
               
           </ul>
@@ -109,6 +117,55 @@
     <div class="row">
       <div class="col-sm-9">
         
+        
+          <div class="row">
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+    <div>
+  <h2><a href="https://lubolab.com/building-sensor-network-sms/">Building Sensor Network: SMS gateway, Node-RED and smart alerts</a>
+</h2>
+
+  <div class="margin-10">
+    <small>
+  <i class="fa fa-calendar"></i>
+  <time datetime="2018-02-12">12 Feb, 2018</time>
+</small>
+
+    
+  <i class="fa fa-tags"></i>
+  
+  <a href="https://lubolab.com/tags/personal-dwh" class="label label-primary">Personal DWH</a>
+  
+  <a href="https://lubolab.com/tags/sms-gate" class="label label-primary">SMS-Gate</a>
+  
+  <a href="https://lubolab.com/tags/node-red" class="label label-primary">Node-RED</a>
+  
+
+
+  </div>
+</div>
+
+    <p>
+  
+  
+    SMS gateway I bought a cheap 3g USB dongle Huawei E3531 and inspired by article Sending SMS on a Raspberry Pi started the installation.
+First this:
+sudo apt-get install ppp usb-modeswitch usb-modeswitch-data  Then some configuration:
+sudo nano /etc/udev/rules.d/40-usb_modeswitch_custom.rules  adding this content:
+# Huawei E3131h-2 ATTRS{idVendor}==&quot;12d1&quot;, ATTRS{idProduct}==&quot;15ca&quot;, RUN+=&quot;usb_modeswitch '%b:%k'&quot;  And another configuration:
+sudo nano /etc/usb_modeswitch.d/12d1\:15ca  adding this content:
+#Huawei E3131 (Variant) TargetVendor= 0x12d1 TargetProductList=&quot;1506&quot; MessageContent=&quot;55534243123456780000000000000011062000000100000000000000000000&quot;  Then reboot with the connected dongle and checking whether it is mounted.
+  
+
+
+</p>
+
+
+    <p class="lead"><a href="https://lubolab.com/building-sensor-network-sms/" class="btn btn-default">Read more &rarr;</a></p>
+
+
+  </div>
+</div>
+
         
           <div class="row">
   <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -492,47 +549,6 @@ The Data Model Concept This time we are going to face bit more complicated inter
 </div>
 
         
-          <div class="row">
-  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-    <div>
-  <h2><a href="https://lubolab.com/the-data-lab-web-app/">Reporting: Data Lab Web App</a>
-</h2>
-
-  <div class="margin-10">
-    <small>
-  <i class="fa fa-calendar"></i>
-  <time datetime="2017-02-17">17 Feb, 2017</time>
-</small>
-
-    
-  <i class="fa fa-tags"></i>
-  
-  <a href="https://lubolab.com/tags/personal-dwh" class="label label-primary">Personal DWH</a>
-  
-
-
-  </div>
-</div>
-
-    <p>
-  
-  
-    Friendly Web App Wanted Now it is the time to start playing with data we have collected. We need some nice, simple, user friendly web application which will be both easy to use and maintain.
-I thought it can help me that I was some time web developer in late 90s. But honestly, I was terrified what happened with web development in past years.
-The time when the developer was in full control of his code using html, css, javascript and some server technology like ASP or PHP are definitely gone.
-  
-
-
-</p>
-
-
-    <p class="lead"><a href="https://lubolab.com/the-data-lab-web-app/" class="btn btn-default">Read more &rarr;</a></p>
-
-
-  </div>
-</div>
-
-        
         
 <nav>
   <ul class="pagination">
@@ -592,6 +608,10 @@ The time when the developer was in full control of his code using html, css, jav
         <ul>
         
           <li>
+          <a href="https://lubolab.com/building-sensor-network-sms/">Building Sensor Network: SMS gateway, Node-RED and smart alerts</a>
+          </li>
+        
+          <li>
           <a href="https://lubolab.com/building-sensor-network-battery/">Building Sensor Network: Computer Battery Monitor</a>
           </li>
         
@@ -625,10 +645,6 @@ The time when the developer was in full control of his code using html, css, jav
         
           <li>
           <a href="https://lubolab.com/astronomical-events/">Astronomical Events</a>
-          </li>
-        
-          <li>
-          <a href="https://lubolab.com/the-data-lab-web-app/">Reporting: Data Lab Web App</a>
           </li>
         
         </ul>
@@ -686,7 +702,7 @@ The time when the developer was in full control of his code using html, css, jav
     
 <div class="container copyright">
     <small>
-  &copy; 2017 Lubolab
+  &copy; 2018 Lubolab
 
   </small>
 </div>

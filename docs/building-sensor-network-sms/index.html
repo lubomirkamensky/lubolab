@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]> <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]> <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Building Sensor Network: SMS gateway, Node-RED and smart alerts  &middot; Lubolab</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<meta name="description" content="" />
+
+<meta name="keywords" content="Personal DWH, SMS-Gate, Node-RED, ">
+
+
+<meta property="og:title" content="Building Sensor Network: SMS gateway, Node-RED and smart alerts  &middot; Lubolab ">
+<meta property="og:site_name" content="Lubolab"/>
+<meta property="og:url" content="https://lubolab.com/building-sensor-network-sms/" />
+<meta property="og:locale" content="en">
+
+
+<meta property="og:type" content="article" />
+<meta property="og:description" content=""/>
+<meta property="og:article:published_time" content="2018-02-12T03:57:28&#43;02:00" />
+<meta property="og:article:modified_time" content="2018-02-12T03:57:28&#43;02:00" />
+
+  
+    
+<meta property="og:article:tag" content="Personal DWH">
+    
+<meta property="og:article:tag" content="SMS-Gate">
+    
+<meta property="og:article:tag" content="Node-RED">
+    
+  
+
+  
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@LubomirKamensky" />
+<meta name="twitter:creator" content="@LubomirKamensky" />
+<meta name="twitter:title" content="Building Sensor Network: SMS gateway, Node-RED and smart alerts" />
+<meta name="twitter:description" content="" />
+<meta name="twitter:url" content="https://lubolab.com/building-sensor-network-sms/" />
+<meta name="twitter:domain" content="https://lubolab.com/">
+  
+
+  
+
+
+
+<link rel="canonical" href="https://lubolab.com/building-sensor-network-sms/" />
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://lubolab.com/touch-icon-144-precomposed.png">
+<link rel="icon" href="https://lubolab.com/favicon.png">
+<meta name="generator" content="Hugo 0.25.1" />
+
+  <!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+
+
+    <link rel="stylesheet" href="https://lubolab.com/css/bootswatch/paper/bootstrap.min.css">
+
+
+<link rel="stylesheet" href="https://lubolab.com/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://lubolab.com/css/style.css">
+
+
+<link rel="stylesheet" href="https://lubolab.com/css/style_custom.css">
+
+
+
+  <link rel="stylesheet" href="https://lubolab.com/css/highlight/default.css">
+
+
+</head>
+<body class="map[name:paper]" data-ng-app="myapp" data-ng-controller="MyController" data-ng-mouseleave="MouseLeave($event)">
+    <header id="main-header">
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        
+          
+          <a class="navbar-brand-img" href="https://lubolab.com/">
+            <img alt="Lubolab" src="https://lubolab.com/images/lubolablogo.png">
+            
+          </a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav navbar-right">
+            
+            
+            <li class="">
+
+              <a href="https://datalab.lubolab.com/" >
+                <i class='fa fa-flask'></i>
+                Datalab
+              </a>
+            </li>
+            
+            <li class="">
+
+              <a href="https://github.com/lubomirkamensky/lubolab" >
+                <i class='fa fa-github'></i>
+                Blog Source code
+              </a>
+            </li>
+            
+            <li class="">
+
+              <a href="https://twitter.com/LubomirKamensky" >
+                <i class='fa fa-twitter'></i>
+                Twitter
+              </a>
+            </li>
+            
+            
+              
+          </ul>
+        </div>
+        
+      </div>
+    </nav>
+  </header>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-9">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+  <div class="text-center">
+
+    <h1>Building Sensor Network: SMS gateway, Node-RED and smart alerts
+</h1>
+
+    <div class="metas">
+<small>
+  <i class="fa fa-calendar"></i>
+  <time datetime="2018-02-12">12 Feb, 2018</time>
+</small>
+
+
+  <small>
+  &middot; Read in about 4 min
+  &middot; (839 words)
+  &middot; 
+<span class="share-box">Share this on:
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2flubolab.com%2fbuilding-sensor-network-sms%2f" onclick="window.open(this.href, 'mywin',
+'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"><i class="fa fa-facebook-official "></i></a>
+
+    <a href="https://twitter.com/intent/tweet?text=Building%20Sensor%20Network%3a%20SMS%20gateway%2c%20Node-RED%20and%20smart%20alerts&amp;url=https%3a%2f%2flubolab.com%2fbuilding-sensor-network-sms%2f" onclick="window.open(this.href, 'mywin',
+'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"><i class="fa fa-twitter"></i></a>
+
+    <a href="https://plus.google.com/share?url=https%3a%2f%2flubolab.com%2fbuilding-sensor-network-sms%2f" onclick="window.open(this.href, 'mywin',
+'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"><i class="fa fa-google-plus"></i></a>
+
+    <a href="http://www.reddit.com/submit?url=https%3a%2f%2flubolab.com%2fbuilding-sensor-network-sms%2f" onclick="window.open(this.href, 'mywin',
+'left=20,top=20,width=900,height=500,toolbar=1,resizable=0'); return false;"><i class="fa fa-reddit"></i></a>
+
+    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2flubolab.com%2fbuilding-sensor-network-sms%2f&amp;title=Building%20Sensor%20Network%3a%20SMS%20gateway%2c%20Node-RED%20and%20smart%20alerts" onclick="window.open(this.href, 'mywin',
+'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"><i class="fa fa-linkedin"></i></a>
+
+    <a href="mailto:?subject=Building%20Sensor%20Network%3a%20SMS%20gateway%2c%20Node-RED%20and%20smart%20alerts&amp;body=Check out this site https%3a%2f%2flubolab.com%2fbuilding-sensor-network-sms%2f" data-proofer-ignore=""><i class="fa fa-envelope"></i></a>
+  </span>
+
+  </small>
+
+<div class="margin-10">
+  <i class="fa fa-tags"></i>
+  
+  <a href="https://lubolab.com/tags/personal-dwh" class="label label-primary">Personal DWH</a>
+  
+  <a href="https://lubolab.com/tags/sms-gate" class="label label-primary">SMS-Gate</a>
+  
+  <a href="https://lubolab.com/tags/node-red" class="label label-primary">Node-RED</a>
+  
+
+
+</div>
+
+<br>
+</div>
+
+  </div>
+</div>
+
+      <div class="content">
+  
+
+<h3 id="sms-gateway">SMS gateway</h3>
+
+<p>I bought a cheap 3g USB dongle <a href="https://consumer.huawei.com/en/mobile-broadband/e3531/specs/" target="_blank">Huawei E3531</a> and inspired by article <a href="https://escapologybb.com/send-sms-from-raspberry-pi/" target="_blank">Sending SMS on a Raspberry Pi</a> started the installation.</p>
+
+<p>First this:</p>
+
+<pre><code>sudo apt-get install ppp usb-modeswitch usb-modeswitch-data
+</code></pre>
+
+<p>Then some configuration:</p>
+
+<pre><code>sudo nano /etc/udev/rules.d/40-usb_modeswitch_custom.rules
+</code></pre>
+
+<p>adding this content:</p>
+
+<pre><code># Huawei E3131h-2
+ATTRS{idVendor}==&quot;12d1&quot;, ATTRS{idProduct}==&quot;15ca&quot;, RUN+=&quot;usb_modeswitch '%b:%k'&quot;
+</code></pre>
+
+<p>And another configuration:</p>
+
+<pre><code>sudo nano /etc/usb_modeswitch.d/12d1\:15ca
+</code></pre>
+
+<p>adding this content:</p>
+
+<pre><code>#Huawei E3131 (Variant)
+TargetVendor= 0x12d1
+TargetProductList=&quot;1506&quot;
+MessageContent=&quot;55534243123456780000000000000011062000000100000000000000000000&quot;
+</code></pre>
+
+<p>Then reboot with the connected dongle and checking whether it is mounted.</p>
+
+<p><img src="https://lubolab.com/images/2018/02/3gdongle1.png" alt="Desktop" /></p>
+
+<p>This setup worked for me, it is a compilation of many sources. This particular dongle <a href="https://consumer.huawei.com/en/mobile-broadband/e3531/specs/" target="_blank">Huawei E3531</a> is from <a href="https://modemy.heureka.cz/huawei-e3531/" target="_blank">Czech market</a> and it was manufactured for O2 operator. I tested the setup for both Raspberry-pi and my tablet with Lubuntu getting the same output.</p>
+
+<h3 id="installing-gammu">Installing Gammu</h3>
+
+<p>To send SMS we need to install Gammu.</p>
+
+<pre><code>sudo apt-get install gammu
+</code></pre>
+
+<p>and make some configuration:</p>
+
+<pre><code>sudo gammu-config
+</code></pre>
+
+<p>Within the configuration, I only changed the port according to the screen above (The first one from the three listed).</p>
+
+<pre><code>Port: /dev/ttyUSB1
+Connection: at19200
+Model: empty
+Synchronize time: yes
+Log file: leave empty
+Log format: nothing
+Use locking: leave empty
+Gammu localisation: leave empty
+</code></pre>
+
+<p>Then tested sending an SMS to number 7XXX1XXX1</p>
+
+<pre><code>echo &quot;test&quot; | sudo gammu sendsms TEXT 7XXX1XXX1
+</code></pre>
+
+<p>It was a success, so I started another installation and setup to create simple file based interface for sending SMS. The idea is that new SMS is created as a text file in SMS outbox directory. Then it is very easy to integrate with Node-RED or anything else.</p>
+
+<pre><code>sudo apt-get install gammu-smsd
+sudo nano /etc/gammu-smsdrc
+sudo service gammu-smsd start
+</code></pre>
+
+<p>Then making sure the service is running</p>
+
+<pre><code>service --status-all | grep gammu
+</code></pre>
+
+<p>And to make sure it works with any pm2 process running under my user</p>
+
+<pre><code>sudo chown -R luba:luba /var/spool/gammu/outbox
+</code></pre>
+
+<p>Finally the test, file name is &laquo;OUT&raquo; + phone number</p>
+
+<pre><code>echo &quot;Hello Earth, Mars calling&quot; &gt; /var/spool/gammu/outbox/OUT7XXX1XXX1.txt
+</code></pre>
+
+<p>And success again. You can also change some setting in the config. Like shortening the timeouts. I put commtimeout = 1 and sendtimeout = 20.</p>
+
+<pre><code>sudo nano /etc/gammu-smsdrc
+</code></pre>
+
+<h3 id="smart-alerts">Smart alerts</h3>
+
+<p>Finally, we are here. Something really practical.</p>
+
+<p>To send SMS alerts I use one of the Czech mobile virtual operators which offer free calls and SMS within its network. Having the cheapest tariff, the total monthly costs for one SIM is around 0.15 Eur.</p>
+
+<p>Surprisingly, I didn&rsquo;t find a perfect app for setting up smart alarms on android device. I would expect many of them, offering to select the communication channel, like SMS, email, Twitter, Telegraf and so on. Then making alarm definition using filters based on a combination of senders, text and more, and finally defining the properties of alarm, sound, light, vibration effects. Okay, so far just dreams.</p>
+
+<p>In reality, I have found just one app which was usable for the purpose but still, with limitations. It was <a href="https://play.google.com/store/apps/details?id=com.unt.usms&amp;hl=cs" target="_blank">SMS Alarms</a>. It is nice and functional, but it can only define alarm based on the SMS sender number. Adding filters on text keywords, it would be perfect.</p>
+
+<h4 id="node-red-doorbell-sms-alarm">Node-RED Doorbell SMS alarm</h4>
+
+<p>After building the smart Doorbell in the post <a href="https://lubolab.com/iot-doorbell-bc/">IoT Doorbell: with BigClown</a>, it is the time to see it in action. I take for granted that we have the setup described in the post <a href="https://lubolab.com/building-sensor-network-bc/">Building Sensor Network: with BigClown</a> which includes Node-RED running as a pm2 process.</p>
+
+<p>Let&rsquo;s  create simple Node-RED flow now. Starting with &laquo;mqtt in&raquo; node:</p>
+
+<pre><code>Server: localhost:1883
+Topic: node/carpinus/push-button/-/event-count
+Qos:2
+</code></pre>
+
+<p>Then &laquo;function&raquo; node:</p>
+
+<pre><code>Name: DOORBELL RINGING
+Function: 
+if (msg.payload&gt;0) {
+msg.payload = &quot;DOORBELL RINGING&quot;
+return msg;
+}
+Output:1
+</code></pre>
+
+<p>And finally the last, &laquo;file&raquo; node:</p>
+
+<pre><code>Filename: /var/spool/gammu/outbox/OUT7XXX1XXX1.txt
+Action: append to file
+Add newline (\n) to each payload? Yes
+</code></pre>
+
+<p>After deploying, the whole flow looks like this
+<img src="https://lubolab.com/images/2018/02/flow1.png" alt="Desktop" /></p>
+
+<p>And here is the screen video of my phone. I started the stopwatch, pressed the doorbell and &hellip;</p>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/5yyMZo36UJE" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+<p>Of course I would like to have a different kind of alarm for a different type of event, unfortunately, considering the available app, this can be done only if the sender number varies. The alerts coming from my SMS gateway differs only in the text message, so it is important to define clear message and select the alarm alarming not too much nor too little</p>
+
+<h4 id="node-red-futura-sms-alarm">Node-RED Futura SMS alarm</h4>
+
+<p>The next flow  is very similar, this time it takes care about the most important alert coming from the heat recovery unit integrated to my sensor network in <a href="https://lubolab.com/building-sensor-network-futura/">this post</a>.</p>
+
+<p>Again starts with &laquo;mqtt in&raquo; node:</p>
+
+<pre><code>Server: localhost:1883
+Topic: futura/temp_set
+Qos:2
+</code></pre>
+
+<p>Then &laquo;function&raquo; node:</p>
+
+<pre><code>Name: FUTURA TEMPERATURE RESET
+Function: 
+if (msg.payload==210) {
+msg.payload = &quot;FUTURA TEMPERATURE RESET&quot;
+return msg;
+}
+Output:1
+</code></pre>
+
+<p>And as the &laquo;file&raquo; node stays the one from prior flow</p>
+
+<h4 id="node-red-power-outage-sms-alarm">Node-RED Power Outage SMS alarm</h4>
+
+<p>This alarm is based on MQTT messages introduced withing the <a href="https://lubolab.com/building-sensor-network-battery/">prior post</a> and again it follows the same pattern as the two flows above, starting with &laquo;mqtt in&raquo; node:</p>
+
+<pre><code>Server: localhost:1883
+Topic: lubuntu/battery/state
+Qos:2
+</code></pre>
+
+<p>Then &laquo;function&raquo; node:</p>
+
+<pre><code>Name: ELECTRICITY OUTAGE
+Function: 
+if (msg.payload==&quot;discharging&quot;) {
+msg.payload = &quot;ELECTRICITY OUTAGE&quot;
+return msg;
+}
+Output:1
+</code></pre>
+
+<p>And the &laquo;file&raquo; node again the same. The whole picture including all three flows is here:
+<img src="https://lubolab.com/images/2018/02/flow2.png" alt="Desktop" /></p>
+
+</div>
+
+
+      <footer>
+  
+<span class="share-box">Share this on:
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2flubolab.com%2fbuilding-sensor-network-sms%2f" onclick="window.open(this.href, 'mywin',
+'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"><i class="fa fa-facebook-official "></i></a>
+
+    <a href="https://twitter.com/intent/tweet?text=Building%20Sensor%20Network%3a%20SMS%20gateway%2c%20Node-RED%20and%20smart%20alerts&amp;url=https%3a%2f%2flubolab.com%2fbuilding-sensor-network-sms%2f" onclick="window.open(this.href, 'mywin',
+'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"><i class="fa fa-twitter"></i></a>
+
+    <a href="https://plus.google.com/share?url=https%3a%2f%2flubolab.com%2fbuilding-sensor-network-sms%2f" onclick="window.open(this.href, 'mywin',
+'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"><i class="fa fa-google-plus"></i></a>
+
+    <a href="http://www.reddit.com/submit?url=https%3a%2f%2flubolab.com%2fbuilding-sensor-network-sms%2f" onclick="window.open(this.href, 'mywin',
+'left=20,top=20,width=900,height=500,toolbar=1,resizable=0'); return false;"><i class="fa fa-reddit"></i></a>
+
+    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2flubolab.com%2fbuilding-sensor-network-sms%2f&amp;title=Building%20Sensor%20Network%3a%20SMS%20gateway%2c%20Node-RED%20and%20smart%20alerts" onclick="window.open(this.href, 'mywin',
+'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"><i class="fa fa-linkedin"></i></a>
+
+    <a href="mailto:?subject=Building%20Sensor%20Network%3a%20SMS%20gateway%2c%20Node-RED%20and%20smart%20alerts&amp;body=Check out this site https%3a%2f%2flubolab.com%2fbuilding-sensor-network-sms%2f" data-proofer-ignore=""><i class="fa fa-envelope"></i></a>
+  </span>
+
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+      
+  
+    <nav><ul class="pager">
+    
+        <li class="previous">
+          <a href="https://lubolab.com/building-sensor-network-battery/" title="Building Sensor Network: Computer Battery Monitor">
+            <span aria-hidden="true">&larr;</span>Previous
+          </a>
+        </li>
+    
+
+    
+    </ul> </nav>
+  
+
+
+</div>
+
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+  
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+  (function() {
+    
+    
+    if (window.location.hostname == "localhost")
+      return;
+
+    var dsq = document.createElement('script'); dsq.async = true; dsq.type = 'text/javascript';
+    dsq.src = '//lubolab.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+</div>
+
+</footer>
+
+    </div>
+    
+      <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+        <div>
+  
+
+    <div class="section">
+      <header><div class="title"><b>Latest Posts</b></div></header>
+      <div class="content">
+        <ul>
+        
+          <li>
+          <a href="https://lubolab.com/building-sensor-network-sms/">Building Sensor Network: SMS gateway, Node-RED and smart alerts</a>
+          </li>
+        
+          <li>
+          <a href="https://lubolab.com/building-sensor-network-battery/">Building Sensor Network: Computer Battery Monitor</a>
+          </li>
+        
+          <li>
+          <a href="https://lubolab.com/building-sensor-network-neurio/">Building Sensor Network: Neurio integration</a>
+          </li>
+        
+          <li>
+          <a href="https://lubolab.com/building-sensor-network-futura/">Building Sensor Network: Jablotron Futura integration</a>
+          </li>
+        
+          <li>
+          <a href="https://lubolab.com/iot-doorbell-bc/">IoT Doorbell: with BigClown</a>
+          </li>
+        
+          <li>
+          <a href="https://lubolab.com/building-sensor-network-bc/">Building Sensor Network: with BigClown</a>
+          </li>
+        
+          <li>
+          <a href="https://lubolab.com/camera-events-the-etl/">Camera Events: The ETL</a>
+          </li>
+        
+          <li>
+          <a href="https://lubolab.com/camera-events-data-model/">Camera Events: Data Model</a>
+          </li>
+        
+          <li>
+          <a href="https://lubolab.com/new_setup_for_this_blog/">New setup for this blog: Migration from Ghost to Hugo</a>
+          </li>
+        
+          <li>
+          <a href="https://lubolab.com/astronomical-events/">Astronomical Events</a>
+          </li>
+        
+        </ul>
+      </div>
+    </div>
+
+    
+      
+      
+    
+      
+      
+      <div class="section taxonomies">
+        <header><div class="title"><b>tag</b></div></header>
+
+        <div class="content">
+          <ul>
+            <li><a href="https://lubolab.com/tags/personal-dwh">personal-dwh</a></li><li><a href="https://lubolab.com/tags/bigclown">bigclown</a></li><li><a href="https://lubolab.com/tags/netatmo">netatmo</a></li><li><a href="https://lubolab.com/tags/battery-monitor2mqtt">battery-monitor2mqtt</a></li><li><a href="https://lubolab.com/tags/blogging-platform">blogging-platform</a></li><li><a href="https://lubolab.com/tags/futura">futura</a></li><li><a href="https://lubolab.com/tags/jablotron">jablotron</a></li><li><a href="https://lubolab.com/tags/json2mqtt">json2mqtt</a></li><li><a href="https://lubolab.com/tags/modbus2mqtt">modbus2mqtt</a></li><li><a href="https://lubolab.com/tags/neurio">neurio</a></li>
+          </ul>
+        </div>
+      </div>
+      
+    
+      
+      
+    
+
+</div>
+
+      </div>
+    
+  </div>
+</div>
+    
+<footer class="footer hidden-print">
+  <div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+           <div class="pull-left">
+  <a class="toplink" href="javascript:" id="return-to-top">back to top</a>
+</div>
+<div class="pull-right">
+
+<a href="https://lubolab.com/"></a> <i>&middot;</i>
+
+</div>
+
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
+              
+    
+
+    
+<div class="container copyright">
+    <small>
+  &copy; 2018 Lubolab
+
+  </small>
+</div>
+
+
+
+        </div>
+    </div>
+  </div>
+</footer>
+
+    
+
+<script src="https://lubolab.com/js/jquery.min.js"></script>
+<script src="https://lubolab.com/js/bootstrap.min.js"></script>
+
+
+<script src="https://lubolab.com/js/highlight.pack.js"></script>
+<script src="https://lubolab.com/js/site.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+<script>
+  var _gaq=[['_setAccount','UA-90639023-1'],['_trackPageview']];
+  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+  g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+  s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+
+<script>
+var ENABLE_POPOVER =  false , 
+EXPIRE_COOKIE =  5 , 
+SHOW_MODAL_TIMEOUT =  10000 , 
+MOUSE_LEAVE =  true , 
+MODAL_SIZE = "", 
+POST_URL = "https://zapier.com/hooks/catch/1227563/", 
+SIGNUP_HEADER = "Join Our Newsletter",
+HEADER_IMAGE = "//placehold.it/1000x600",
+IMG_DESCRIPTION = "Placeholder image for this popover modal optin form",
+SIGNUP_TEXT = "Signup today for free and be the first to get notified on new updates.",
+INPUT_PLACEHOLDER = "Enter your email",
+SUBMIT_BUTTON = "Subscribe",
+SUCCESS_MESSAGE = "Thanks for your subscription!",
+ERROR_MESSAGE = "Submitting form failed!",
+OPTIN =  true ,
+COOKIE_NAME = "mycookie1",
+CONTENTLANGUAGE = ""; 
+</script>
+
+
+
+
+
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js"></script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/config/TeX-AMS-MML_HTMLorMML.js"></script>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[','\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    for(var all in MathJax.Hub.getAllJax()) {
+        all.SourceElement().parentNode.className += ' has-jax';
+
+    }
+});
+</script>
+
+
+
+
+
+
+  </body>
+</html>
+

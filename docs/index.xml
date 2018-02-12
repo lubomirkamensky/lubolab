@@ -8,11 +8,26 @@
     <language>en</language>
     <managingEditor>lubomir.kamensky@gmail.com (Lubomir Kamensky)</managingEditor>
     <webMaster>lubomir.kamensky@gmail.com (Lubomir Kamensky)</webMaster>
-    <copyright>(c) 2017 Lubolab</copyright>
-    <lastBuildDate>Sun, 11 Feb 2018 03:57:28 +0200</lastBuildDate>
+    <copyright>(c) 2018 Lubolab</copyright>
+    <lastBuildDate>Mon, 12 Feb 2018 03:57:28 +0200</lastBuildDate>
     
 	<atom:link href="https://lubolab.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Building Sensor Network: SMS gateway, Node-RED and smart alerts</title>
+      <link>https://lubolab.com/building-sensor-network-sms/</link>
+      <pubDate>Mon, 12 Feb 2018 03:57:28 +0200</pubDate>
+      <author>lubomir.kamensky@gmail.com (Lubomir Kamensky)</author>
+      <guid>https://lubolab.com/building-sensor-network-sms/</guid>
+      <description>SMS gateway I bought a cheap 3g USB dongle Huawei E3531 and inspired by article Sending SMS on a Raspberry Pi started the installation.
+First this:
+sudo apt-get install ppp usb-modeswitch usb-modeswitch-data  Then some configuration:
+sudo nano /etc/udev/rules.d/40-usb_modeswitch_custom.rules  adding this content:
+# Huawei E3131h-2 ATTRS{idVendor}==&amp;quot;12d1&amp;quot;, ATTRS{idProduct}==&amp;quot;15ca&amp;quot;, RUN+=&amp;quot;usb_modeswitch &#39;%b:%k&#39;&amp;quot;  And another configuration:
+sudo nano /etc/usb_modeswitch.d/12d1\:15ca  adding this content:
+#Huawei E3131 (Variant) TargetVendor= 0x12d1 TargetProductList=&amp;quot;1506&amp;quot; MessageContent=&amp;quot;55534243123456780000000000000011062000000100000000000000000000&amp;quot;  Then reboot with the connected dongle and checking whether it is mounted.</description>
+    </item>
     
     <item>
       <title>Building Sensor Network: Computer Battery Monitor</title>
