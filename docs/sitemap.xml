@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://lubolab.com/building-sensor-network-battery/</loc>
+    <lastmod>2018-02-11T03:57:28+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://lubolab.com/building-sensor-network-neurio/</loc>
     <lastmod>2018-02-10T03:57:28+02:00</lastmod>
   </url>
@@ -63,6 +68,12 @@
   </url>
   
   <url>
+    <loc>https://lubolab.com/tags/battery-monitor2mqtt/</loc>
+    <lastmod>2018-02-11T03:57:28+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://lubolab.com/tags/bigclown/</loc>
     <lastmod>2018-02-08T03:57:28+02:00</lastmod>
     <priority>0</priority>
@@ -99,7 +110,7 @@
   
   <url>
     <loc>https://lubolab.com/</loc>
-    <lastmod>2018-02-10T03:57:28+02:00</lastmod>
+    <lastmod>2018-02-11T03:57:28+02:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -123,19 +134,19 @@
   
   <url>
     <loc>https://lubolab.com/tags/personal-dwh/</loc>
-    <lastmod>2018-02-10T03:57:28+02:00</lastmod>
+    <lastmod>2018-02-11T03:57:28+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://lubolab.com/post/</loc>
-    <lastmod>2018-02-10T03:57:28+02:00</lastmod>
+    <lastmod>2018-02-11T03:57:28+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://lubolab.com/tags/</loc>
-    <lastmod>2018-02-08T03:57:28+02:00</lastmod>
+    <lastmod>2018-02-11T03:57:28+02:00</lastmod>
     <priority>0</priority>
   </url>
   
