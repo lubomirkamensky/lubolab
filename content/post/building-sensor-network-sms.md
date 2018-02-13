@@ -7,7 +7,7 @@ tags = [ "Personal DWH", "SMS-Gate", "Node-RED"]
 +++
 
 ### SMS gateway
-Before designing some simple flows in Node-RED, lets's create functional SMS gateway. The critical communication channel in the sensor network I build and describe in my blog. Having SMS gateway, we can create first practical use cases utilizing the data in access layers. Although there is finished just the first access layer now, the MQTT. 
+Before designing some simple flows in Node-RED, lets's create functional SMS gateway. The critical communication channel in the sensor network I build and describe in my blog. Having SMS gateway, we can create first practical use cases utilizing the data in access layers. For now, just the first access layer, the MQTT. 
 
 I bought a cheap 3g USB dongle [Huawei E3531](https://consumer.huawei.com/en/mobile-broadband/e3531/specs/) and inspired by article [Sending SMS on a Raspberry Pi](https://escapologybb.com/send-sms-from-raspberry-pi/) started the installation.
 
