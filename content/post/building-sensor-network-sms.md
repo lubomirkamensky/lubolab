@@ -108,7 +108,7 @@ Finally, we are here. Something really practical.
 
 To send SMS alerts I use one of the Czech mobile virtual operators which offer free calls and SMS within its network. Having the cheapest tariff, the total monthly costs for one SIM is around 0.15 Eur. 
 
-Surprisingly, I didn't find a perfect app for setting up smart alarms on android device. I would expect many of them, offering to select the communication channel, like SMS, email, Twitter, Telegraf and so on. Then making alarm definition using filters based on a combination of senders, text and more, and finally defining the properties of alarm, sound, light, vibration effects. Okay, so far just dreams.
+Surprisingly, I didn't find a perfect app for setting up smart alarms on android device. I would expect many of them, offering to select the communication channel, like SMS, email, Twitter, Telegram and so on. Then making alarm definition using filters based on a combination of senders, text and more, and finally defining the properties of alarm, sound, light, vibration effects. Okay, so far just dreams.
 
 In reality, I have found just one app which was usable for the purpose but still, with limitations. It was [SMS Alarms](https://play.google.com/store/apps/details?id=com.unt.usms&hl=cs). It is nice and functional, but it can only define alarm based on the SMS sender number. Adding filters on text keywords, it would be perfect. 
 
