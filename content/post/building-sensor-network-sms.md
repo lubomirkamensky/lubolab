@@ -7,7 +7,7 @@ tags = [ "Personal DWH", "SMS-Gate", "Node-RED"]
 +++
 
 ### SMS gateway
-Before designing the nice flows in Node-RED, it is necessary to create functional SMS gateway. The critical communication channel in the sensor network I build and describe in my blog. Having SMS gateway we can create first practical use cases utilizing the data in access layers. Although there is finished just the first access layer now, the MQTT. 
+Before designing the nice flows in Node-RED, lets's create functional SMS gateway. The critical communication channel in the sensor network I build and describe in my blog. Having SMS gateway we can create first practical use cases utilizing the data in access layers. Although there is finished just the first access layer now, the MQTT. 
 
 I bought a cheap 3g USB dongle [Huawei E3531](https://consumer.huawei.com/en/mobile-broadband/e3531/specs/) and inspired by article [Sending SMS on a Raspberry Pi](https://escapologybb.com/send-sms-from-raspberry-pi/) started the installation.
 
@@ -40,7 +40,7 @@ TargetProductList="1506"
 MessageContent="55534243123456780000000000000011062000000100000000000000000000"
 ```
 
-Then reboot with the connected dongle and checking whether it is mounted.
+Then reboot with the connected dongle and check whether it is mounted.
 
 ![Desktop](/images/2018/02/3gdongle1.png)
 
@@ -92,7 +92,7 @@ And to make sure it works with any pm2 process running under my user
 sudo chown -R luba:luba /var/spool/gammu/outbox
 ```
 
-Finally the test, file name is "OUT" + phone number
+Finally the SMS test, file name is "OUT" + phone number
 ```
 echo "Hello Earth, Mars calling" > /var/spool/gammu/outbox/OUT7XXX1XXX1.txt
 ```
@@ -150,7 +150,7 @@ And here is the screen video of my phone. I started the stopwatch, pressed the d
 Of course I would like to have a different kind of alarm for a different type of event, unfortunately, considering the available app, this can be done only if the sender number varies. The alerts coming from my SMS gateway differs only in the text message, so it is important to define clear message and select the alarm alarming not too much nor too little
 
 #### Node-RED Futura SMS alarm
-The next flow  is very similar, this time it takes care about the most important alert coming from the heat recovery unit integrated to my sensor network in [this post](/building-sensor-network-futura/).
+The next flow  is very similar, this time it takes care about the most important alert, coming from the heat recovery unit, integrated to my sensor network in [this post](/building-sensor-network-futura/).
 
 Again starts with "mqtt in" node:
 ```

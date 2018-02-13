@@ -153,7 +153,7 @@
 
   <small>
   &middot; Read in about 5 min
-  &middot; (897 words)
+  &middot; (895 words)
   &middot; 
 <span class="share-box">Share this on:
     <a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2flubolab.com%2fbuilding-sensor-network-sms%2f" onclick="window.open(this.href, 'mywin',
@@ -200,7 +200,7 @@
 
 <h3 id="sms-gateway">SMS gateway</h3>
 
-<p>Before designing the nice flows in Node-RED, it is necessary to create functional SMS gateway. The critical communication channel in the sensor network I build and describe in my blog. Having SMS gateway we can create first practical use cases utilizing the data in access layers. Although there is finished just the first access layer now, the MQTT.</p>
+<p>Before designing the nice flows in Node-RED, lets&rsquo;s create functional SMS gateway. The critical communication channel in the sensor network I build and describe in my blog. Having SMS gateway we can create first practical use cases utilizing the data in access layers. Although there is finished just the first access layer now, the MQTT.</p>
 
 <p>I bought a cheap 3g USB dongle <a href="https://consumer.huawei.com/en/mobile-broadband/e3531/specs/" target="_blank">Huawei E3531</a> and inspired by article <a href="https://escapologybb.com/send-sms-from-raspberry-pi/" target="_blank">Sending SMS on a Raspberry Pi</a> started the installation.</p>
 
@@ -233,7 +233,7 @@ TargetProductList=&quot;1506&quot;
 MessageContent=&quot;55534243123456780000000000000011062000000100000000000000000000&quot;
 </code></pre>
 
-<p>Then reboot with the connected dongle and checking whether it is mounted.</p>
+<p>Then reboot with the connected dongle and check whether it is mounted.</p>
 
 <p><img src="https://lubolab.com/images/2018/02/3gdongle1.png" alt="Desktop" /></p>
 
@@ -285,7 +285,7 @@ sudo service gammu-smsd start
 <pre><code>sudo chown -R luba:luba /var/spool/gammu/outbox
 </code></pre>
 
-<p>Finally the test, file name is &laquo;OUT&raquo; + phone number</p>
+<p>Finally the SMS test, file name is &laquo;OUT&raquo; + phone number</p>
 
 <pre><code>echo &quot;Hello Earth, Mars calling&quot; &gt; /var/spool/gammu/outbox/OUT7XXX1XXX1.txt
 </code></pre>
@@ -345,7 +345,7 @@ Add newline (\n) to each payload? Yes
 
 <h4 id="node-red-futura-sms-alarm">Node-RED Futura SMS alarm</h4>
 
-<p>The next flow  is very similar, this time it takes care about the most important alert coming from the heat recovery unit integrated to my sensor network in <a href="https://lubolab.com/building-sensor-network-futura/">this post</a>.</p>
+<p>The next flow  is very similar, this time it takes care about the most important alert, coming from the heat recovery unit, integrated to my sensor network in <a href="https://lubolab.com/building-sensor-network-futura/">this post</a>.</p>
 
 <p>Again starts with &laquo;mqtt in&raquo; node:</p>
 
