@@ -9,10 +9,20 @@
     <managingEditor>lubomir.kamensky@gmail.com (Lubomir Kamensky)</managingEditor>
     <webMaster>lubomir.kamensky@gmail.com (Lubomir Kamensky)</webMaster>
     <copyright>(c) 2018 Lubolab</copyright>
-    <lastBuildDate>Mon, 12 Feb 2018 03:57:28 +0200</lastBuildDate>
+    <lastBuildDate>Wed, 14 Mar 2018 03:57:28 +0200</lastBuildDate>
     
 	<atom:link href="https://lubolab.com/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Building Sensor Network: History layer using InfluxData</title>
+      <link>https://lubolab.com/building-sensor-network-history/</link>
+      <pubDate>Wed, 14 Mar 2018 03:57:28 +0200</pubDate>
+      <author>lubomir.kamensky@gmail.com (Lubomir Kamensky)</author>
+      <guid>https://lubolab.com/building-sensor-network-history/</guid>
+      <description>History Layer There are 5 access data layers introduced in my elder post Building Sensor Network: with BigClown: Current, History, Integration, Machine Learning, Reporting. And we have already utilized the first one and the last one in the post IoT Doorbell: with BigClown. Now it is the time to look into the History layer.
+Time series database Storing, maintaining and accessing historical data is always expensive, so it is worth spending some time on finding the most effective way how to cope with that.</description>
+    </item>
     
     <item>
       <title>Building Sensor Network: SMS gateway, Node-RED and smart alerts</title>

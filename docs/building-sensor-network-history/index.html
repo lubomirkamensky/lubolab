@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]> <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]> <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Building Sensor Network: History layer using InfluxData  &middot; Lubolab</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<meta name="description" content="" />
+
+<meta name="keywords" content="Personal DWH, InfluxData, ">
+
+
+<meta property="og:title" content="Building Sensor Network: History layer using InfluxData  &middot; Lubolab ">
+<meta property="og:site_name" content="Lubolab"/>
+<meta property="og:url" content="https://lubolab.com/building-sensor-network-history/" />
+<meta property="og:locale" content="en">
+
+
+<meta property="og:type" content="article" />
+<meta property="og:description" content=""/>
+<meta property="og:article:published_time" content="2018-03-14T03:57:28&#43;02:00" />
+<meta property="og:article:modified_time" content="2018-03-14T03:57:28&#43;02:00" />
+
+  
+    
+<meta property="og:article:tag" content="Personal DWH">
+    
+<meta property="og:article:tag" content="InfluxData">
+    
+  
+
+  
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@LubomirKamensky" />
+<meta name="twitter:creator" content="@LubomirKamensky" />
+<meta name="twitter:title" content="Building Sensor Network: History layer using InfluxData" />
+<meta name="twitter:description" content="" />
+<meta name="twitter:url" content="https://lubolab.com/building-sensor-network-history/" />
+<meta name="twitter:domain" content="https://lubolab.com/">
+  
+
+  
+
+
+
+<link rel="canonical" href="https://lubolab.com/building-sensor-network-history/" />
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://lubolab.com/touch-icon-144-precomposed.png">
+<link rel="icon" href="https://lubolab.com/favicon.png">
+<meta name="generator" content="Hugo 0.25.1" />
+
+  <!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+
+
+    <link rel="stylesheet" href="https://lubolab.com/css/bootswatch/paper/bootstrap.min.css">
+
+
+<link rel="stylesheet" href="https://lubolab.com/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://lubolab.com/css/style.css">
+
+
+<link rel="stylesheet" href="https://lubolab.com/css/style_custom.css">
+
+
+
+  <link rel="stylesheet" href="https://lubolab.com/css/highlight/default.css">
+
+
+</head>
+<body class="map[name:paper]" data-ng-app="myapp" data-ng-controller="MyController" data-ng-mouseleave="MouseLeave($event)">
+    <header id="main-header">
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        
+          
+          <a class="navbar-brand-img" href="https://lubolab.com/">
+            <img alt="Lubolab" src="https://lubolab.com/images/lubolablogo.png">
+            
+          </a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav navbar-right">
+            
+            
+            <li class="">
+
+              <a href="https://datalab.lubolab.com/" >
+                <i class='fa fa-flask'></i>
+                Datalab
+              </a>
+            </li>
+            
+            <li class="">
+
+              <a href="https://github.com/lubomirkamensky/lubolab" >
+                <i class='fa fa-github'></i>
+                Blog Source code
+              </a>
+            </li>
+            
+            <li class="">
+
+              <a href="https://twitter.com/LubomirKamensky" >
+                <i class='fa fa-twitter'></i>
+                Twitter
+              </a>
+            </li>
+            
+            
+              
+          </ul>
+        </div>
+        
+      </div>
+    </nav>
+  </header>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-9">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+  <div class="text-center">
+
+    <h1>Building Sensor Network: History layer using InfluxData
+</h1>
+
+    <div class="metas">
+<small>
+  <i class="fa fa-calendar"></i>
+  <time datetime="2018-03-14">14 Mar, 2018</time>
+</small>
+
+
+  <small>
+  &middot; Read in about 12 min
+  &middot; (2388 words)
+  &middot; 
+<span class="share-box">Share this on:
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2flubolab.com%2fbuilding-sensor-network-history%2f" onclick="window.open(this.href, 'mywin',
+'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"><i class="fa fa-facebook-official "></i></a>
+
+    <a href="https://twitter.com/intent/tweet?text=Building%20Sensor%20Network%3a%20History%20layer%20using%20InfluxData&amp;url=https%3a%2f%2flubolab.com%2fbuilding-sensor-network-history%2f" onclick="window.open(this.href, 'mywin',
+'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"><i class="fa fa-twitter"></i></a>
+
+    <a href="https://plus.google.com/share?url=https%3a%2f%2flubolab.com%2fbuilding-sensor-network-history%2f" onclick="window.open(this.href, 'mywin',
+'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"><i class="fa fa-google-plus"></i></a>
+
+    <a href="http://www.reddit.com/submit?url=https%3a%2f%2flubolab.com%2fbuilding-sensor-network-history%2f" onclick="window.open(this.href, 'mywin',
+'left=20,top=20,width=900,height=500,toolbar=1,resizable=0'); return false;"><i class="fa fa-reddit"></i></a>
+
+    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2flubolab.com%2fbuilding-sensor-network-history%2f&amp;title=Building%20Sensor%20Network%3a%20History%20layer%20using%20InfluxData" onclick="window.open(this.href, 'mywin',
+'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"><i class="fa fa-linkedin"></i></a>
+
+    <a href="mailto:?subject=Building%20Sensor%20Network%3a%20History%20layer%20using%20InfluxData&amp;body=Check out this site https%3a%2f%2flubolab.com%2fbuilding-sensor-network-history%2f" data-proofer-ignore=""><i class="fa fa-envelope"></i></a>
+  </span>
+
+  </small>
+
+<div class="margin-10">
+  <i class="fa fa-tags"></i>
+  
+  <a href="https://lubolab.com/tags/personal-dwh" class="label label-primary">Personal DWH</a>
+  
+  <a href="https://lubolab.com/tags/influxdata" class="label label-primary">InfluxData</a>
+  
+
+
+</div>
+
+<br>
+</div>
+
+  </div>
+</div>
+
+      <div class="content">
+  
+
+<h3 id="history-layer">History Layer</h3>
+
+<p>There are 5 access data layers introduced in my elder post <a href="https://lubolab.com/building-sensor-network-bc/">Building Sensor Network: with BigClown</a>:
+Current, History, Integration, Machine Learning, Reporting. And we have already utilized the first one and the last one in the post <a href="https://lubolab.com/iot-doorbell-bc/">IoT Doorbell: with BigClown</a>. Now it is the time to look into the History layer.</p>
+
+<h3 id="time-series-database">Time series database</h3>
+
+<p>Storing, maintaining and accessing historical data is always expensive, so it is worth spending some time on finding the most effective way how to cope with that.</p>
+
+<p>A classical relational database is a powerful tool for organizing any kind of relational data. In my first post, I described how to build both detail and aggregate layer using classical SQL database, see <a href="https://lubolab.com/weather-data-mart/">Weather Data Mart</a>.</p>
+
+<p>Meteorological data is a perfect example of Time series data. It is data provided by some kind of sensors during a specific period of time. If we remove the time dimension, the data is pretty small, perhaps only sensor type, quantity name, and unit of measure. For one weather station just a few records. What makes the data big is really just the time dimension, considering measurement every second it makes 31.5 million records just for one quantity in 10 years.</p>
+
+<p>Yes, it is a quite specific type of data so using classical SQL database may not be the most effective way of processing them. A specialized tool can be better here. And of course, it is.</p>
+
+<h3 id="influxdata">InfluxData</h3>
+
+<p>Time series database like InfluxData focuses just on one type of data and it is extremely effective in processing it. Of course, this extra effectivity comes with other big limitations. It definitely cannot replace SQL database in general but that&rsquo;s not the goal. And as the technology is still young, even some expected features are still missing. For example, I would expect the support of calendar month and year, but so far only symmetric time units like seconds, minutes, hours and days are supported.</p>
+
+<p>But let&rsquo;s look into InfluxDb more closely.</p>
+
+<h3 id="data-model">Data Model</h3>
+
+<p>This is how the database is defined in the InfluxDB</p>
+
+<pre><code>CREATE DATABASE &quot;landing&quot; WITH DURATION 30d REPLICATION 1 SHARD DURATION 1d NAME &quot;one_month&quot; 
+</code></pre>
+
+<p>The purpose of this database is to store the data exactly as they come from the sensors. DURATION specifies how long the data is supposed to be stored in the database. Then it is automatically removed.  SHARD DURATION specifies the minimal data block which can be removed. So to summarize,  we keep data here for 30 days and everyday is one day of the history removed. This set of rules is called the Retention policy and we give it a name &laquo;one_month&raquo;. There can be more of them within one database.</p>
+
+<p>There are no tables like in SQL databases in the InfluxData. There is data structure called Measurement. In fact, you can store very different data in one Measurement structure, even with distinct primary keys but the concept of primary key is anyway never used in the world of time series databases.</p>
+
+<p><b>I decided to create two Measurements in the database, additive and nonadditive, grouping quantities with the same way of aggregation.
+Additive quantities are aggregated using SUM, Nonadditive using AVG, MIN, MAX.</b></p>
+
+<p>Withing the Measurement we define some sort of indexed dimensions called tags and the facts called fields. Both are defined as a key, value pairs.</p>
+
+<p><b>Measurements in Landing database have only one field named value.
+And I use four tags: quantity, subject, sensor, UOM.</b></p>
+
+<div class="c_alert c_alert-success"><i class="fa fa-info-circle"></i>
+The tags and fields aren't predefined for the Measurement, this definition is part of any loaded data. So there can be data using various tags within one Measurement. And I mean both sets of tag values and tag keys can different.
+</div>
+
+<p>Well, coming from the SQL database world this can be a bit hard to grasp. Measurement is not really like a physical table or logical entity in relational databases.</p>
+
+<div class="c_alert c_alert-success"><i class="fa fa-exclamation-triangle"></i> 
+In fact, the essential component of SQL data modeling, the concept of a table (or entity) doesn't exist in the Time series database universe at all.
+</div>
+
+<p>But the instance of the entity (or record of the table, if you wish) plays the main role. It is called the Data point here and is identified by Measurement, timestamp, and set of tag key, values pairs.</p>
+
+<p>Collection of data points, sharing Measurement and set of tag key, values pairs, is called a Series. Series represents the history of a data point.  If you think the Series is something like table or entity, then you are wrong again. Imagine you have a Customer table in SQL database storing the history of all your customers, then the Series is the history of just one particular customer, not all of them. Really the concept of table or entity is not used in the world of Time series databases.</p>
+
+<p>The case of Customer table is also a good example why the time series databases cannot be used for any kind of historical data. While for few sensors we have millions of measurements,  the situation with Customers can be quite the opposite. We can have millions of customers and collect new data for them just once in a month.</p>
+
+<div class="c_alert c_alert-success"><i class="fa fa-exclamation-triangle"></i>
+The shape of data is extremely important for Time series databases. Everything is focused on extremely fast access to the latest data and effective storage of the history. The logical approach is to keep the latest data in memory and the history on the drive. Now imagine what would happen with our Customer example, the in-memory part would just explode.
+</div>
+
+<h3 id="series-in-practice">Series in practice</h3>
+
+<p>But enough of the theory, it is the time to dive into the practice. We have defined database, retention policy, measurement and let&rsquo;s assume we have already loaded the data composed of tag and field sets.</p>
+
+<p>What series do we have in the database?</p>
+
+<pre><code>use landing
+show series
+</code></pre>
+
+<p>Here it is. Loaded data is the result of Integration of <a href="https://lubolab.com/building-sensor-network-neurio/">Neurio</a>, <a href="https://lubolab.com/building-sensor-network-futura/">Futura</a>, the rest are <a href="https://lubolab.com/building-sensor-network-bc/">BigClown sensors</a>, all described in linked posts. Data is loaded using <a href="https://github.com/bigclownlabs/bch-mqtt2influxdb" target="_blank">bch-mqtt2influxdb</a> and my latest configuration looks like <a href="https://github.com/lubomirkamensky/lubolab_src/blob/master/mqtt2influxdb.yml" target="_blank">this</a></p>
+
+<p>Each row represents one Series and it nicely shows how the series key is composed. Adding the timestamp you can get the data point identification.</p>
+
+<pre><code>key
+---
+additive,quantity=event_count,sensor=carpinus,subject=push
+additive,quantity=event_count,sensor=pinus,subject=pir
+nonadditive,quantity=concentration,sensor=quercus,subject=co2,uom=1ppm
+nonadditive,quantity=consumption,sensor=futura,subject=total,uom=1W
+nonadditive,quantity=consumption,sensor=neurio,subject=phase_A,uom=1W
+nonadditive,quantity=consumption,sensor=neurio,subject=phase_B,uom=1W
+nonadditive,quantity=consumption,sensor=neurio,subject=phase_C,uom=1W
+nonadditive,quantity=consumption,sensor=neurio,subject=total,uom=1W
+nonadditive,quantity=flow,sensor=futura,subject=air,uom=m3/h
+nonadditive,quantity=humidity,sensor=futura,subject=ambient,uom=0.1%
+nonadditive,quantity=humidity,sensor=futura,subject=fresh,uom=0.1%
+nonadditive,quantity=humidity,sensor=futura,subject=indoor,uom=0.1%
+nonadditive,quantity=humidity,sensor=futura,subject=waste,uom=0.1%
+nonadditive,quantity=humidity,sensor=quercus,subject=default,uom=1%
+nonadditive,quantity=humidity,sensor=salix,subject=default,uom=1%
+nonadditive,quantity=humidity,sensor=ulmus,subject=default,uom=1%
+nonadditive,quantity=illuminance,sensor=salix,subject=default,uom=1lux
+nonadditive,quantity=illuminance,sensor=ulmus,subject=default,uom=1lux
+nonadditive,quantity=pressure,sensor=quercus,subject=default,uom=1kPa
+nonadditive,quantity=pressure,sensor=salix,subject=default,uom=1kPa
+nonadditive,quantity=pressure,sensor=ulmus,subject=default,uom=1kPa
+nonadditive,quantity=recovery,sensor=futura,subject=heat,uom=1W
+nonadditive,quantity=temperature,sensor=carpinus,subject=default,uom=1°C
+nonadditive,quantity=temperature,sensor=fraxinus,subject=default,uom=1°C
+nonadditive,quantity=temperature,sensor=futura,subject=ambient,uom=0.1°C
+nonadditive,quantity=temperature,sensor=futura,subject=fresh,uom=0.1°C
+nonadditive,quantity=temperature,sensor=futura,subject=indoor,uom=0.1°C
+nonadditive,quantity=temperature,sensor=futura,subject=waste,uom=0.1°C
+nonadditive,quantity=temperature,sensor=pinus,subject=default,uom=1°C
+nonadditive,quantity=temperature,sensor=quercus,subject=default,uom=1°C
+nonadditive,quantity=temperature,sensor=salix,subject=default,uom=1°C
+nonadditive,quantity=temperature,sensor=ulmus,subject=default,uom=1°C
+nonadditive,quantity=voltage,sensor=carpinus,subject=default,uom=1V
+nonadditive,quantity=voltage,sensor=pinus,subject=default,uom=1V
+nonadditive,quantity=voltage,sensor=quercus,subject=default,uom=1V
+nonadditive,quantity=voltage,sensor=salix,subject=default,uom=1V
+nonadditive,quantity=voltage,sensor=ulmus,subject=default,uom=1V
+nonadditive,quantity=wear_level,sensor=futura,subject=filter,uom=1%
+</code></pre>
+
+<p>All listed series use a fixed number of tags. Even for sensors where the subject tag is not really applicable, the value &laquo;default&raquo; is used. This approach will simplify the reporting in Grafana which I am going to describe in the next post.</p>
+
+<p>Using this approach, despite everything I have written about the time series databases, logically I can consider all the series belonging to one supertype entity, sharing the same primary key. Well, it is hard to forget this RDBMS concept. Another way of looking into this is that all series inherits its properties from one common ancestor.</p>
+
+<p>I think such design is not only nicely symmetric but it significantly simplifies the overall data flow allowing to use the power of abstraction.</p>
+
+<h3 id="data-history">Data History</h3>
+
+<p>Well, we have defined our retention policy for the landing database but are we really just going to drop the elder history and lose it? No, definitely not. The question is whether we really need the very detailed information as it comes from the sensors or we are happy with aggregated data for an elder history.</p>
+
+<p>To be honest, I want to keep all details for unlimited history but not necessarily easily accessible. I require easy access to the latest detail data and to aggregated history. The detailed history can be just archived in some well-compressed way and ready to be loaded into a database if needed.</p>
+
+<h3 id="data-normalization">Data Normalization</h3>
+
+<p>Before the aggregation itself, it is necessary to make it clear what data we receive from the sensors. The specific case is the event data where we receive data anytime time the event happens.  Then there are measurements of various quantities. Some sensors provides continuous measurement and send data any time the measured value changes. Of course the &laquo;changes&raquo; always depends on the sensor sensitivity and required measurement precision, so in fact, there is never a true continuous measurement of any quantity. Other sensors provide measurements in some regular intervals and we have no clue what happens in between them.</p>
+
+<p>Considering all this it is a good idea to somehow normalize data before we start the aggregation. Let&rsquo;s create a new database for that:</p>
+
+<pre><code>CREATE DATABASE &quot;base&quot; WITH DURATION 30d REPLICATION 1 SHARD DURATION 1d NAME &quot;one_month&quot;
+</code></pre>
+
+<p>And we will load this database using Continuous queries. There is one query for  additive measurement.</p>
+
+<pre><code>CREATE CONTINUOUS QUERY &quot;additive_base&quot; ON &quot;landing&quot; BEGIN SELECT COUNT(&quot;value&quot;) as value INTO &quot;base&quot;.&quot;one_month&quot;.&quot;additive&quot; FROM additive GROUP BY quantity, sensor, subject, uom, time(1s) END
+</code></pre>
+
+<p>It is defined on landing database, the most important is the GROUP BY section, defining the granularity of new data in the base database. We keep all the tag keys and define 1s as the time grain. If not specified in other parts of the query this time grain also specifies the frequency of query execution.  We use COUNT function to get value 1 for any event which will be later aggregated using SUM function. As result, we get data points only when there is an event in the landing database.</p>
+
+<p>Now let&rsquo;s look at the processing of the nonadditive measurement. Here we create two continuous queries grouping the sensors into slow and fast groups. Neurio and Futura sensors provide measurements more frequently than the BigClown sensors.</p>
+
+<pre><code>CREATE CONTINUOUS QUERY &quot;nonadditive_base_fast&quot; ON &quot;landing&quot; RESAMPLE EVERY 11m FOR 11m BEGIN SELECT MEAN(&quot;value&quot;) as value INTO &quot;base&quot;.&quot;one_month&quot;.&quot;nonadditive&quot; FROM nonadditive WHERE quantity != 'voltage' AND (sensor = 'neurio' OR sensor = 'futura') GROUP BY quantity, sensor, subject, uom, time(1s) FILL(linear) END
+
+CREATE CONTINUOUS QUERY &quot;nonadditive_base_slow&quot; ON &quot;landing&quot; RESAMPLE EVERY 10m FOR 40m BEGIN SELECT MEAN(&quot;value&quot;) as value INTO &quot;base&quot;.&quot;one_month&quot;.&quot;nonadditive&quot; FROM nonadditive WHERE quantity != 'voltage' AND sensor != 'neurio' AND sensor != 'futura' GROUP BY quantity, sensor, subject, uom, time(1s) FILL(linear) END
+</code></pre>
+
+<p>The GROUP BY section is the same as for additive measurement but there are some new sections. For the nonadditive quantities, we are going to normalize data using linear extrapolation filling the space between the measurements with derived values. All that is done using two words FILL(linear). To make it work as expected we have to force the execution interval and data scope processed using the RESAMPLE section. EVERY 10m defines the execution interval and FOR 40m defines the scope of data being recalculated. So every ten minutes the period of last 40 minutes is recalculated.</p>
+
+<p>The reason why to recalculate the past interval is that for the linear extrapolation of any period of data we need the value at both interval ends. But as we are not receiving all measurements every second, some intervals stay open and the values cannot be derived until the closing value arrives.</p>
+
+<h3 id="testing">Testing</h3>
+
+<p>Below is a simple test checking the number of data points within a day to verify that the Linear fill was successful and there are no gaps in the timeline.</p>
+
+<pre><code>influx -database 'base' -precision 'rfc3339' -execute 'select count(*) from nonadditive group by quantity, sensor, subject, uom, time(24h) order by time' &gt; test/nonadditive.txt
+</code></pre>
+
+<h3 id="data-aggregation">Data Aggregation</h3>
+
+<p>Once the data is normalized it is easy to aggregate it. Let&rsquo;s create another database for that.</p>
+
+<pre><code>CREATE DATABASE &quot;agg_hour&quot; WITH DURATION INF REPLICATION 1 SHARD DURATION 1000w NAME &quot;infinite&quot;
+</code></pre>
+
+<p>This database is going to provide the aggregated history which is supposed to stay there forever so we define the infinite duration in the Retention policy.</p>
+
+<p>Following continuous query is creating hourly aggregate data for an additive measurement using the SUM function.</p>
+
+<pre><code>CREATE CONTINUOUS QUERY &quot;additive_agg_hour&quot; ON &quot;base&quot; RESAMPLE FOR 2h BEGIN SELECT SUM(&quot;value&quot;) as sum_value INTO &quot;agg_hour&quot;.&quot;infinite&quot;.&quot;additive&quot; FROM additive GROUP BY quantity, sensor, subject, uom, time(1h) END
+</code></pre>
+
+<p>Next continuous query is creating hourly aggregate data for a nonadditive measurement using the MEAN, MIN, MAX, MEDIAN and LAST functions.</p>
+
+<pre><code>CREATE CONTINUOUS QUERY &quot;nonadditive_agg_hour&quot; ON &quot;base&quot; RESAMPLE FOR 2h BEGIN SELECT MEAN(&quot;value&quot;) as avg_value, MIN(&quot;value&quot;) as min_value, MAX(&quot;value&quot;) as max_value, MEDIAN(&quot;value&quot;) as mdn_value, LAST(&quot;value&quot;) as last_value INTO &quot;agg_hour&quot;.&quot;infinite&quot;.&quot;nonadditive&quot; FROM nonadditive GROUP BY quantity, sensor, subject, uom, time(1h) END
+</code></pre>
+
+<p>And finally the last one. Quantity voltage was excluded from the normalization in the base database as it is changing slowly and the normalization would not have sense. The hourly aggregate data is directly derived from the landing database. Another change is using previous value instead of linear extrapolation.</p>
+
+<pre><code>CREATE CONTINUOUS QUERY &quot;voltage_agg_hour&quot; ON &quot;landing&quot; RESAMPLE EVERY 1h FOR 3h BEGIN SELECT MEAN(&quot;value&quot;) as avg_value, MIN(&quot;value&quot;) as min_value, MAX(&quot;value&quot;) as max_value, MEDIAN(&quot;value&quot;) as mdn_value, LAST(&quot;value&quot;) as last_value INTO &quot;agg_hour&quot;.&quot;infinite&quot;.&quot;nonadditive&quot; FROM nonadditive WHERE quantity = 'voltage' GROUP BY quantity, sensor, subject, uom, time(1h) FILL(previous) END
+</code></pre>
+
+<h3 id="data-archiving">Data Archiving</h3>
+
+<p>I stated before that I want to keep all historical data archived in the full detail forever. As I use Google Drive for archiving my photos and files, the data archive is not going to be an exception.</p>
+
+<p>To upload data to Google drive I use <a href="https://rclone.org" target="_blank">rclone</a>. Below is how to install it and start interactive configuration.</p>
+
+<pre><code>sudo curl https://rclone.org/install.sh | sudo bash
+sudo rclone config
+</code></pre>
+
+<p>When <a href="https://rclone.org" target="_blank">rclone</a> is ready we can create a simple shell script which archive one day of data from landing database, store it in folder structure YYYY/YYYYMM and finally copy the missing files into Google drive using the same folder structure.</p>
+
+<pre><code>sudo nano influxdb_archive.sh
+</code></pre>
+
+<p>then copy and paste following content:</p>
+
+<pre><code>#!/bin/sh
+# archives one day of influx landing database into Google Drive
+
+yesterday=$(date --date='yesterday' +&quot;%Y-%m-%d&quot;)
+today=$(date +&quot;%Y-%m-%d&quot;)
+thisYear=$(date --date='yesterday' +&quot;%Y&quot;)
+thisMonth=$(date --date='yesterday' +&quot;%Y%m&quot;)
+
+# creates the source data path
+mkdir -p &quot;/data/export/googledrive/${thisYear}/${thisMonth}&quot;
+
+# exports and compresses one day of data from influxdb
+influx_inspect export -datadir &quot;/data/influxdb/data&quot; -waldir &quot;/data/influxdb/wal&quot; -out &quot;/data/export/googledrive/${thisYear}/${thisMonth}/landing_${yesterday}&quot; -database landing -retention one_month -start &quot;${yesterday}T00:00:00Z&quot; -end &quot;${today}T00:00:00Z&quot; -compress
+
+# makes sure the target data path exists
+rclone mkdir myGoogleDrive:InfluxData/lubuntu/${thisYear}/${thisMonth} --config /home/luba/.config/rclone/rclone.conf
+
+# copies the data to google drive
+rclone copy /data/export/googledrive myGoogleDrive:InfluxData/lubuntu --config /home/luba/.config/rclone/rclone.conf
+</code></pre>
+
+<p>then introduce new job using crontab:</p>
+
+<pre><code>sudo crontab -e
+</code></pre>
+
+<p>adding following row:</p>
+
+<pre><code>0 5 * * *     /home/luba/influxdb_archive.sh  &gt;&gt; /home/luba/log_influxdb_archive.out 2&gt;&amp;1
+</code></pre>
+
+<h3 id="restoring-the-archived-data">Restoring the archived data</h3>
+
+<p>Whenever there is a need to look into detail data from the archive, it can be easily imported:</p>
+
+<pre><code>sudo influx -import -path=landing_2018_03_08 -compressed
+</code></pre>
+
+</div>
+
+
+      <footer>
+  
+<span class="share-box">Share this on:
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2flubolab.com%2fbuilding-sensor-network-history%2f" onclick="window.open(this.href, 'mywin',
+'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"><i class="fa fa-facebook-official "></i></a>
+
+    <a href="https://twitter.com/intent/tweet?text=Building%20Sensor%20Network%3a%20History%20layer%20using%20InfluxData&amp;url=https%3a%2f%2flubolab.com%2fbuilding-sensor-network-history%2f" onclick="window.open(this.href, 'mywin',
+'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"><i class="fa fa-twitter"></i></a>
+
+    <a href="https://plus.google.com/share?url=https%3a%2f%2flubolab.com%2fbuilding-sensor-network-history%2f" onclick="window.open(this.href, 'mywin',
+'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"><i class="fa fa-google-plus"></i></a>
+
+    <a href="http://www.reddit.com/submit?url=https%3a%2f%2flubolab.com%2fbuilding-sensor-network-history%2f" onclick="window.open(this.href, 'mywin',
+'left=20,top=20,width=900,height=500,toolbar=1,resizable=0'); return false;"><i class="fa fa-reddit"></i></a>
+
+    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2flubolab.com%2fbuilding-sensor-network-history%2f&amp;title=Building%20Sensor%20Network%3a%20History%20layer%20using%20InfluxData" onclick="window.open(this.href, 'mywin',
+'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"><i class="fa fa-linkedin"></i></a>
+
+    <a href="mailto:?subject=Building%20Sensor%20Network%3a%20History%20layer%20using%20InfluxData&amp;body=Check out this site https%3a%2f%2flubolab.com%2fbuilding-sensor-network-history%2f" data-proofer-ignore=""><i class="fa fa-envelope"></i></a>
+  </span>
+
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+      
+  
+    <nav><ul class="pager">
+    
+        <li class="previous">
+          <a href="https://lubolab.com/building-sensor-network-sms/" title="Building Sensor Network: SMS gateway, Node-RED and smart alerts">
+            <span aria-hidden="true">&larr;</span>Previous
+          </a>
+        </li>
+    
+
+    
+    </ul> </nav>
+  
+
+
+</div>
+
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+  
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+  (function() {
+    
+    
+    if (window.location.hostname == "localhost")
+      return;
+
+    var dsq = document.createElement('script'); dsq.async = true; dsq.type = 'text/javascript';
+    dsq.src = '//lubolab.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+</div>
+
+</footer>
+
+    </div>
+    
+      <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+        <div>
+  
+
+    <div class="section">
+      <header><div class="title"><b>Latest Posts</b></div></header>
+      <div class="content">
+        <ul>
+        
+          <li>
+          <a href="https://lubolab.com/building-sensor-network-history/">Building Sensor Network: History layer using InfluxData</a>
+          </li>
+        
+          <li>
+          <a href="https://lubolab.com/building-sensor-network-sms/">Building Sensor Network: SMS gateway, Node-RED and smart alerts</a>
+          </li>
+        
+          <li>
+          <a href="https://lubolab.com/building-sensor-network-battery/">Building Sensor Network: Computer Battery Monitor</a>
+          </li>
+        
+          <li>
+          <a href="https://lubolab.com/building-sensor-network-neurio/">Building Sensor Network: Neurio integration</a>
+          </li>
+        
+          <li>
+          <a href="https://lubolab.com/building-sensor-network-futura/">Building Sensor Network: Jablotron Futura integration</a>
+          </li>
+        
+          <li>
+          <a href="https://lubolab.com/iot-doorbell-bc/">IoT Doorbell: with BigClown</a>
+          </li>
+        
+          <li>
+          <a href="https://lubolab.com/building-sensor-network-bc/">Building Sensor Network: with BigClown</a>
+          </li>
+        
+          <li>
+          <a href="https://lubolab.com/camera-events-the-etl/">Camera Events: The ETL</a>
+          </li>
+        
+          <li>
+          <a href="https://lubolab.com/camera-events-data-model/">Camera Events: Data Model</a>
+          </li>
+        
+          <li>
+          <a href="https://lubolab.com/new_setup_for_this_blog/">New setup for this blog: Migration from Ghost to Hugo</a>
+          </li>
+        
+        </ul>
+      </div>
+    </div>
+
+    
+      
+      
+    
+      
+      
+      <div class="section taxonomies">
+        <header><div class="title"><b>tag</b></div></header>
+
+        <div class="content">
+          <ul>
+            <li><a href="https://lubolab.com/tags/personal-dwh">personal-dwh</a></li><li><a href="https://lubolab.com/tags/bigclown">bigclown</a></li><li><a href="https://lubolab.com/tags/netatmo">netatmo</a></li><li><a href="https://lubolab.com/tags/battery-monitor2mqtt">battery-monitor2mqtt</a></li><li><a href="https://lubolab.com/tags/blogging-platform">blogging-platform</a></li><li><a href="https://lubolab.com/tags/futura">futura</a></li><li><a href="https://lubolab.com/tags/influxdata">influxdata</a></li><li><a href="https://lubolab.com/tags/jablotron">jablotron</a></li><li><a href="https://lubolab.com/tags/json2mqtt">json2mqtt</a></li><li><a href="https://lubolab.com/tags/modbus2mqtt">modbus2mqtt</a></li>
+          </ul>
+        </div>
+      </div>
+      
+    
+      
+      
+    
+
+</div>
+
+      </div>
+    
+  </div>
+</div>
+    
+<footer class="footer hidden-print">
+  <div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+           <div class="pull-left">
+  <a class="toplink" href="javascript:" id="return-to-top">back to top</a>
+</div>
+<div class="pull-right">
+
+<a href="https://lubolab.com/"></a> <i>&middot;</i>
+
+</div>
+
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
+              
+    
+
+    
+<div class="container copyright">
+    <small>
+  &copy; 2018 Lubolab
+
+  </small>
+</div>
+
+
+
+        </div>
+    </div>
+  </div>
+</footer>
+
+    
+
+<script src="https://lubolab.com/js/jquery.min.js"></script>
+<script src="https://lubolab.com/js/bootstrap.min.js"></script>
+
+
+<script src="https://lubolab.com/js/highlight.pack.js"></script>
+<script src="https://lubolab.com/js/site.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+<script>
+  var _gaq=[['_setAccount','UA-90639023-1'],['_trackPageview']];
+  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+  g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+  s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+
+<script>
+var ENABLE_POPOVER =  false , 
+EXPIRE_COOKIE =  5 , 
+SHOW_MODAL_TIMEOUT =  10000 , 
+MOUSE_LEAVE =  true , 
+MODAL_SIZE = "", 
+POST_URL = "https://zapier.com/hooks/catch/1227563/", 
+SIGNUP_HEADER = "Join Our Newsletter",
+HEADER_IMAGE = "//placehold.it/1000x600",
+IMG_DESCRIPTION = "Placeholder image for this popover modal optin form",
+SIGNUP_TEXT = "Signup today for free and be the first to get notified on new updates.",
+INPUT_PLACEHOLDER = "Enter your email",
+SUBMIT_BUTTON = "Subscribe",
+SUCCESS_MESSAGE = "Thanks for your subscription!",
+ERROR_MESSAGE = "Submitting form failed!",
+OPTIN =  true ,
+COOKIE_NAME = "mycookie1",
+CONTENTLANGUAGE = ""; 
+</script>
+
+
+
+
+
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js"></script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/config/TeX-AMS-MML_HTMLorMML.js"></script>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[','\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    for(var all in MathJax.Hub.getAllJax()) {
+        all.SourceElement().parentNode.className += ' has-jax';
+
+    }
+});
+</script>
+
+
+
+
+
+
+  </body>
+</html>
+
