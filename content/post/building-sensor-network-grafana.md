@@ -6,7 +6,7 @@ title = "Building Sensor Network: Data visualisation with Grafana"
 tags = [ "Personal DWH", "Grafana"]
 +++
 
-In the [prior post](/building-sensor-network-history/)  we have built the history layer, now it is the time to look into the data. The idea is to get some simple interface providing interactive access to any data we want. Let's try to achieve that with the leading open source software for time series analytics, [Grafana](https://grafana.com/ ). 
+In the [prior post](/building-sensor-network-history/)  we have built the history layer, now it is the time to look into its data. The idea is to get some simple interface providing interactive access to any data we want. Let's try to achieve that with the leading open source software for time series analytics, [Grafana](https://grafana.com/ ). 
 
 
 ### Installation
