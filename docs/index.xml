@@ -9,10 +9,20 @@
     <managingEditor>lubomir.kamensky@gmail.com (Lubomir Kamensky)</managingEditor>
     <webMaster>lubomir.kamensky@gmail.com (Lubomir Kamensky)</webMaster>
     <copyright>(c) 2018 Lubolab</copyright>
-    <lastBuildDate>Wed, 14 Mar 2018 03:57:28 +0200</lastBuildDate>
+    <lastBuildDate>Mon, 19 Mar 2018 03:57:28 +0200</lastBuildDate>
     
 	<atom:link href="https://lubolab.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Building Sensor Network: Data visualisation with Grafana</title>
+      <link>https://lubolab.com/building-sensor-network-grafana/</link>
+      <pubDate>Mon, 19 Mar 2018 03:57:28 +0200</pubDate>
+      <author>lubomir.kamensky@gmail.com (Lubomir Kamensky)</author>
+      <guid>https://lubolab.com/building-sensor-network-grafana/</guid>
+      <description>In the prior post we have built the history layer, now it is the time to look into the data. The idea is to get some simple interface providing interactive access to any data we want. Let&amp;rsquo;s try to achieve that with the leading open source software for time series analytics, Grafana.
+Installation I installed Grafana on my development machine using Docker. How to install Docker can be found here.</description>
+    </item>
     
     <item>
       <title>Building Sensor Network: History layer using InfluxData</title>

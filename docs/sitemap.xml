@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://lubolab.com/building-sensor-network-grafana/</loc>
+    <lastmod>2018-03-19T03:57:28+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://lubolab.com/building-sensor-network-history/</loc>
     <lastmod>2018-03-14T03:57:28+02:00</lastmod>
   </url>
@@ -107,6 +112,12 @@
   </url>
   
   <url>
+    <loc>https://lubolab.com/tags/grafana/</loc>
+    <lastmod>2018-03-19T03:57:28+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://lubolab.com/tags/influxdata/</loc>
     <lastmod>2018-03-14T03:57:28+02:00</lastmod>
     <priority>0</priority>
@@ -126,7 +137,7 @@
   
   <url>
     <loc>https://lubolab.com/</loc>
-    <lastmod>2018-03-14T03:57:28+02:00</lastmod>
+    <lastmod>2018-03-19T03:57:28+02:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -156,13 +167,13 @@
   
   <url>
     <loc>https://lubolab.com/tags/personal-dwh/</loc>
-    <lastmod>2018-03-14T03:57:28+02:00</lastmod>
+    <lastmod>2018-03-19T03:57:28+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://lubolab.com/post/</loc>
-    <lastmod>2018-03-14T03:57:28+02:00</lastmod>
+    <lastmod>2018-03-19T03:57:28+02:00</lastmod>
     <priority>0</priority>
   </url>
   

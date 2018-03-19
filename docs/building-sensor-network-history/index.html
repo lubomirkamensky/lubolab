@@ -151,7 +151,7 @@
 
   <small>
   &middot; Read in about 12 min
-  &middot; (2388 words)
+  &middot; (2386 words)
   &middot; 
 <span class="share-box">Share this on:
     <a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2flubolab.com%2fbuilding-sensor-network-history%2f" onclick="window.open(this.href, 'mywin',
@@ -324,7 +324,7 @@ nonadditive,quantity=wear_level,sensor=futura,subject=filter,uom=1%
 
 <h3 id="data-normalization">Data Normalization</h3>
 
-<p>Before the aggregation itself, it is necessary to make it clear what data we receive from the sensors. The specific case is the event data where we receive data anytime time the event happens.  Then there are measurements of various quantities. Some sensors provides continuous measurement and send data any time the measured value changes. Of course the &laquo;changes&raquo; always depends on the sensor sensitivity and required measurement precision, so in fact, there is never a true continuous measurement of any quantity. Other sensors provide measurements in some regular intervals and we have no clue what happens in between them.</p>
+<p>Before the aggregation itself, it is necessary to make it clear what data we receive from the sensors. The specific case is the event data where we receive data anytime  the event happens.  Then there are measurements of various quantities. Some sensors provides continuous measurement and send data anytime the measured value changes. Of course the &laquo;changes&raquo; always depends on the sensor sensitivity and required measurement precision, so in fact, there is never a true continuous measurement of any quantity. Other sensors provide measurements in some regular intervals and we have no clue what happens in between them.</p>
 
 <p>Considering all this it is a good idea to somehow normalize data before we start the aggregation. Let&rsquo;s create a new database for that:</p>
 
@@ -472,6 +472,12 @@ rclone copy /data/export/googledrive myGoogleDrive:InfluxData/lubuntu --config /
     
 
     
+      <li class="next">
+        <a href="https://lubolab.com/building-sensor-network-grafana/" title="Building Sensor Network: Data visualisation with Grafana">
+            Next <span aria-hidden="true">&rarr;</span>
+        </a>
+      </li>
+    
     </ul> </nav>
   
 
@@ -512,6 +518,10 @@ rclone copy /data/export/googledrive myGoogleDrive:InfluxData/lubuntu --config /
         <ul>
         
           <li>
+          <a href="https://lubolab.com/building-sensor-network-grafana/">Building Sensor Network: Data visualisation with Grafana</a>
+          </li>
+        
+          <li>
           <a href="https://lubolab.com/building-sensor-network-history/">Building Sensor Network: History layer using InfluxData</a>
           </li>
         
@@ -547,10 +557,6 @@ rclone copy /data/export/googledrive myGoogleDrive:InfluxData/lubuntu --config /
           <a href="https://lubolab.com/camera-events-data-model/">Camera Events: Data Model</a>
           </li>
         
-          <li>
-          <a href="https://lubolab.com/new_setup_for_this_blog/">New setup for this blog: Migration from Ghost to Hugo</a>
-          </li>
-        
         </ul>
       </div>
     </div>
@@ -566,7 +572,7 @@ rclone copy /data/export/googledrive myGoogleDrive:InfluxData/lubuntu --config /
 
         <div class="content">
           <ul>
-            <li><a href="https://lubolab.com/tags/personal-dwh">personal-dwh</a></li><li><a href="https://lubolab.com/tags/bigclown">bigclown</a></li><li><a href="https://lubolab.com/tags/netatmo">netatmo</a></li><li><a href="https://lubolab.com/tags/battery-monitor2mqtt">battery-monitor2mqtt</a></li><li><a href="https://lubolab.com/tags/blogging-platform">blogging-platform</a></li><li><a href="https://lubolab.com/tags/futura">futura</a></li><li><a href="https://lubolab.com/tags/influxdata">influxdata</a></li><li><a href="https://lubolab.com/tags/jablotron">jablotron</a></li><li><a href="https://lubolab.com/tags/json2mqtt">json2mqtt</a></li><li><a href="https://lubolab.com/tags/modbus2mqtt">modbus2mqtt</a></li>
+            <li><a href="https://lubolab.com/tags/personal-dwh">personal-dwh</a></li><li><a href="https://lubolab.com/tags/bigclown">bigclown</a></li><li><a href="https://lubolab.com/tags/netatmo">netatmo</a></li><li><a href="https://lubolab.com/tags/battery-monitor2mqtt">battery-monitor2mqtt</a></li><li><a href="https://lubolab.com/tags/blogging-platform">blogging-platform</a></li><li><a href="https://lubolab.com/tags/futura">futura</a></li><li><a href="https://lubolab.com/tags/grafana">grafana</a></li><li><a href="https://lubolab.com/tags/influxdata">influxdata</a></li><li><a href="https://lubolab.com/tags/jablotron">jablotron</a></li><li><a href="https://lubolab.com/tags/json2mqtt">json2mqtt</a></li>
           </ul>
         </div>
       </div>
