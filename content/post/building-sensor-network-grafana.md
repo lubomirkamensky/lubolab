@@ -48,7 +48,7 @@ In Grafana we need to introduce a variable for any such selection box. And we ca
 
 ![Variables](/images/2018/03/variables.png)
 
-Having all needed variables defined we can compose the query giving the data for the visualisation.
+Having all needed variables defined we can compose the query providing the data for the visualisation.
 
 ![Metrics](/images/2018/03/metrics.png)
 
